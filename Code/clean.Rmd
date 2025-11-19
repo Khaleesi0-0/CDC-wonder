@@ -4,3 +4,12 @@ output: html_document
 date: "2025-11-07"
 ---
 
+```{r}
+library(readr)
+library(dplyr)
+library(tidyverse)
+Urban <- read_csv("../Data/Urban.csv")
+tibble::glimpse(Urban)
+
+```
+
