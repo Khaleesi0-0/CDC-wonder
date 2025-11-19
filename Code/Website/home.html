@@ -8,8 +8,47 @@
   <script src="https://cdn.plot.ly/plotly-2.24.2.min.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .hero { padding: 28px 0; }
+    :root {
+      --ink: #0f172a;
+      --ink-soft: #1e293b;
+      --sky: #e0eafc;
+      --lavender: #c7d2fe;
+      --peach: #ffedd5;
+      --highlight: #f97316;
+      --panel-bg: #ffffff;
+      --muted-text: #475467;
+      --border-soft: rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(169,196,255,0.35), transparent 45%), radial-gradient(circle at 80% 10%, rgba(248,113,113,0.15), transparent 35%), #f6f8fb;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 { color: var(--ink); font-weight: 700; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .content-panel {
+      background: var(--panel-bg);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 20px 50px rgba(15,23,42,0.08);
+      border: 1px solid var(--border-soft);
+    }
+    .content-panel + .content-panel { margin-top: 18px; }
+    .hero {
+      padding: 36px 40px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(37,99,235,0.85));
+      color: #f8fafc;
+      box-shadow: 0 30px 60px rgba(15,23,42,0.25);
+    }
+    .hero h1, .hero h1 small { color: #f8fafc; }
+    .hero small { color: rgba(248,250,252,0.8); }
+    .hero .lead { color: rgba(248,250,252,0.9); }
+    section .section-title { font-size: 1.4rem; margin-bottom: 0.75rem; letter-spacing: 0.01em; }
+    section .section-desc { color: var(--muted-text); }
     .controls { gap: 12px; display: flex; flex-wrap: wrap; align-items: center; }
     .chart { min-height: 360px; margin-bottom: 24px; }
     @media (max-width: 768px) { .controls { flex-direction: column; align-items: stretch; } }
@@ -100,6 +139,8 @@
       #filter-buttons button { flex: 1 1 auto; text-align: center; }
       #trends-insights-wrapper { flex: 1 1 100%; }
     }
+    footer { background: var(--ink); color: rgba(248,250,252,0.7); border-radius: 20px; padding: 18px 28px; }
+    footer small { color: rgba(248,250,252,0.9); }
   </style>
 </head>
 <body>
@@ -112,19 +153,19 @@
     </header>
 
     <!-- Project Goal -->
-    <section class="mb-4">
+    <section class="mb-4 content-panel">
       <h2 class="h4">Project Goal</h2>
       <p>Explore questions like: <strong>How have mortality rates from key causes (COVID-19, heart disease, drug overdoses) changed since 2018?</strong> How do trends vary by race, age, geography, and urbanization?</p>
     </section>
 
     <!-- Dataset Info -->
-    <section class="mb-4">
+    <section class="mb-4 content-panel">
       <h2 class="h4">Dataset</h2>
       <p class="note">Data source: CDC WONDER provisional multiple cause of death, 2018–2024. All visualizations use the latest available data.</p>
     </section>
 
     <!-- Controls -->
-    <section class="mb-4">
+    <section class="mb-4 content-panel">
       <div class="row g-4 mb-4 align-items-stretch">
         <div class="col-lg-3 col-md-6 mb-3">
           <div class="card shadow h-100 border-0 bg-gradient" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);">
@@ -188,7 +229,7 @@
     </section>
 
     <!-- Map and Visualizations -->
-    <section class="mb-4">
+    <section class="mb-4 content-panel">
       <h2 class="h4 mb-3">Cause & Chapter Visualizations</h2>
       <div id="timeSeries" class="chart"></div>
       <div id="urban-deaths" class="chart mt-4"></div>
@@ -261,7 +302,7 @@
     </section>
 
     <!-- Data & Usage Notes -->
-    <section class="mb-4">
+    <section class="mb-4 content-panel">
       <h2 class="h4">Data & Usage</h2>
       <ul>
         <li><strong>Recommended export:</strong> CDC WONDER provisional multiple cause of death by week/month, with columns for year, state, county, ICD-10 cause, race, age-group, urbanization, deaths, population.</li>
