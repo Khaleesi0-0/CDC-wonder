@@ -1,7 +1,7 @@
 // urban-trends.js
 // Creates the stacked area "trends" visualization powered by the Urban dataset.
 (function () {
-  const localPath = '../../Data/Urban.csv';
+  const localPath = '../Data/Urban.csv';
    const remotePath = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
 
   async function loadUrbanCsv() {
@@ -28,11 +28,14 @@
 
   function normalizeRows(rows) {
     return rows.map(r => {
-      const rawYear = (r.Year || '').toString();
-      const numericYear = rawYear.replace(/[^\d]/g, '');
-      const yearValue = numericYear ? +numericYear : +r['Year Code'] || null;
+      const rawYear = (r.Year || '').toString().trim();
+      const fallback = r['Year Code'] ? String(r['Year Code']) : '';
+      const label = rawYear || fallback;
+      const numericYearString = label.replace(/[^\d]/g, '');
+      const yearValue = numericYearString ? +numericYearString : +r['Year Code'] || null;
       return {
         year: yearValue,
+        yearLabel: label || (yearValue ? String(yearValue) : ''),
         deaths: +r.Deaths || 0,
         sex: r.Sex || '(missing)',
         race: r['Single Race 6'] || '(missing)',
@@ -43,7 +46,12 @@
   }
 
   function buildStackData(rows, field, maxSegments = 6) {
-    const years = Array.from(new Set(rows.map(r => r.year))).sort((a, b) => a - b);
+    const rowsGrouped = d3.group(rows, r => r.year);
+    const yearsMeta = Array.from(rowsGrouped.keys()).map(year => {
+      const groupRows = rowsGrouped.get(year) || [];
+      const label = groupRows.find(r => r.yearLabel)?.yearLabel || String(year);
+      return { year, label };
+    }).sort((a, b) => a.year - b.year);
     const totalByKey = new Map();
     const fieldAccessor = field
       ? r => {
@@ -69,10 +77,10 @@
       keys.push('Other');
     }
 
-    const data = years.map(year => {
-      const rowsInYear = rows.filter(r => r.year === year);
+    const data = yearsMeta.map((meta, idx) => {
+      const rowsInYear = rowsGrouped.get(meta.year) || [];
       const sums = d3.rollup(rowsInYear, v => d3.sum(v, d => d.deaths), r => field ? fieldAccessor(r) || '(missing)' : 'Total');
-      const entry = { year };
+      const entry = { year: meta.year, yearLabel: meta.label, position: idx };
       let otherTotal = 0;
       keys.forEach(key => {
         if (key === 'Other') return;
@@ -87,7 +95,7 @@
       entry.total = d3.sum(keys, key => entry[key] || 0);
       return entry;
     });
-    return { data, keys };
+    return { data, keys, yearMeta: yearsMeta };
   }
 
   function formatNumber(value) {
@@ -119,22 +127,29 @@
 
     const xScale = d3.scaleLinear().range([0, innerWidth]);
     const yScale = d3.scaleLinear().range([innerHeight, 0]);
-    const colorScale = d3.scaleOrdinal([
-      '#4477AA', '#66CCEE', '#228833', '#CCBB44', '#EE6677',
-      '#AA3377', '#882255', '#44AA99', '#117733', '#999933'
-    ]);
+    const colorPalette = ['#005F73', '#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00', '#CA6702', '#BB3E03', '#9B2226', '#3D5A80', '#BC4749'];
+    const colorScale = d3.scaleOrdinal(colorPalette).unknown('#94a3b8');
 
     const chartContent = container.select('#stack-chart-content');
     const chartContentNode = chartContent.empty() ? container.node() : chartContent.node();
     const legend = container.select('#stack-legend .legend-items');
-    const chartContentNode = container.select('#stack-chart-content').node();
+    const focusSvg = chartContent.select('.focus-chart-svg');
+    const focusEmpty = chartContent.select('.focus-chart-empty');
     const insightHeader = container.select('#trends-insights-header');
     const insightText = container.select('#trends-text');
     const nextBtn = container.select('#trends-next');
     const tooltip = chartContent.selectAll('.stack-tooltip').data([null]).join('div').attr('class', 'stack-tooltip');
+    const hoverLine = g.append('line')
+      .attr('class', 'stack-hover-line')
+      .attr('y1', 0)
+      .attr('y2', innerHeight)
+      .style('opacity', 0);
 
     let insightMessages = [];
     let insightIndex = 0;
+    let currentStackData = [];
+    let currentKeys = [];
+    let activeFocusKey = null;
 
     function updateLegend(keys) {
       const items = legend.selectAll('.legend-item').data(keys, d => d);
@@ -184,11 +199,17 @@
 
     const areaGenerator = d3.area()
       .curve(d3.curveCatmullRom.alpha(0.5))
-      .x(d => xScale(d.data.year))
+      .x(d => xScale(d.data.position))
       .y0(d => yScale(d[0]))
       .y1(d => yScale(d[1]));
 
     const stack = d3.stack().order(d3.stackOrderNone).offset(d3.stackOffsetNone);
+
+    svg.on('click', () => {
+      if (!activeFocusKey) return;
+      activeFocusKey = null;
+      syncFocusState();
+    });
 
     let activeConfig = fieldConfigs[0];
 
@@ -201,39 +222,129 @@
 
     function handleHover(event, layer, stackData, keys) {
       const [xPos] = d3.pointer(event, g.node());
-      const yearValue = Math.round(xScale.invert(xPos));
-      const closest = stackData.reduce((acc, row) => {
-        if (!acc) return row;
-        return Math.abs(row.year - yearValue) < Math.abs(acc.year - yearValue) ? row : acc;
-      }, null);
+      const posValue = Math.round(xScale.invert(xPos));
+      const idx = Math.max(0, Math.min(stackData.length - 1, posValue));
+      const closest = stackData[idx];
       if (!closest) return;
       const value = closest[layer.key] || 0;
       const share = closest.total ? value / closest.total : 0;
+      const xCoord = xScale(closest.position);
+      hoverLine
+        .attr('x1', xCoord)
+        .attr('x2', xCoord)
+        .style('opacity', 1);
       const [cx, cy] = d3.pointer(event, chartContentNode);
       tooltip.style('display', 'block')
         .style('left', `${cx + 16}px`)
         .style('top', `${cy - 10}px`)
         .html(
           `<div><strong>${layer.key}</strong> — ${closest.year}</div>` +
+          (closest.yearLabel && closest.yearLabel !== String(closest.year) ? `<div>${closest.yearLabel}</div>` : '') +
           `<div>${formatNumber(value)} deaths</div>` +
-          (activeConfig.field ? `<div>${formatPercent(share)} of year</div>` : '')
+          (activeConfig.field ? `<div>${formatPercent(share)} of year</div>` : '') +
+          `<div style="margin-top:4px;font-size:0.75rem;color:#cbd5f5;">Click layer to pin its trend</div>`
         );
     }
 
     function hideTooltip() {
       tooltip.style('display', 'none');
+      hoverLine.style('opacity', 0);
+    }
+
+    const focusMargin = { top: 20, right: 30, bottom: 30, left: 60 };
+    const focusHeight = 220;
+
+    function toggleFocusVisibility(active) {
+      if (focusSvg.empty() || focusEmpty.empty()) return;
+      focusSvg.style('display', active ? 'block' : 'none');
+      focusEmpty.style('display', active ? 'none' : 'flex');
+    }
+
+    function renderFocusChart() {
+      if (focusSvg.empty()) return;
+      const hasFocus = !!(activeFocusKey && currentStackData.length);
+      toggleFocusVisibility(hasFocus);
+      focusSvg.selectAll('*').remove();
+      if (!hasFocus) return;
+
+      const focusWidth = width;
+      focusSvg.attr('viewBox', `0 0 ${focusWidth} ${focusHeight}`);
+      const innerWidthFocus = focusWidth - focusMargin.left - focusMargin.right;
+      const innerHeightFocus = focusHeight - focusMargin.top - focusMargin.bottom;
+      const series = currentStackData.map(d => ({
+        year: d.year,
+        value: d[activeFocusKey] || 0
+      }));
+      const fx = d3.scaleLinear().domain(d3.extent(series, d => d.year)).range([0, innerWidthFocus]);
+      const fy = d3.scaleLinear().domain([0, d3.max(series, d => d.value) || 1]).nice().range([innerHeightFocus, 0]);
+
+      const area = d3.area()
+        .curve(d3.curveCatmullRom.alpha(0.5))
+        .x(d => fx(d.year))
+        .y0(innerHeightFocus)
+        .y1(d => fy(d.value));
+      const line = d3.line()
+        .curve(d3.curveCatmullRom.alpha(0.5))
+        .x(d => fx(d.year))
+        .y(d => fy(d.value));
+
+      const baseColor = d3.color(colorScale(activeFocusKey) || '#4e79a7');
+      const areaColor = baseColor && baseColor.brighter ? baseColor.brighter(1.2).formatHex() : '#cbd5ff';
+      const focusStroke = baseColor ? baseColor.formatHex() : '#4e79a7';
+
+      const focusGroup = focusSvg.append('g').attr('transform', `translate(${focusMargin.left},${focusMargin.top})`);
+      focusGroup.append('path')
+        .datum(series)
+        .attr('fill', areaColor)
+        .attr('opacity', 0.35)
+        .attr('d', area);
+      focusGroup.append('path')
+        .datum(series)
+        .attr('fill', 'none')
+        .attr('stroke', focusStroke)
+        .attr('stroke-width', 2.5)
+        .attr('d', line);
+      focusGroup.append('g')
+        .attr('class', 'focus-x-axis')
+        .attr('transform', `translate(0,${innerHeightFocus})`)
+        .call(d3.axisBottom(fx).tickFormat(d3.format('d')));
+      focusGroup.append('g')
+        .attr('class', 'focus-y-axis')
+        .call(d3.axisLeft(fy).ticks(4).tickFormat(d => d3.format('.2s')(d).replace('G', 'B')));
+      focusGroup.append('text')
+        .attr('x', 0)
+        .attr('y', -6)
+        .attr('fill', '#0f172a')
+        .attr('font-size', '0.85rem')
+        .attr('font-weight', '600')
+        .text(`${activeFocusKey}`);
+    }
+
+    function handleLayerClick(layerKey) {
+      if (!layerKey) return;
+      if (activeFocusKey === layerKey) activeFocusKey = null;
+      else activeFocusKey = layerKey;
+      syncFocusState();
+    }
+
+    function syncFocusState() {
+      renderFocusChart();
+      g.selectAll('.stack-layer').classed('focused', d => d.key === activeFocusKey);
     }
 
     function updateChart() {
-      const { data, keys } = buildStackData(rows, activeConfig.field);
+      const { data, keys, yearMeta } = buildStackData(rows, activeConfig.field);
       if (!data.length) return;
       stack.keys(keys);
       const layers = stack(data);
-      const yearExtent = d3.extent(data, d => d.year);
+      const positionExtent = d3.extent(data, d => d.position);
       const maxY = d3.max(data, d => d3.sum(keys, key => d[key] || 0));
-      xScale.domain(yearExtent);
+      xScale.domain(positionExtent);
       yScale.domain([0, maxY]).nice();
       colorScale.domain(keys);
+      currentStackData = data;
+      currentKeys = keys;
+      if (activeFocusKey && !keys.includes(activeFocusKey)) activeFocusKey = null;
 
       const layersSel = g.selectAll('.stack-layer').data(layers, d => d.key);
       layersSel.enter()
@@ -253,14 +364,31 @@
         .on('pointermove', function (event, layer) {
           handleHover(event, layer, data, keys);
         })
-        .on('pointerleave', hideTooltip);
+        .on('pointerleave', hideTooltip)
+        .on('click', function (event, layer) {
+          event.stopPropagation();
+          handleLayerClick(layer.key);
+        });
+      if (hoverLine.raise) hoverLine.raise();
 
-      const xAxis = d3.axisBottom(xScale).tickFormat(d3.format('d'));
+      const tickPositions = data.map(d => d.position);
+      const positionToLabel = new Map(data.map(d => [d.position, d.yearLabel || String(d.year)]));
+      const xAxis = d3.axisBottom(xScale)
+        .tickValues(tickPositions)
+        .tickFormat(pos => {
+          const raw = positionToLabel.get(pos) || '';
+          const digits = raw.replace(/[^\d]/g, '');
+          return digits || raw;
+        });
       const yAxis = d3.axisLeft(yScale).ticks(5).tickFormat(d => d3.format('.2s')(d).replace('G', 'B'));
-      g.selectAll('.x-axis').data([null]).join('g')
+      const xAxisG = g.selectAll('.x-axis').data([null]).join('g')
         .attr('class', 'x-axis')
         .attr('transform', `translate(0,${innerHeight})`)
         .call(xAxis);
+      xAxisG.selectAll('.tick title').remove();
+      xAxisG.selectAll('.tick')
+        .append('title')
+        .text(pos => positionToLabel.get(pos));
       g.selectAll('.y-axis').data([null]).join('g')
         .attr('class', 'y-axis')
         .call(yAxis);
@@ -269,6 +397,7 @@
       insightMessages = buildInsights(activeConfig, data, keys);
       insightIndex = 0;
       insightText.text(insightMessages[0] || 'Select a filter to view insights.');
+      syncFocusState();
     }
 
     fieldConfigs.forEach(cfg => {
