@@ -105,6 +105,7 @@
     <section class="mb-4">
       <h2 class="h4 mb-3">Cause & Chapter Visualizations</h2>
       <div id="timeSeries" class="chart"></div>
+      <div id="urban-deaths" class="chart mt-4"></div>
     </section>
 
     <!-- Data & Usage Notes -->
@@ -128,7 +129,7 @@
   <script src="js/data-loader.js"></script>
   <script src="js/ucd-mcd-charts.js"></script>
   <script src="js/choropleth.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="js/deaths-sunburst.js"></script>
   <script>
     // Initialize page: load remote datasets and render modules
     (async function () {
@@ -223,6 +224,13 @@
             .style('font-size', '1.1rem')
             .style('font-weight', '600')
             .text(d => d.data.sex);
+
+        // Initialize Urban deaths sunburst (loads ../Data/Urban.csv)
+        try {
+          await window.renderUrbanDeaths('#urban-deaths');
+        } catch (err) {
+          console.warn('Urban deaths viz not initialized:', err && err.message ? err.message : err);
+        }
 
       } catch (err) {
         console.error('Error initializing visualizations', err);
