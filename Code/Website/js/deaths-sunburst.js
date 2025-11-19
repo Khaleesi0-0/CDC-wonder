@@ -4,8 +4,8 @@
   async function loadUrbanData() {
     // Attempt to load Urban.csv relative to the Website folder first.
     // If that fails (not served locally), fall back to the raw GitHub URL provided by the user.
-    const localPath = '../Data/Urban.csv';
-    const fallbackUrl = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/refs/heads/main/Data/Urban.csv';
+    const localPath = '../../Data/Urban.csv';
+    const fallbackUrl = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
 
     // Try local path
     try {
@@ -196,7 +196,13 @@
     const chartDiv = vizWrap.append('div').attr('id', 'urban-sunburst').style('flex', '1').style('position', 'relative');
     const insights = vizWrap.append('div').attr('class', 'insights-wrapper').style('width', '320px');
     insights.append('h4').text('Suggested Explorations');
-    insights.append('div').html('<ul><li>Select <strong>Cause Chapter</strong> then <strong>Place</strong> to compare locations.</li><li>Select <strong>Ethnicity</strong> + <strong>Gender</strong> to compare proportions across groups.</li></ul>');
+    insights.append('div').html(
+      '<ul>' +
+      '<li>Pick a <strong>year</strong>, then toggle <strong>Place</strong> and <strong>Cause Chapter</strong> to expose how geography reshapes the leading causes.</li>' +
+      '<li>Layer <strong>Ethnicity</strong> with <strong>Gender</strong> to surface disproportional burdens across demographic groups.</li>' +
+      '<li>Use <strong>Focus</strong> on a single segment to isolate its share and see how the inner ring reallocates.</li>' +
+      '</ul>'
+    );
 
     // Setup SVG
     const width = 700, height = 500, radius = Math.min(width, height) / 2;
@@ -205,18 +211,27 @@
 
     const partition = d3.partition().size([2 * Math.PI, radius]);
     const arc = d3.arc().startAngle(d => d.x0).endAngle(d => d.x1).innerRadius(d => d.y0).outerRadius(d => d.y1 - 1);
-    const paletteLevel1 = ['#264653', '#2a9d8f', '#6c757d', '#457b9d', '#8ab17d', '#bc6c25', '#4b5563', '#6d597a', '#5f0f40', '#3d5a80', '#e29578', '#287271'];
-    const paletteLevel2 = ['#9ad0c2', '#b8c0ff', '#ffcf99', '#f8ad9d', '#a3c4f3', '#e0afa0', '#ffc8dd', '#d4a373', '#c8b6ff', '#8eecf5', '#ffafcc', '#ffe066', '#c1d3fe', '#b7e4c7', '#ffd6a5', '#ffd9da'];
+    // Paul Tol + Okabe-Ito inspired palette; tuned for color-blind accessibility.
+    const paletteLevel1 = ['#4477AA', '#66CCEE', '#228833', '#CCBB44', '#EE6677', '#AA3377', '#BBBBBB', '#882255', '#44AA99', '#117733', '#999933', '#DDCC77'];
     const colorLevel1 = d3.scaleOrdinal(paletteLevel1);
-    const colorLevel2 = d3.scaleOrdinal(paletteLevel2);
+    const getChildTintColor = (node) => {
+      if (!node.parent) return '#cbd5f5';
+      const parentName = node.parent.data.name || '(missing)';
+      const baseColor = d3.color(colorLevel1(parentName));
+      if (!baseColor) return '#cbd5f5';
+      const siblings = node.parent.children || [];
+      const index = Math.max(0, siblings.indexOf(node));
+      const ratio = siblings.length > 1 ? index / (siblings.length - 1) : 0.4;
+      const hsl = d3.hsl(baseColor);
+      const minLightness = Math.max(0.25, Math.min(0.45, hsl.l));
+      hsl.l = Math.min(0.9, minLightness + ratio * 0.45);
+      hsl.s = Math.max(0.35, hsl.s * (0.95 - ratio * 0.35));
+      return hsl.formatHex();
+    };
     const getFillColor = (node) => {
       if (!node) return '#cbd5f5';
       if (node.depth === 1) return colorLevel1(node.data.name || '(missing)');
-      if (node.depth > 1) {
-        const parentName = (node.parent && (node.parent.data.name || '(missing)')) || '(missing)';
-        const key = `${parentName}>${node.data.name || '(missing)'}`;
-        return colorLevel2(key);
-      }
+      if (node.depth > 1) return getChildTintColor(node);
       return '#cbd5f5';
     };
 
@@ -429,7 +444,7 @@
       });
     });
     render(containerSelector, rows);
-    return true;
+    return rows;
   };
 
 })();
