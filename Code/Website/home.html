@@ -18,67 +18,63 @@
 </head>
 <body>
   <div class="container py-4">
-    <header class="hero">
-      <h1>Visualizing Mortality Patterns in the U.S.: Trends by Cause, Demographics, and Urbanization (2018–2024)</h1>
+    <!-- Header -->
+    <header class="hero mb-4">
+      <h1 class="mb-2">Visualizing Mortality Patterns in the U.S.<br><small class="text-muted">Trends by Cause, Demographics, and Urbanization (2018–2024)</small></h1>
       <p class="mb-1"><strong>Group Member:</strong> Khaleesi Chen</p>
-      <p class="lead">Understanding how mortality patterns differ across regions, races, and causes of death offers essential insights into public health disparities and emerging threats. This site demonstrates interactive, multi-level visualizations built from CDC WONDER provisional mortality data.</p>
+      <p class="lead">Understanding how mortality patterns differ across regions, races, and causes of death offers essential insights into public health disparities and emerging threats. This site presents interactive, multi-level visualizations built from CDC WONDER provisional mortality data.</p>
     </header>
 
+    <!-- Project Goal -->
     <section class="mb-4">
-      <h3>Project Goal</h3>
-      <p>Explore questions like: How have mortality rates from key causes (COVID-19, heart disease, drug overdoses) changed since 2018? How do trends vary by race, age, geography, and urbanization?</p>
+      <h2 class="h4">Project Goal</h2>
+      <p>Explore questions like: <strong>How have mortality rates from key causes (COVID-19, heart disease, drug overdoses) changed since 2018?</strong> How do trends vary by race, age, geography, and urbanization?</p>
     </section>
 
+    <!-- Dataset Info -->
     <section class="mb-4">
-      <h4>Dataset</h4>
-      <p class="note">This page is a demo. To load real data, export CDC WONDER's Provisional Multiple Cause of Death dataset (CSV) and place it at <code>data/provisional_deaths.csv</code>. See the <strong>Data & usage</strong> notes below for preprocessing tips.</p>
+      <h2 class="h4">Dataset</h2>
+      <p class="note">To load your own data, export CDC WONDER's Provisional Multiple Cause of Death dataset (CSV) and place it at <code>data/provisional_deaths.csv</code>.<br>See the <strong>Data & usage</strong> notes below for preprocessing tips.</p>
     </section>
 
-    <section class="mb-3">
+    <!-- Controls -->
+    <section class="mb-4">
+      <h2 class="h4 mb-3">Interactive Controls</h2>
       <div class="controls mb-2">
         <label class="me-2"><strong>Cause:</strong>
-          <select id="causeSelect" class="form-select d-inline-block" style="width:220px">
-            <option>COVID-19</option>
-            <option>Heart disease</option>
-            <option>Drug overdoses</option>
-          </select>
+          <select id="causeSelect" class="form-select d-inline-block" style="width:220px"></select>
         </label>
-
-        <label class="me-2"><strong>Years:</strong>
-          <input id="yearStart" type="number" value="2018" min="2018" max="2024" class="form-control d-inline-block" style="width:96px"> -
-          <input id="yearEnd" type="number" value="2024" min="2018" max="2024" class="form-control d-inline-block" style="width:96px">
+        <label class="me-2"><strong>Race:</strong>
+          <select id="raceSelect" class="form-select d-inline-block" style="width:180px"></select>
         </label>
-
-        <label class="me-2"><strong>Urbanization:</strong>
-          <select id="urbanSelect" class="form-select d-inline-block" style="width:220px">
-            <option value="all">All</option>
-            <option value="large">Large Metro</option>
-            <option value="medium">Medium/Small Metro</option>
-            <option value="nonmetro">Nonmetro</option>
-          </select>
+        <label class="me-2"><strong>Sex:</strong>
+          <select id="sexSelect" class="form-select d-inline-block" style="width:140px"></select>
         </label>
-
-        <button id="loadCSV" class="btn btn-outline-secondary">Load Local CSV</button>
       </div>
-      <div class="note mt-2">Add your CDC WONDER export file to <code>data/provisional_deaths.csv</code> and click <strong>Load Local CSV</strong> (serve the folder with a local webserver to avoid CORS).</div>
+      <!-- Note removed with CSV/Year controls -->
     </section>
 
-    <section>
+    <!-- Map and Visualizations -->
+    <section class="mb-4">
+      <h2 class="h4 mb-3">Visualizations</h2>
+      <!-- Move map directly under controls -->
+      <div id="choropleth" class="chart mb-4"></div>
       <div id="timeSeries" class="chart"></div>
-      <div id="choropleth" class="chart"></div>
     </section>
 
-    <section class="mt-3">
-      <h4>Data & usage</h4>
+    <!-- Data & Usage Notes -->
+    <section class="mb-4">
+      <h2 class="h4">Data & Usage</h2>
       <ul>
-        <li>Recommended export: CDC WONDER provisional multiple cause of death by week/month, with columns for year, state, county, ICD-10 cause, race, age-group, urbanization, deaths, population.</li>
-        <li>Preprocessing: compute rates per 100,000 (deaths / population * 100000). For comparisons over time, consider age-adjustment using a standard population.</li>
-        <li>To use your own CSV: ensure column names like <code>year</code>, <code>state</code> (2-letter), <code>cause</code>, <code>race</code>, <code>urbanization</code>, <code>deaths</code>, and <code>population</code>.</li>
+        <li><strong>Recommended export:</strong> CDC WONDER provisional multiple cause of death by week/month, with columns for year, state, county, ICD-10 cause, race, age-group, urbanization, deaths, population.</li>
+        <li><strong>Preprocessing:</strong> compute rates per 100,000 (deaths / population * 100000). For comparisons over time, consider age-adjustment using a standard population.</li>
+        <li><strong>To use your own CSV:</strong> ensure column names like <code>year</code>, <code>state</code> (2-letter), <code>cause</code>, <code>race</code>, <code>urbanization</code>, <code>deaths</code>, and <code>population</code>.</li>
       </ul>
     </section>
 
-    <footer class="mt-4 mb-5">
-      <small>Created by Khaleesi Chen — Demo for exploring CDC provisional mortality data (2018–2024).</small>
+    <!-- Footer -->
+    <footer class="mt-4 mb-5 border-top pt-3">
+      <small>Created by Khaleesi Chen — Exploring CDC provisional mortality data (2018–2024).</small>
     </footer>
   </div>
 
@@ -94,22 +90,58 @@
         const data = await window.loadMortalityData();
 
         // Render UCD/MCD interactive chart (uses the Cause CSV)
-        // The user's `Cause` CSV is passed directly
         renderUcdMcd('#timeSeries', data.Cause);
+
+        // Helper to get unique, sorted values for dropdowns
+        function getUniqueSorted(arr, key) {
+          return Array.from(new Set(arr.map(d => d[key]).filter(Boolean))).sort();
+        }
+
+        // Populate dropdowns
+        function populateDropdown(id, values) {
+          const sel = document.getElementById(id);
+          if (!sel) return;
+          // Remove all except first ("All")
+          while (sel.options.length > 1) sel.remove(1);
+          values.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            sel.appendChild(opt);
+          });
+        }
+
+        // Populate all dropdowns from data, filtering out unwanted cause label
+        const causes = getUniqueSorted(data.deathData, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag'));
+        const races = getUniqueSorted(data.deathData, 'race');
+        const sexes = getUniqueSorted(data.deathData, 'sex');
+        populateDropdown('causeSelect', causes);
+        populateDropdown('raceSelect', races);
+        populateDropdown('sexSelect', sexes);
+
+        // Set default cause to first available if present
+        if (causes.length && !document.getElementById('causeSelect').value)
+          document.getElementById('causeSelect').value = causes[0];
 
         // Render choropleth using normalized deathData and wire controls
         function renderMapFromControls(localDeathData) {
-          const cause = document.getElementById('causeSelect').value || null;
-          const race = null;
-          const sex = null;
+          const cause = document.getElementById('causeSelect').value;
+          const race = document.getElementById('raceSelect').value;
+          const sex = document.getElementById('sexSelect').value;
           const ddata = localDeathData || data.deathData;
-          renderChoropleth('#choropleth', ddata, data.us, { cause, race, sex });
+          // Only filter if not "All" (empty string)
+          const filtered = ddata.filter(d =>
+            (!cause || d.cause === cause) &&
+            (!race || d.race === race) &&
+            (!sex || d.sex === sex)
+          );
+          renderChoropleth('#choropleth', filtered, data.us, { cause, race, sex });
         }
 
         renderMapFromControls();
 
         // Re-render map when selectors change
-        ['causeSelect','yearStart','yearEnd','urbanSelect'].forEach(id => {
+        ['causeSelect','raceSelect','sexSelect','yearStart','yearEnd'].forEach(id => {
           const el = document.getElementById(id);
           if (el) el.addEventListener('change', () => renderMapFromControls());
         });
@@ -130,6 +162,10 @@
               population: +r.Population || +r.population || 0,
               rate: (() => { const rr = (r['Crude Rate'] || r.rate || '').toString().trim(); return rr === '' || rr.toLowerCase() === 'unreliable' ? NaN : +rr; })()
             }));
+            // Repopulate dropdowns with new data
+            populateDropdown('causeSelect', getUniqueSorted(norm, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag')));
+            populateDropdown('raceSelect', getUniqueSorted(norm, 'race'));
+            populateDropdown('sexSelect', getUniqueSorted(norm, 'sex'));
             renderMapFromControls(norm);
           } catch (err) {
             alert('Could not load CSV at "' + path + '". Place your CDC WONDER export at that path and serve the site from a local webserver.');

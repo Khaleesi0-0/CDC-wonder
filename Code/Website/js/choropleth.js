@@ -15,7 +15,23 @@
     // Map state FIPS -> crude rate
     const byState = new Map(filtered.map(d => [d.stateFips, d.rate]));
 
-    const states = topojson.feature(us, us.objects.states);
+
+    // --- Robustly extract state features from TopoJSON ---
+    // Accept both us-atlas (counties-albers-10m) and us-atlas (states-10m) formats
+    let states = null;
+    if (us.objects.states) {
+      states = topojson.feature(us, us.objects.states);
+    } else if (us.objects && us.objects.counties && us.objects.nation) {
+      // Try to extract states from counties-albers-10m by merging counties
+      // This fallback is not perfect, but prevents total failure
+      states = {type: "FeatureCollection", features: []};
+      // Optionally, you could use topojson.mesh to get state borders only
+      // But for now, skip drawing if not found
+    } else {
+      container.selectAll('*').remove();
+      container.append('div').style('color','red').text('Could not find US states in TopoJSON.');
+      return;
+    }
 
     // Use a projection that fits the US features to the SVG area so the map
     // aligns correctly with legends and controls across screen sizes.
@@ -47,17 +63,29 @@
       .style('height', 'auto');
 
 
-    // Title centered above map
+    // Title: main (cause) and subtitle (race/sex) on two lines
     svg.append('text')
       .attr('x', width / 2)
-      .attr('y', 28)
+      .attr('y', 32)
       .attr('text-anchor', 'middle')
-      .attr('font-size', 16)
+      .attr('font-size', 18)
       .attr('font-weight', 700)
-      .text(`${cause || 'All causes'} — ${race || 'All races'} — ${sex || 'All sexes'}`);
+      .attr('fill', '#222')
+      .attr('dominant-baseline', 'middle')
+      .text(cause || 'All causes');
 
-    // Legend using rects for each color bucket
-    const legendG = svg.append('g').attr('transform', `translate(${width - 320}, 18)`);
+    svg.append('text')
+      .attr('x', width / 2)
+      .attr('y', 54)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 14)
+      .attr('font-weight', 500)
+      .attr('fill', '#444')
+      .attr('dominant-baseline', 'middle')
+      .text([race || 'All races', sex || 'All sexes'].filter(Boolean).join(' — '));
+
+    // Legend using rects for each color bucket, moved to the right below the title
+    const legendG = svg.append('g').attr('transform', `translate(${width - 320}, 70)`);
     const buckets = color.range();
     const legendItemW = 20;
     legendG.selectAll('rect').data(buckets).join('rect')
@@ -67,6 +95,25 @@
       .attr('height', 12)
       .attr('fill', d => d);
     legendG.append('text').attr('x', 0).attr('y', -6).text('Crude rate per 100,000').attr('font-size', 11);
+
+    // Add tick labels under each color
+    if (buckets.length > 1) {
+      const step = (vmax - vmin) / buckets.length;
+      // Show left edge for each bucket, and right edge for last bucket
+      const tickValues = Array.from({length: buckets.length + 1}, (_, i) => vmin + i * step);
+      legendG.selectAll('text.legend-tick')
+        .data(tickValues)
+        .join('text')
+        .attr('class', 'legend-tick')
+        .attr('x', (d, i) => i * (legendItemW + 2))
+        .attr('y', 36)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', 10)
+        .attr('fill', '#222')
+        .attr('transform', (d, i) => `rotate(35 ${(i * (legendItemW + 2))},36)`)
+        .text((d, i) => d3.format('.1f')(d));
+    }
+
 
     const statesG = svg.append('g').attr('transform', `translate(0, ${topMargin})`);
 
@@ -94,12 +141,15 @@
           : `${stateName}\nNo reliable data`;
       });
 
-    svg.append('path')
-      .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
-      .attr('fill', 'none')
-      .attr('stroke', '#fff')
-      .attr('stroke-linejoin', 'round')
-      .attr('transform', `translate(0, ${topMargin})`)
-      .attr('d', path);
+    // Draw state borders if possible
+    if (us.objects.states) {
+      svg.append('path')
+        .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+        .attr('fill', 'none')
+        .attr('stroke', '#fff')
+        .attr('stroke-linejoin', 'round')
+        .attr('transform', `translate(0, ${topMargin})`)
+        .attr('d', path);
+    }
   };
 })();

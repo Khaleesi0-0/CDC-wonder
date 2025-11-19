@@ -6,8 +6,7 @@
     // Use the standard raw.githubusercontent.com pattern: /<owner>/<repo>/<branch>/<path>
     const deathUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/MortalitybyRace.csv";
     const causeUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/deathcause.csv";
-    const usUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-albers-10m.json";
-
+    const usUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
     let Death, Cause, us;
     try {
       [Death, Cause, us] = await Promise.all([
