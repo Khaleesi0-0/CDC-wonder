@@ -21,7 +21,7 @@
     <!-- Header -->
     <header class="hero mb-4">
       <h1 class="mb-2">Visualizing Mortality Patterns in the U.S.<br><small class="text-muted">Trends by Cause, Demographics, and Urbanization (2018–2024)</small></h1>
-      <p class="mb-1"><strong>Group Member:</strong> Khaleesi Chen</p>
+      <p class="mb-1"><strong>Author:</strong> Khaleesi Chen</p>
       <p class="lead">Understanding how mortality patterns differ across regions, races, and causes of death offers essential insights into public health disparities and emerging threats. This site presents interactive, multi-level visualizations built from CDC WONDER provisional mortality data.</p>
     </header>
 
@@ -34,31 +34,76 @@
     <!-- Dataset Info -->
     <section class="mb-4">
       <h2 class="h4">Dataset</h2>
-      <p class="note">To load your own data, export CDC WONDER's Provisional Multiple Cause of Death dataset (CSV) and place it at <code>data/provisional_deaths.csv</code>.<br>See the <strong>Data & usage</strong> notes below for preprocessing tips.</p>
+      <p class="note">Data source: CDC WONDER provisional multiple cause of death, 2018–2024. All visualizations use the latest available data.</p>
     </section>
 
     <!-- Controls -->
     <section class="mb-4">
-      <h2 class="h4 mb-3">Interactive Controls</h2>
-      <div class="controls mb-2">
-        <label class="me-2"><strong>Cause:</strong>
-          <select id="causeSelect" class="form-select d-inline-block" style="width:220px"></select>
-        </label>
-        <label class="me-2"><strong>Race:</strong>
-          <select id="raceSelect" class="form-select d-inline-block" style="width:180px"></select>
-        </label>
-        <label class="me-2"><strong>Sex:</strong>
-          <select id="sexSelect" class="form-select d-inline-block" style="width:140px"></select>
-        </label>
+      <div class="row g-4 mb-4 align-items-stretch">
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="card shadow h-100 border-0 bg-gradient" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-2">Total Deaths</h5>
+              <div id="total-deaths" class="display-6 fw-bold text-primary"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="card shadow h-100 border-0 bg-gradient" style="background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-2">Unique Causes</h5>
+              <div id="unique-causes" class="display-6 fw-bold text-danger"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="card shadow h-100 border-0 bg-gradient" style="background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-2">Unique Races</h5>
+              <div id="unique-races" class="display-6 fw-bold text-warning"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3">
+          <div class="card shadow h-100 border-0 bg-gradient" style="background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-2">Unique Sexes</h5>
+              <div id="unique-sexes" class="display-6 fw-bold text-success"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Note removed with CSV/Year controls -->
+      <div class="row mb-4">
+        <div class="col-md-8 mb-4">
+          <div class="p-3 shadow rounded bg-white">
+            <div class="mb-3">
+              <label for="causeSelect" class="form-label">Cause</label>
+              <select id="causeSelect" class="form-select"></select>
+            </div>
+            <div class="mb-3">
+              <label for="raceSelect" class="form-label">Race</label>
+              <select id="raceSelect" class="form-select"></select>
+            </div>
+            <div class="mb-3">
+              <label for="sexSelect" class="form-label">Sex</label>
+              <select id="sexSelect" class="form-select"></select>
+            </div>
+            <div id="map-title" class="mb-2"></div>
+            <div id="choropleth" class="chart mb-4"></div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="p-3 shadow rounded bg-white h-100">
+            <h5 class="mb-3 text-center">Deaths by Sex</h5>
+            <div id="sex-pie-chart" style="height:320px;"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Map and Visualizations -->
     <section class="mb-4">
-      <h2 class="h4 mb-3">Visualizations</h2>
-      <!-- Move map directly under controls -->
-      <div id="choropleth" class="chart mb-4"></div>
+      <h2 class="h4 mb-3">Cause & Chapter Visualizations</h2>
       <div id="timeSeries" class="chart"></div>
     </section>
 
@@ -83,6 +128,7 @@
   <script src="js/data-loader.js"></script>
   <script src="js/ucd-mcd-charts.js"></script>
   <script src="js/choropleth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script>
     // Initialize page: load remote datasets and render modules
     (async function () {
@@ -101,8 +147,7 @@
         function populateDropdown(id, values) {
           const sel = document.getElementById(id);
           if (!sel) return;
-          // Remove all except first ("All")
-          while (sel.options.length > 1) sel.remove(1);
+          sel.innerHTML = '';
           values.forEach(v => {
             const opt = document.createElement('option');
             opt.value = v;
@@ -129,7 +174,6 @@
           const race = document.getElementById('raceSelect').value;
           const sex = document.getElementById('sexSelect').value;
           const ddata = localDeathData || data.deathData;
-          // Only filter if not "All" (empty string)
           const filtered = ddata.filter(d =>
             (!cause || d.cause === cause) &&
             (!race || d.race === race) &&
@@ -141,41 +185,49 @@
         renderMapFromControls();
 
         // Re-render map when selectors change
-        ['causeSelect','raceSelect','sexSelect','yearStart','yearEnd'].forEach(id => {
+        ['causeSelect','raceSelect','sexSelect'].forEach(id => {
           const el = document.getElementById(id);
           if (el) el.addEventListener('change', () => renderMapFromControls());
         });
 
-        // Wire CSV button to re-run renderers using a local CSV if desired
-        document.getElementById('loadCSV').addEventListener('click', async () => {
-          const path = 'data/provisional_deaths.csv';
-          try {
-            const rows = await d3.csv(path);
-            renderUcdMcd('#timeSeries', rows);
-            const norm = rows.map(r => ({
-              state: r['Residence State'] || r.state,
-              stateFips: (r['Residence State Code'] || r.stateFips || '').toString().padStart(2, '0'),
-              race: r['Single Race 6'] || r.race,
-              sex: r['Sex'] || r.sex,
-              cause: r['UCD - ICD Chapter'] || r.cause,
-              deaths: +r.Deaths || +r.deaths || 0,
-              population: +r.Population || +r.population || 0,
-              rate: (() => { const rr = (r['Crude Rate'] || r.rate || '').toString().trim(); return rr === '' || rr.toLowerCase() === 'unreliable' ? NaN : +rr; })()
-            }));
-            // Repopulate dropdowns with new data
-            populateDropdown('causeSelect', getUniqueSorted(norm, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag')));
-            populateDropdown('raceSelect', getUniqueSorted(norm, 'race'));
-            populateDropdown('sexSelect', getUniqueSorted(norm, 'sex'));
-            renderMapFromControls(norm);
-          } catch (err) {
-            alert('Could not load CSV at "' + path + '". Place your CDC WONDER export at that path and serve the site from a local webserver.');
-          }
-        });
+        // Summary cards
+        document.getElementById('total-deaths').textContent = d3.format(',')(d3.sum(data.deathData, d => d.deaths));
+        document.getElementById('unique-causes').textContent = d3.format(',')(new Set(data.deathData.map(d => d.cause)).size);
+        document.getElementById('unique-races').textContent = d3.format(',')(new Set(data.deathData.map(d => d.race)).size);
+        document.getElementById('unique-sexes').textContent = d3.format(',')(new Set(data.deathData.map(d => d.sex)).size);
+
+        // Pie chart for deaths by sex
+        const pieData = Array.from(d3.rollup(data.deathData, v => d3.sum(v, d => d.deaths), d => d.sex), ([sex, deaths]) => ({ sex, deaths }));
+        const width = 320, height = 320, radius = Math.min(width, height) / 2;
+        const color = d3.scaleOrdinal().domain(pieData.map(d => d.sex)).range(["#4e79a7", "#f28e2b", "#e15759"]);
+        const svg = d3.select('#sex-pie-chart').append('svg').attr('width', width).attr('height', height);
+        const g = svg.append('g').attr('transform', `translate(${width/2},${height/2})`);
+        const pie = d3.pie().value(d => d.deaths);
+        const arc = d3.arc().innerRadius(60).outerRadius(radius - 10);
+        const arcs = g.selectAll('arc').data(pie(pieData)).enter().append('g');
+        arcs.append('path')
+            .attr('d', arc)
+            .attr('fill', d => color(d.data.sex))
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 2)
+            .on('mouseover', function(event, d) {
+                d3.select(this).attr('opacity', 0.7);
+            })
+            .on('mouseout', function(event, d) {
+                d3.select(this).attr('opacity', 1);
+            });
+        arcs.append('text')
+            .attr('transform', d => `translate(${arc.centroid(d)})`)
+            .attr('text-anchor', 'middle')
+            .attr('dy', '0.35em')
+            .style('font-size', '1.1rem')
+            .style('font-weight', '600')
+            .text(d => d.data.sex);
 
       } catch (err) {
         console.error('Error initializing visualizations', err);
         const msg = err && err.message ? err.message : String(err);
-        alert('Failed to load remote datasets: ' + msg + '\n\nIf this persists, check the raw URLs in js/data-loader.js and try opening them in your browser (ensure network access and that GitHub raw URLs are reachable).');
+        alert('Failed to load remote datasets: ' + msg);
       }
     })();
   </script>
