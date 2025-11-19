@@ -1,0 +1,113 @@
+"Notes"	"Ten-Year Age Groups"	"Ten-Year Age Groups Code"	"Year"	"Year Code"	Deaths	Population	Crude Rate	Crude Rate Lower 95% Confidence Interval	Crude Rate Upper 95% Confidence Interval	Crude Rate Standard Error	% of Total Deaths
+	"25-34 years"	"25-34"	"2018"	"2018"	57	45697774	0.124732553	0.094471188	0.161605990	0.016521230	0.020127190%
+	"25-34 years"	"25-34"	"2019"	"2019"	53	45940321	0.115367065	0.086418007	0.150902428	0.015846885	0.018714755%
+	"25-34 years"	"25-34"	"2020"	"2020"	56	46069646	0.121555091	0.091821500	0.157849010	0.016243482	0.019774081%
+	"25-34 years"	"25-34"	"2021"	"2021"	59	45495105	0.129684281	0.098722159	0.167283645	0.016883455	0.020833407%
+	"25-34 years"	"25-34"	"2022"	"2022"	70	45501300	0.153841758	0.119927343	0.194369831	0.018387607	0.024717601%
+	"25-34 years"	"25-34"	"2023 "	"2023"	55	45542516	0.120766275	0.090978065	0.157194214	0.016284121	0.019420973%
+"Total"	"25-34 years"	"25-34"			350	274246662	0.127622337	0.114251804	0.140992871	0.006821701	0.123588007%
+	"35-44 years"	"35-44"	"2018"	"2018"	432	41277888	1.046565173	0.947873508	1.145256838	0.050352890	0.152542912%
+	"35-44 years"	"35-44"	"2019"	"2019"	479	41659144	1.149807591	1.046836933	1.252778249	0.052536050	0.169139015%
+	"35-44 years"	"35-44"	"2020"	"2020"	458	42136192	1.086951569	0.987403343	1.186499795	0.050789911	0.161723735%
+	"35-44 years"	"35-44"	"2021"	"2021"	495	43403854	1.140451721	1.039983115	1.240920327	0.051259493	0.174788753%
+	"35-44 years"	"35-44"	"2022"	"2022"	490	43695365	1.121400405	1.022107380	1.220693429	0.050659706	0.173023210%
+	"35-44 years"	"35-44"	"2023 "	"2023"	443	44390693	0.997956937	0.905024781	1.090889092	0.047414365	0.156427106%
+"Total"	"35-44 years"	"35-44"			2797	256563136	1.090180002	1.049777519	1.130582484	0.020613511	0.987644730%
+	"45-54 years"	"45-54"	"2018"	"2018"	2460	41631699	5.908958940	5.675452163	6.142465718	0.119136111	0.868647135%
+	"45-54 years"	"45-54"	"2019"	"2019"	2448	40874902	5.989005185	5.751755822	6.226254547	0.121045593	0.864409832%
+	"45-54 years"	"45-54"	"2020"	"2020"	2447	40366133	6.062012430	5.821821884	6.302202976	0.122546197	0.864056723%
+	"45-54 years"	"45-54"	"2021"	"2021"	2358	40688436	5.795258387	5.561343978	6.029172797	0.119344086	0.832630059%
+	"45-54 years"	"45-54"	"2022"	"2022"	2403	40431645	5.943364412	5.705728788	6.181000035	0.121242665	0.848519945%
+	"45-54 years"	"45-54"	"2023 "	"2023"	2389	40493781	5.899671359	5.663092564	6.136250155	0.120703467	0.843576425%
+"Total"	"45-54 years"	"45-54"			14505	244486596	5.932840588	5.836288897	6.029392279	0.049261067	5.121840119%
+	"55-64 years"	"55-64"	"2018"	"2018"	8737	42272636	20.668216669	20.234827644	21.101605694	0.221116849	3.085109764%
+	"55-64 years"	"55-64"	"2019"	"2019"	9047	42448537	21.312866448	20.873683328	21.752049568	0.224073020	3.194573427%
+	"55-64 years"	"55-64"	"2020"	"2020"	8695	42403677	20.505297218	20.074287217	20.936307218	0.219903061	3.070279203%
+	"55-64 years"	"55-64"	"2021"	"2021"	8907	42803064	20.809257954	20.377095594	21.241420315	0.220491000	3.145138224%
+	"55-64 years"	"55-64"	"2022"	"2022"	8783	42085437	20.869451825	20.432990596	21.305913054	0.222684301	3.101352759%
+	"55-64 years"	"55-64"	"2023 "	"2023"	8597	41854411	20.540248434	20.106049953	20.974446915	0.221529837	3.035674561%
+"Total"	"55-64 years"	"55-64"			52766	253867762	20.784836792	20.607489075	20.962184510	0.090483529	18.632127938%
+	"65-74 years"	"65-74"	"2018"	"2018"	13982	30492316	45.854175196	45.094110941	46.614239451	0.387787885	4.937164326%
+	"65-74 years"	"65-74"	"2019"	"2019"	14423	31483433	45.811395473	45.063739528	46.559051417	0.381457115	5.092885215%
+	"65-74 years"	"65-74"	"2020"	"2020"	15072	32549398	46.305003859	45.565741569	47.044266149	0.377174638	5.322052691%
+	"65-74 years"	"65-74"	"2021"	"2021"	15643	33666122	46.465108158	45.736954558	47.193261759	0.371506939	5.523677697%
+	"65-74 years"	"65-74"	"2022"	"2022"	15445	33788439	45.710901294	44.989989883	46.431812704	0.367811944	5.453762195%
+	"65-74 years"	"65-74"	"2023 "	"2023"	16093	34685284	46.397198305	45.680346600	47.114050009	0.365740666	5.682576563%
+"Total"	"65-74 years"	"65-74"			90658	196664992	46.097680669	45.797604104	46.397757234	0.153100288	32.012118687%
+	"75-84 years"	"75-84"	"2018"	"2018"	12409	15394374	80.607369939	79.189088465	82.025651414	0.723612997	4.381724512%
+	"75-84 years"	"75-84"	"2019"	"2019"	12684	15969872	79.424556440	78.042318680	80.806794200	0.705223347	4.478829374%
+	"75-84 years"	"75-84"	"2020"	"2020"	13227	16451547	80.399733837	79.029546323	81.769921350	0.699075262	4.670567340%
+	"75-84 years"	"75-84"	"2021"	"2021"	13543	16206075	83.567427647	82.159968926	84.974886367	0.718091184	4.782149654%
+	"75-84 years"	"75-84"	"2022"	"2022"	14239	17520545	81.270302950	79.935404573	82.605201327	0.681070601	5.027913234%
+	"75-84 years"	"75-84"	"2023 "	"2023"	14980	18368097	81.554447366	80.248433422	82.860461310	0.666333645	5.289566700%
+"Total"	"75-84 years"	"75-84"			81082	99910510	81.154625274	80.596017312	81.713233237	0.285004062	28.630750815%
+	"85+ years"	"85+"	"2018"	"2018"	6826	6544503	104.301273909	101.826915869	106.775631948	1.262427571	2.410319245%
+	"85+ years"	"85+"	"2019"	"2019"	6743	6604958	102.089975440	99.653216372	104.526734507	1.243244422	2.381011232%
+	"85+ years"	"85+"	"2020"	"2020"	6810	6658420	102.276516050	99.847343074	104.705689027	1.239373968	2.404669508%
+	"85+ years"	"85+"	"2021"	"2021"	6892	5975756	115.332687613	112.609761546	118.055613680	1.389247993	2.433624413%
+	"85+ years"	"85+"	"2022"	"2022"	6886	6485868	106.169289909	103.661613612	108.676966205	1.279426682	2.431505761%
+	"85+ years"	"85+"	"2023 "	"2023"	6884	6194980	111.122231226	108.497187188	113.747275264	1.339308183	2.430799544%
+"Total"	"85+ years"	"85+"			41041	38464485	106.698425834	105.666127761	107.730723906	0.526682690	14.491929703%
+"Total"					283199	1364204143	20.759283092	20.682825157	20.835741027	0.039009151	100.000000000%
+"---"
+"Dataset: Underlying Cause of Death, 2018-2023, Single Race"
+"Query Parameters:"
+"ICD-10 Codes: C25.0 (Head of pancreas - Malignant neoplasms); C25.1 (Body of pancreas - Malignant neoplasms); C25.2 (Tail of"
+"pancreas - Malignant neoplasms); C25.3 (Pancreatic duct - Malignant neoplasms); C25.4 (Endocrine pancreas - Malignant"
+"neoplasms); C25.7 (Other parts of pancreas - Malignant neoplasms); C25.8 (Overlapping lesion of pancreas - Malignant neoplasms);"
+"C25.9 (Pancreas, unspecified - Malignant neoplasms)"
+"Ten-Year Age Groups: 25-34 years; 35-44 years; 45-54 years; 55-64 years; 65-74 years; 75-84 years; 85+ years"
+"Group By: Ten-Year Age Groups; Year"
+"Show Totals: True"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd-expanded.html for more information."
+"---"
+"Query Date: Jun 4, 2025 2:32:11 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 2018-2023 on CDC WONDER Online Database, released in 2024. Data are from the Multiple Cause of Death Files,"
+"2018-2023, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/ucd-icd10-expanded.html on Jun 4, 2025 2:32:11 PM"
+"---"
+Caveats:
+"1. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Not Stated."
+"2. The method used to calculate 95% confidence intervals is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Confidence-Intervals."
+"3. The method used to calculate standard errors is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Standard-Errors."
+"4. The population figures for years 2023 are single-race estimates of the July 1 resident population, from the Vintage 2023"
+"postcensal series released by the Census Bureau on June 27, 2024. The 2023 series is based on the Modified Blended Base produced"
+"by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The Modified Blended Base consists of the blend"
+"of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data"
+"from the internal Census Edited File (CEF). The population figures for years 2022 are single-race estimates of the July 1"
+"resident population, from the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023. The 2022 series is"
+"based on the Modified Blended Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The"
+"Modified Blended Base consists of the blend of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic"
+"Analysis Estimates, and 2020 Census data from the internal Census Edited File (CEF). The population figures for years 2021 are"
+"single-race estimates of the July 1 resident population, based on the Blended Base produced by the US Census Bureau in lieu of"
+"the April 1, 2020 decennial population count, from the Vintage 2021 postcensal series released by the Census Bureau on June 30,"
+"2022. The population figures for year 2020 are single-race estimates of the July 1 resident population, from the Vintage 2020"
+"postcensal series based on April 2010 Census, released by the Census Bureau on July 27, 2021. The population figures for year"
+"2019 are single-race estimates of the July 1 resident population, from the Vintage 2019 postcensal series based on April 2010"
+"Census, released by the Census Bureau on June 25, 2020. The population figures for year 2018 are single-race estimates of the"
+"July 1 resident population, from the Vintage 2018 postcensal series based on April 2010 Census, released by the Census Bureau on"
+"June 20, 2019. More information: http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Population Data."
+"5. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#Connecticut-2022."
+"6. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"7. Changes to cause of death classification affect reporting trends. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd-expanded.html#ICD-10 Changes."

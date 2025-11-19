@@ -1,0 +1,119 @@
+"Notes"	"Sex"	"Sex Code"	"Year"	"Year Code"	Deaths	Population	Crude Rate	Crude Rate Lower 95% Confidence Interval	Crude Rate Upper 95% Confidence Interval	Crude Rate Standard Error	Age Adjusted Rate	Age Adjusted Rate Lower 95% Confidence Interval	Age Adjusted Rate Upper 95% Confidence Interval	Age Adjusted Rate Standard Error	% of Total Deaths
+	"Female"	"F"	"1999"	"1999"	14902	94123092	15.832459053	15.578255178	16.086662927	0.129695854	14.384213415	14.152121982	14.616304849	0.118413997	1.838788290%
+	"Female"	"F"	"2000"	"2000"	15090	94864102	15.906965524	15.653161332	16.160769716	0.129491935	14.416353191	14.185194794	14.647511589	0.117937958	1.861985995%
+	"Female"	"F"	"2001"	"2001"	15334	95984408	15.975511356	15.722649623	16.228373089	0.129011088	14.436162486	14.206548724	14.665776247	0.117149878	1.892093655%
+	"Female"	"F"	"2002"	"2002"	15384	96927703	15.871623410	15.620814601	16.122432219	0.127963678	14.313461080	14.086200176	14.540721985	0.115949441	1.898263257%
+	"Female"	"F"	"2003"	"2003"	15713	97893297	16.051150060	15.800173784	16.302126336	0.128049120	14.385077807	14.159048990	14.611106625	0.115320825	1.938859241%
+	"Female"	"F"	"2004"	"2004"	15990	98921524	16.164328402	15.913781231	16.414875574	0.127830190	14.440775556	14.215826033	14.665725079	0.114770165	1.973038838%
+	"Female"	"F"	"2005"	"2005"	16610	100097839	16.593764826	16.341407344	16.846122309	0.128753818	14.776124116	14.550095080	15.002153151	0.115320936	2.049541907%
+	"Female"	"F"	"2006"	"2006"	16891	101328442	16.669554635	16.418162094	16.920947176	0.128261500	14.783424197	14.559036298	15.007812097	0.114483622	2.084215072%
+	"Female"	"F"	"2007"	"2007"	16981	102513830	16.564594260	16.315447501	16.813741020	0.127115694	14.662245401	14.440113834	14.884376968	0.113332432	2.095320357%
+	"Female"	"F"	"2008"	"2008"	17717	103688156	17.086811728	16.835205137	17.338418319	0.128370710	14.969307623	14.747139868	15.191475378	0.113350896	2.186136903%
+	"Female"	"F"	"2009"	"2009"	17752	104834186	16.933407581	16.684305826	17.182509337	0.127092732	14.740485101	14.521757948	14.959212254	0.111595486	2.190455625%
+	"Female"	"F"	"2010"	"2010"	18186	105717426	17.202461967	16.952440048	17.452483886	0.127562204	14.908693653	14.689791813	15.127595493	0.111684612	2.244007774%
+	"Female"	"F"	"2011"	"2011"	18462	107004480	17.253483219	17.004601221	17.502365216	0.126980611	14.787264420	14.571295965	15.003232876	0.110187988	2.278063979%
+	"Female"	"F"	"2012"	"2012"	19075	108088829	17.647522113	17.397079900	17.897964327	0.127776639	14.946536548	14.731616343	15.161456753	0.109653166	2.353703304%
+	"Female"	"F"	"2013"	"2013"	19135	109172782	17.527262427	17.278917137	17.775607717	0.126706781	14.632525324	14.422160498	14.842890150	0.107328993	2.361106827%
+	"Female"	"F"	"2014"	"2014"	19657	110581619	17.776010315	17.527507252	18.024513378	0.126787277	14.735702175	14.526546869	14.944857481	0.106711891	2.425517475%
+	"Female"	"F"	"2015"	"2015"	20217	111947362	18.059380444	17.810437074	18.308323813	0.127011923	14.824567369	14.616933827	15.032200910	0.105935480	2.494617022%
+	"Female"	"F"	"2016"	"2016"	20855	112990913	18.457236468	18.206730746	18.707742190	0.127809042	14.998409821	14.791469097	15.205350546	0.105582002	2.573341148%
+	"Female"	"F"	"2017"	"2017"	21090	114358026	18.442081188	18.193179575	18.690982801	0.126990619	14.806515991	14.603479285	15.009552698	0.103590156	2.602338279%
+	"Female"	"F"	"2018"	"2018"	21734	115265998	18.855517132	18.604834245	19.106200019	0.127899432	14.912147709	14.710893670	15.113401749	0.102680632	2.681802758%
+	"Female"	"F"	"2019"	"2019"	22152	116084432	19.082662178	18.831364450	19.333959906	0.128213126	14.907516650	14.708151822	15.106881479	0.101716749	2.733380634%
+	"Female"	"F"	"2020"	"2020"	22490	116909132	19.237162756	18.985741286	19.488584227	0.128276261	14.884336464	14.686675903	15.081997025	0.100847225	2.775087146%
+"Total"	"Female"	"F"			401417	2319297578	17.307697115	17.254154759	17.361239471	0.027317529	14.721612916	14.675733386	14.767492447	0.023407924	49.531665484%
+	"Male"	"M"	"1999"	"1999"	14175	86285677	16.427987231	16.157542270	16.698432192	0.137982123	19.000913866	18.683248493	19.318579239	0.162074170	1.749082272%
+	"Male"	"M"	"2000"	"2000"	14232	87120538	16.335987273	16.067595938	16.604378608	0.136934354	18.817338120	18.503642417	19.131033824	0.160048828	1.756115618%
+	"Male"	"M"	"2001"	"2001"	14463	88320720	16.375545852	16.108661774	16.642429929	0.136165346	18.752619312	18.442444564	19.062794059	0.158252422	1.784619181%
+	"Male"	"M"	"2002"	"2002"	14871	89280325	16.656525388	16.388811812	16.924238964	0.136588559	18.823398083	18.516105893	19.130690274	0.156781730	1.834963137%
+	"Male"	"M"	"2003"	"2003"	15053	90197132	16.689000710	16.422391669	16.955609752	0.136025021	18.629016718	18.326837050	18.931196387	0.154173300	1.857420489%
+	"Male"	"M"	"2004"	"2004"	15770	91283860	17.275781283	17.006145254	17.545417311	0.137569402	19.128212587	18.824801366	19.431623809	0.154801643	1.945892587%
+	"Male"	"M"	"2005"	"2005"	16144	92453545	17.461742543	17.192379458	17.731105628	0.137430145	19.111960488	18.812230295	19.411690682	0.152923568	1.992041213%
+	"Male"	"M"	"2006"	"2006"	16555	93690917	17.669802506	17.400634663	17.938970349	0.137330532	19.146699475	18.850228106	19.443170845	0.151260903	2.042755344%
+	"Male"	"M"	"2007"	"2007"	17129	94889947	18.051438052	17.781103304	18.321772800	0.137925892	19.363995029	19.069120504	19.658869555	0.150446186	2.113582380%
+	"Male"	"M"	"2008"	"2008"	17508	96106934	18.217207928	17.947359671	18.487056185	0.137677682	19.280862130	18.990349948	19.571374313	0.148220501	2.160347966%
+	"Male"	"M"	"2009"	"2009"	17865	97272830	18.365868455	18.096550052	18.635186858	0.137407348	19.219903345	18.932895782	19.506910908	0.146432430	2.204398926%
+	"Male"	"M"	"2010"	"2010"	18691	98174557	19.038537653	18.765593755	19.311481551	0.139257091	19.746501896	19.458056640	20.034947151	0.147165947	2.306320758%
+	"Male"	"M"	"2011"	"2011"	18877	99588456	18.955008199	18.684603920	19.225412478	0.137961367	19.343907072	19.062617672	19.625196472	0.143515000	2.329271678%
+	"Male"	"M"	"2012"	"2012"	19714	100737208	19.569730382	19.296547465	19.842913299	0.139379039	19.543371645	19.265095146	19.821648145	0.141977806	2.432550822%
+	"Male"	"M"	"2013"	"2013"	19849	101912532	19.476505598	19.205550207	19.747460988	0.138242546	19.208509185	18.935813992	19.481204379	0.139130201	2.449208748%
+	"Male"	"M"	"2014"	"2014"	20746	103227661	20.097326433	19.823845425	20.370807440	0.139531126	19.454372975	19.183978078	19.724767872	0.137956580	2.559891415%
+	"Male"	"M"	"2015"	"2015"	21384	104606455	20.442333124	20.168338488	20.716327759	0.139793181	19.529473152	19.262039898	19.796906406	0.136445538	2.638615541%
+	"Male"	"M"	"2016"	"2016"	21896	105650504	20.724936627	20.450421115	20.999452139	0.140058935	19.569923695	19.304965758	19.834881632	0.135182621	2.701792269%
+	"Male"	"M"	"2017"	"2017"	22917	107089305	21.399896096	21.122826511	21.676965681	0.141362033	19.909243749	19.645876800	20.172610699	0.134370893	2.827775550%
+	"Male"	"M"	"2018"	"2018"	23169	108045192	21.443804737	21.167680664	21.719928810	0.140879629	19.605883054	19.348387291	19.863378817	0.131375389	2.858870346%
+	"Male"	"M"	"2019"	"2019"	23725	108896735	21.786695441	21.509462825	22.063928057	0.141445212	19.588675555	19.334488612	19.842862499	0.129687216	2.927476324%
+	"Male"	"M"	"2020"	"2020"	24275	109725881	22.123312913	21.845004321	22.401621505	0.141994180	19.654591410	19.402519610	19.906663211	0.128608062	2.995341950%
+"Total"	"Male"	"M"			409008	2154556911	18.983392730	18.925214031	19.041571428	0.029683009	19.346960975	19.286741315	19.407180635	0.030724316	50.468334516%
+"Total"					810425	4473854489	18.114692867	18.075253437	18.154132297	0.020122158	16.825427918	16.788596321	16.862259515	0.018791631	100.000000000%
+"---"
+"Dataset: Underlying Cause of Death, 1999-2020"
+"Query Parameters:"
+"ICD-10 Codes: C25.0 (Head of pancreas - Malignant neoplasms); C25.1 (Body of pancreas - Malignant neoplasms); C25.2 (Tail of"
+"pancreas - Malignant neoplasms); C25.3 (Pancreatic duct - Malignant neoplasms); C25.4 (Endocrine pancreas - Malignant"
+"neoplasms); C25.7 (Other parts of pancreas - Malignant neoplasms); C25.8 (Overlapping lesion of pancreas - Malignant neoplasms);"
+"C25.9 (Pancreas, unspecified - Malignant neoplasms)"
+"Ten-Year Age Groups: 25-34 years; 35-44 years; 45-54 years; 55-64 years; 65-74 years; 75-84 years; 85+ years"
+"Group By: Sex; Year"
+"Show Totals: True"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Standard Population: 2000 U.S. Std. Population"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/ucd.html for more information."
+"---"
+"Query Date: Jun 4, 2025 12:10:02 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 1999-2020 on CDC WONDER Online Database, released in 2021. Data are from the Multiple Cause of Death Files,"
+"1999-2020, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/ucd-icd10.html on Jun 4, 2025 12:10:02 PM"
+"---"
+Caveats:
+"1. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2014-Revision."
+"2. Circumstances in Georgia for the years 2008 and 2009 have resulted in unusually high death counts for the ICD-10 cause of"
+"death code R99, ""Other ill-defined and unspecified causes of mortality."" Caution should be used in interpreting these data."
+"More information: http://wonder.cdc.gov/wonder/help/ucd.html#Georgia-Reporting-Anomalies."
+"3. Circumstances in New Jersey for the year 2009 have resulted in unusually high death counts for the ICD-10 cause of death code"
+"R99, ""Other ill-defined and unspecified causes of mortality"" and therefore unusually low death counts in other ICD-10 codes,"
+"most notably R95, ""Sudden Infant Death Syndrome"" and X40-X49, ""Unintentional poisoning."" Caution should be used in"
+"interpreting these data. More information: http://wonder.cdc.gov/wonder/help/ucd.html#New-Jersey-Reporting-Anomalies."
+"4. Circumstances in California resulted in unusually high death counts for the ICD-10 cause of death code R99, ""Other"
+"ill-defined and unspecified causes of mortality"" for deaths occurring in years 2000 and 2001. Caution should be used in"
+"interpreting these data. More information: http://wonder.cdc.gov/wonder/help/ucd.html#California-Reporting-Anomalies."
+"5. The populations used to calculate standard age-adjusted rates are documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#2000 Standard Population."
+"6. The method used to calculate age-adjusted rates is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Age-Adjusted Rates."
+"7. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Not Stated."
+"8. The method used to calculate 95% confidence intervals is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Confidence-Intervals."
+"9. The method used to calculate standard errors is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#Standard-Errors."
+"10. The population figures for year 2020 are bridged-race estimates of the July 1 resident population, from the Vintage 2020"
+"postcensal series released by NCHS on September 22, 2021. The population figures for year 2019 are bridged-race estimates of the"
+"July 1 resident population, from the Vintage 2019 postcensal series released by NCHS on July 9, 2020. The population figures for"
+"year 2018 are bridged-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series released by NCHS"
+"on June 25, 2019. The population figures for year 2017 are bridged-race estimates of the July 1 resident population, from the"
+"Vintage 2017 postcensal series released by NCHS on June 27, 2018. The population figures for year 2016 are bridged-race"
+"estimates of the July 1 resident population, from the Vintage 2016 postcensal series released by NCHS on June 26, 2017. The"
+"population figures for year 2015 are bridged-race estimates of the July 1 resident population, from the Vintage 2015 postcensal"
+"series released by NCHS on June 28, 2016. The population figures for year 2014 are bridged-race estimates of the July 1 resident"
+"population, from the Vintage 2014 postcensal series released by NCHS on June 30, 2015. The population figures for year 2013 are"
+"bridged-race estimates of the July 1 resident population, from the Vintage 2013 postcensal series released by NCHS on June 26,"
+"2014. The population figures for year 2012 are bridged-race estimates of the July 1 resident population, from the Vintage 2012"
+"postcensal series released by NCHS on June 13, 2013. The population figures for year 2011 are bridged-race estimates of the July"
+"1 resident population, from the Vintage 2011 postcensal series released by NCHS on July 18, 2012. Population figures for 2010"
+"are April 1 Census counts. The population figures for years 2001 - 2009 are bridged-race estimates of the July 1 resident"
+"population, from the revised intercensal county-level 2000 - 2009 series released by NCHS on October 26, 2012. Population"
+"figures for 2000 are April 1 Census counts. Population figures for 1999 are from the 1990-1999 intercensal series of July 1"
+"estimates. Population figures for the infant age groups are the number of live births. <br/><b>Note:</b> Rates and population"
+"figures for years 2001 - 2009 differ slightly from previously published reports, due to use of the population estimates which"
+"were available at the time of release."
+"11. Changes to cause of death classification affect reporting trends. More information:"
+"http://wonder.cdc.gov/wonder/help/ucd.html#ICD-10 Changes."
