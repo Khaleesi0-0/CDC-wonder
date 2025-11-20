@@ -283,6 +283,14 @@
       return clone.formatHex();
     }
 
+    function getContrastingTextColor(colorStr) {
+      const c = d3.color(colorStr || '#6c757d');
+      if (!c) return '#0f172a';
+      const { r, g, b } = c.rgb ? c.rgb() : c;
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      return luminance > 0.6 ? '#0f172a' : '#fff';
+    }
+
     function buildCrumbData(node) {
       if (!node) return [{ label: 'Total', key: 'total', color: '#6c757d' }];
       const nodes = node.ancestors().filter(n => n.depth > 0).reverse();
@@ -297,9 +305,12 @@
     function updateBreadcrumbDisplay(node, total, yearText) {
       const crumbData = buildCrumbData(node);
       const crumbs = crumbTrail.selectAll('div.crumb').data(crumbData, d => d.key);
-      const crumbEnter = crumbs.enter().append('div').attr('class', 'crumb').style('padding', '4px 10px').style('border-radius', '12px').style('font-size', '13px').style('color', '#fff').style('font-weight', '600');
+      const crumbEnter = crumbs.enter().append('div').attr('class', 'crumb').style('padding', '4px 10px').style('border-radius', '12px').style('font-size', '13px').style('font-weight', '600');
       crumbEnter.append('span');
-      crumbs.merge(crumbEnter).style('background', d => d.color || '#6c757d').select('span').text(d => d.label);
+      crumbs.merge(crumbEnter)
+        .style('background', d => d.color || '#6c757d')
+        .style('color', d => getContrastingTextColor(d.color))
+        .select('span').text(d => d.label);
       crumbs.exit().remove();
       const value = node && node.value ? node.value : total;
       const share = total ? formatShare(value / total) : '—';
