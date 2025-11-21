@@ -29,8 +29,8 @@
   }
 
   const fieldConfigs = [
-    { id: 'gender', label: 'Gender', button: '#gender-button', dataset: 'urban', accessor: r => r.sex },
-    { id: 'urbanization', label: 'Urbanization', button: '#urban-button', dataset: 'urban', accessor: r => r.place },
+    { id: 'gender', label: 'Gender', button: '#gender-button', dataset: 'urban', accessor: r => r.sex, includeOther: false },
+    { id: 'urbanization', label: 'Urbanization', button: '#urban-button', dataset: 'urban', accessor: r => r.place, includeOther: false },
     { id: 'ethnicity', label: 'Ethnicity', button: '#ethnicity-button', dataset: 'urban', accessor: r => r.race },
     { id: 'cause', label: 'Cause Chapter', button: '#cause-button', dataset: 'urban', accessor: r => r.cause },
     { id: 'age', label: 'Age Group', button: '#age-button', dataset: 'agePlace', accessor: r => r.ageGroup },
@@ -76,7 +76,7 @@
     }).filter(r => r.year && r.deaths > 0 && r.ageGroup);
   }
 
-  function buildStackData(rows, accessor, maxSegments = 6) {
+  function buildStackData(rows, accessor, maxSegments = 6, includeOther = true) {
     const rowsGrouped = d3.group(rows, r => r.year);
     const yearsMeta = Array.from(rowsGrouped.keys()).map(year => {
       const groupRows = rowsGrouped.get(year) || [];
@@ -97,7 +97,7 @@
     } else {
       const ordered = Array.from(totalByKey.entries()).sort((a, b) => b[1] - a[1]);
       keys = ordered.slice(0, maxSegments).map(([key]) => key);
-      keys.push('Other');
+      if (includeOther) keys.push('Other');
     }
 
     const data = yearsMeta.map((meta, idx) => {
@@ -109,7 +109,7 @@
         if (key === 'Other') return;
         entry[key] = sums.get(key) || 0;
       });
-      if (accessor) {
+      if (accessor && includeOther) {
         sums.forEach((value, key) => {
           if (!keys.includes(key)) otherTotal += value;
         });
@@ -391,7 +391,8 @@
         return;
       }
 
-      const { data, keys } = buildStackData(rowsForConfig, activeConfig.accessor);
+      const includeOther = activeConfig.includeOther !== false;
+      const { data, keys } = buildStackData(rowsForConfig, activeConfig.accessor, 6, includeOther);
       if (!data.length) return;
       stack.keys(keys);
       const layers = stack(data);
@@ -420,9 +421,14 @@
 
       g.selectAll('.stack-layer')
         .on('pointermove', function (event, layer) {
+          g.selectAll('.stack-layer').attr('opacity', 0.25);
+          d3.select(this).attr('opacity', 0.9);
           handleHover(event, layer, data, keys);
         })
-        .on('pointerleave', hideTooltip)
+        .on('pointerleave', function () {
+          g.selectAll('.stack-layer').attr('opacity', 0.9);
+          hideTooltip();
+        })
         .on('click', function (event, layer) {
           event.stopPropagation();
           handleLayerClick(layer.key);

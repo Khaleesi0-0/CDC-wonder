@@ -237,9 +237,12 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="p-3 shadow rounded bg-white h-100">
-            <h5 class="mb-2 text-center">Deaths by Sex</h5>
-            <p class="text-muted small text-center mb-2">Use this as a quick check before diving into causes.</p>
-            <div id="sex-pie-chart" style="height:320px;"></div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="mb-0">State trend</h5>
+              <select id="stateSelect" class="form-select form-select-sm w-auto"></select>
+            </div>
+            <p class="text-muted small mb-2">Annual deaths and crude rates for the selected state.</p>
+            <div id="state-trend-chart" style="height:320px;"></div>
           </div>
         </div>
       </div>
@@ -344,8 +347,31 @@
         <li><strong>Recommended export:</strong> CDC WONDER provisional multiple cause of death by week or month with year, state, ICD-10 cause, race, age-group, urbanization, deaths, population.</li>
         <li><strong>Preprocessing:</strong> compute crude rates per 100,000 (deaths / population * 100000). For comparisons over time, consider age-adjustment using a standard population.</li>
         <li><strong>Age & place-of-death view:</strong> uses ten-year age bands and place-of-death categories from <code>ageLocation.csv</code>.</li>
-        <li><strong>To use your own CSV:</strong> ensure column names like <code>year</code>, <code>state</code>, <code>cause</code>, <code>race</code>, <code>urbanization</code>, <code>deaths</code>, and <code>population</code>.</li>
       </ul>
+    </section>
+
+    <!-- Interactive Definitions -->
+    <section class="mb-4 content-panel">
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <div>
+          <h2 class="h4 mb-1">Definitions & Notes</h2>
+          <p class="mb-0 text-muted">Click a term to see how we define urbanization tiers or notable ICD-10 changes.</p>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h6 class="fw-semibold">Urbanization</h6>
+          <div id="urban-def-buttons" class="d-flex flex-wrap gap-2"></div>
+        </div>
+        <div class="col-md-6">
+          <h6 class="fw-semibold">Cause updates</h6>
+          <div id="cause-def-buttons" class="d-flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+      <div class="mt-3 p-3 rounded border" id="definition-display" style="background:#f8fafc;">
+        <div class="text-muted small mb-1">Definition</div>
+        <div id="definition-text" class="fw-semibold">Select a term to view details.</div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -396,9 +422,11 @@
         const causes = [ALL_CAUSES].concat(getUniqueSorted(data.deathData, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag')));
         const races = [ALL_RACES].concat(getUniqueSorted(data.deathData, 'race'));
         const sexes = [ALL_SEXES].concat(getUniqueSorted(data.deathData, 'sex'));
+        const states = getUniqueSorted(data.stateTrends || [], 'state');
         populateDropdown('causeSelect', causes);
         populateDropdown('raceSelect', races);
         populateDropdown('sexSelect', sexes);
+        populateDropdown('stateSelect', states);
 
         // Set default cause to first available if present
         if (causes.length && !document.getElementById('causeSelect').value)
@@ -482,33 +510,52 @@
         document.getElementById('unique-races').textContent = d3.format(',')(races.length - 1); // exclude "All races"
         document.getElementById('unique-sexes').textContent = d3.format(',')(sexes.length - 1); // exclude "All sexes"
 
-        // Pie chart for deaths by sex
-        const pieData = Array.from(d3.rollup(data.deathData, v => d3.sum(v, d => d.deaths), d => d.sex), ([sex, deaths]) => ({ sex, deaths }));
-        const width = 320, height = 320, radius = Math.min(width, height) / 2;
-        const color = d3.scaleOrdinal().domain(pieData.map(d => d.sex)).range(["#4e79a7", "#f28e2b", "#e15759"]);
-        const svg = d3.select('#sex-pie-chart').append('svg').attr('width', width).attr('height', height);
-        const g = svg.append('g').attr('transform', `translate(${width/2},${height/2})`);
-        const pie = d3.pie().value(d => d.deaths);
-        const arc = d3.arc().innerRadius(60).outerRadius(radius - 10);
-        const arcs = g.selectAll('arc').data(pie(pieData)).enter().append('g');
-        arcs.append('path')
-            .attr('d', arc)
-            .attr('fill', d => color(d.data.sex))
-            .attr('stroke', '#fff')
+        function renderStateTrend(stateName) {
+          const container = d3.select('#state-trend-chart');
+          container.selectAll('*').remove();
+          const rows = (data.stateTrends || []).filter(d => d.state === stateName);
+          if (!rows.length) {
+            container.append('div').attr('class','text-center text-muted').text('No data for this state.');
+            return;
+          }
+          const width = 320, height = 300, margin = { top: 20, right: 18, bottom: 32, left: 48 };
+          const svg = container.append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`);
+          const x = d3.scaleLinear().domain(d3.extent(rows, d => d.year)).range([margin.left, width - margin.right]);
+          const y = d3.scaleLinear().domain([0, d3.max(rows, d => d.rate) || 1]).nice().range([height - margin.bottom, margin.top]);
+          const line = d3.line()
+            .curve(d3.curveMonotoneX)
+            .x(d => x(d.year))
+            .y(d => y(d.rate));
+          svg.append('path')
+            .datum(rows)
+            .attr('fill', 'none')
+            .attr('stroke', '#2563eb')
             .attr('stroke-width', 2)
-            .on('mouseover', function(event, d) {
-                d3.select(this).attr('opacity', 0.7);
-            })
-            .on('mouseout', function(event, d) {
-                d3.select(this).attr('opacity', 1);
-            });
-        arcs.append('text')
-            .attr('transform', d => `translate(${arc.centroid(d)})`)
+            .attr('d', line);
+          svg.append('g')
+            .attr('transform', `translate(0,${height - margin.bottom})`)
+            .call(d3.axisBottom(x).ticks(5).tickFormat(d3.format('d')));
+          svg.append('g')
+            .attr('transform', `translate(${margin.left},0)`)
+            .call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('.1f')));
+          svg.append('text')
+            .attr('x', width / 2)
+            .attr('y', margin.top)
             .attr('text-anchor', 'middle')
-            .attr('dy', '0.35em')
-            .style('font-size', '1.1rem')
-            .style('font-weight', '600')
-            .text(d => d.data.sex);
+            .attr('font-size', 12)
+            .attr('fill', '#0f172a')
+            .text(`Crude rate per 100k`);
+        }
+
+        const stateSelect = document.getElementById('stateSelect');
+        if (states.length && stateSelect) {
+          stateSelect.value = states[0];
+          renderStateTrend(states[0]);
+          stateSelect.addEventListener('change', (e) => renderStateTrend(e.target.value));
+        }
 
         // Initialize Urban deaths sunburst (loads ../Data/Urban.csv)
         let urbanRows = null;
@@ -525,6 +572,47 @@
             console.warn('Urban trends viz not initialized:', err && err.message ? err.message : err);
           }
         }
+
+        // Interactive definitions for urbanization and cause updates
+        const urbanDefs = {
+          'Large central metro': 'Counties in metro areas ≥1M that contain the largest principal city, are fully the principal city, or have ≥250k residents of any principal city.',
+          'Large fringe metro': 'Counties in metro areas ≥1M that do not qualify as large central metro.',
+          'Medium metro': 'Counties in metro areas of 250k to 999,999 population.',
+          'Small metro': 'Counties in metro areas of 50k to 249,999 population.',
+          'Micropolitan': 'Nonmetropolitan counties in micropolitan statistical areas.',
+          'Noncore': 'Nonmetropolitan counties that are not micropolitan.'
+        };
+        const causeDefs = {
+          'New causes 2023': 'Post COVID-19 condition (U09, U09.9) added as contributing causes only.',
+          'New causes 2020': 'COVID-19 (U07.1) introduced.',
+          'New causes 2019': 'Vaping related disorder (U07.0) introduced.',
+          'New causes 2011': 'Multiple ICD-10 additions including thrombophilia (D68.5, D68.6) and staging for decubitus ulcers (L89.0-L89.9).',
+          'New causes 2009': 'Gastroenteritis refinements (A09.0, A09.9), indeterminate colitis (K52.3), and immobility/insufficient intake codes.',
+          'New causes 2007': 'Avian influenza (J09) and SARS (U04.9) additions.',
+          'New causes 2006': 'Additions include hantavirus pulmonary syndrome (B33.4) and detailed acute pancreatitis codes (K85.x).',
+          'New causes 2003': 'Other secondary pulmonary hypertension (I27.2).',
+          'Discontinued 2009/2007/2006': 'Certain acute intoxication and diarrhea codes retired; terrorism categories *U01-*U03 classify into assault and suicide; see technical notes.'
+        };
+
+        function buildButtons(containerId, defs) {
+          const container = document.getElementById(containerId);
+          if (!container) return;
+          container.innerHTML = '';
+          Object.keys(defs).forEach(key => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'btn btn-sm btn-outline-primary';
+            btn.textContent = key;
+            btn.addEventListener('click', () => {
+              const display = document.getElementById('definition-text');
+              if (display) display.textContent = defs[key] || 'No definition available.';
+            });
+            container.appendChild(btn);
+          });
+        }
+
+        buildButtons('urban-def-buttons', urbanDefs);
+        buildButtons('cause-def-buttons', causeDefs);
 
       } catch (err) {
         console.error('Error initializing visualizations', err);

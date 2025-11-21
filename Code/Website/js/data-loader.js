@@ -8,14 +8,16 @@
     const causeUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/deathcause.csv";
     const stateTotalsUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/stateDeathTotal.csv";
     const totalStateUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/totalState.csv";
+    const stateTrendUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/statedeathtrend.csv";
     const usUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-    let Death, Cause, stateTotals, totalState, us;
+    let Death, Cause, stateTotals, totalState, stateTrend, us;
     try {
-      [Death, Cause, stateTotals, totalState, us] = await Promise.all([
+      [Death, Cause, stateTotals, totalState, stateTrend, us] = await Promise.all([
         d3.csv(deathUrl),
         d3.csv(causeUrl),
         d3.csv(stateTotalsUrl),
         d3.csv(totalStateUrl),
+        d3.csv(stateTrendUrl),
         d3.json(usUrl)
       ]);
     } catch (err) {
@@ -39,6 +41,9 @@
     }
     if (!Array.isArray(totalState) || totalState.length === 0) {
       throw new Error(`Loaded cause-state totals CSV is empty or invalid from: ${totalStateUrl}`);
+    }
+    if (!Array.isArray(stateTrend) || stateTrend.length === 0) {
+      throw new Error(`Loaded state trend CSV is empty or invalid from: ${stateTrendUrl}`);
     }
 
     function computeCrudeRate(deaths, population, rawRate) {
@@ -96,6 +101,23 @@
       };
     });
 
-    return { deathData, Cause, us, stateTotals: stateTotalsData, causeTotalsByState };
+    const stateTrends = stateTrend.map(d => {
+      const deaths = +d.Deaths || 0;
+      const population = +d.Population || 0;
+      const rateRaw = (d["Crude Rate"] ?? "").trim();
+      const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
+      const year = +d.Year || +d["Year Code"] || null;
+      return {
+        state: d["Residence State"],
+        stateFips: d["Residence State Code"]?.padStart(2, "0"),
+        year,
+        yearLabel: d.Year || d["Year Code"],
+        deaths,
+        population,
+        rate: computeCrudeRate(deaths, population, rateParsed)
+      };
+    }).filter(d => d.year);
+
+    return { deathData, Cause, us, stateTotals: stateTotalsData, causeTotalsByState, stateTrends };
   };
 })();
