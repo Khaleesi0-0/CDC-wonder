@@ -1,0 +1,104 @@
+"Notes","Residence State","Residence State Code",Deaths,Population,Crude Rate
+,"Alabama","01",464526,40152165,1156.9
+,"Alaska","02",40806,5866615,695.6
+,"Arizona","04",541340,58801309,920.6
+,"Arkansas","05",278711,24336875,1145.2
+,"California","06",2291212,313600103,730.6
+,"Colorado","08",341358,46546844,733.4
+,"Connecticut","09",257703,28778288,895.5
+,"Delaware","10",81434,8045194,1012.2
+,"District of Columbia","11",40394,5499789,734.5
+,"Florida","12",1772010,176368503,1004.7
+,"Georgia","13",749164,86647038,864.6
+,"Hawaii","15",95447,11430532,835.0
+,"Idaho","16",125603,15102320,831.7
+,"Illinois","17",906789,100902999,898.7
+,"Indiana","18",552779,54404669,1016.1
+,"Iowa","19",254191,25489384,997.2
+,"Kansas","20",230089,23431994,981.9
+,"Kentucky","21",413096,36013492,1147.1
+,"Louisiana","22",390057,36889625,1057.4
+,"Maine","23",125434,10977510,1142.6
+,"Maryland","24",420652,49014748,858.2
+,"Massachusetts","25",476073,55659120,855.3
+,"Michigan","26",824722,80146034,1029.0
+,"Minnesota","27",379726,45546472,833.7
+,"Mississippi","28",279773,23638557,1183.5
+,"Missouri","29",525738,49350040,1065.3
+,"Montana","30",87423,8837234,989.3
+,"Nebraska","31",140032,15667980,893.7
+,"Nevada","32",223908,25157098,890.0
+,"New Hampshire","33",106134,11072829,958.5
+,"New Jersey","34",616114,73074433,843.1
+,"New Mexico","35",171011,16870910,1013.6
+,"New York","36",1308563,156559258,835.8
+,"North Carolina","37",820289,85229135,962.5
+,"North Dakota","38",54387,6193435,878.1
+,"Ohio","39",1021993,93965639,1087.6
+,"Oklahoma","40",350065,32048744,1092.3
+,"Oregon","41",317639,33836323,938.8
+,"Pennsylvania","42",1098615,103213416,1064.4
+,"Rhode Island","44",82040,8651031,948.3
+,"South Carolina","45",447624,42044885,1064.6
+,"South Dakota","46",67611,7222765,936.1
+,"Tennessee","47",619282,55892042,1108.0
+,"Texas","48",1786183,238125901,750.1
+,"Utah","49",161512,26588919,607.4
+,"Vermont","50",50618,5108661,990.8
+,"Virginia","51",599997,69116754,868.1
+,"Washington","53",494341,61807214,799.8
+,"West Virginia","54",196581,14251094,1379.4
+,"Wisconsin","55",447591,46989969,952.5
+,"Wyoming","56",43977,4651179,945.5
+"Total",,,24172357,2654817067,910.5
+"---"
+"Dataset: Provisional Mortality Statistics, 2018 through Last Week"
+"Query Parameters:"
+"Group By: Residence State"
+"Show Totals: True"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/mcd-provisional.html for more information."
+"---"
+"Query Date: Nov 21, 2025 4:08:11 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-2023,"
+"and from provisional data for years 2024 and later, as compiled from data provided by the 57 vital statistics jurisdictions"
+"through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-provisional.html on Nov 21, 2025"
+"4:08:11 PM"
+"---"
+Caveats:
+"1. The population figures for years 2023 and later are single-race estimates of the July 1 resident population, from the Vintage"
+"2023 postcensal series released by the Census Bureau on June 27, 2024. The population figures for years 2022 and later are"
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau"
+"on June 22, 2023. The 2022 and 2023 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the"
+"April 1, 2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population"
+"estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File"
+"(CEF). The population figures for years 2021 are single-race estimates of the July 1 resident population, based on the Blended"
+"Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal"
+"series released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the"
+"July 1 resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on"
+"July 27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the"
+"Vintage 2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population"
+"figures for year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based"
+"on April 2010 Census, released by the Census Bureau on June 20, 2019. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Population Data."
+"2. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the"
+"resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Age"
+"Group."
+"3. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Connecticut-2022."
+"4. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"5. Deaths occurring through September 20, 2025 as of September 28, 2025."

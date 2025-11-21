@@ -1,0 +1,1093 @@
+"Notes","Residence State","Residence State Code","UCD - ICD Chapter","UCD - ICD Chapter Code",Deaths,Population,Crude Rate
+,"Alabama","01","Certain infectious and parasitic diseases","A00-B99",11581,40152165,28.8
+,"Alabama","01","Neoplasms","C00-D48",82491,40152165,205.4
+,"Alabama","01","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1667,40152165,4.2
+,"Alabama","01","Endocrine, nutritional and metabolic diseases","E00-E88",20615,40152165,51.3
+,"Alabama","01","Mental and behavioural disorders","F01-F99",13793,40152165,34.4
+,"Alabama","01","Diseases of the nervous system","G00-G98",41335,40152165,102.9
+,"Alabama","01","Diseases of the ear and mastoid process","H60-H93",17,40152165,Unreliable
+,"Alabama","01","Diseases of the circulatory system","I00-I99",146795,40152165,365.6
+,"Alabama","01","Diseases of the respiratory system","J00-J98",44688,40152165,111.3
+,"Alabama","01","Diseases of the digestive system","K00-K92",16692,40152165,41.6
+,"Alabama","01","Diseases of the skin and subcutaneous tissue","L00-L98",769,40152165,1.9
+,"Alabama","01","Diseases of the musculoskeletal system and connective tissue","M00-M99",2427,40152165,6.0
+,"Alabama","01","Diseases of the genitourinary system","N00-N98",13454,40152165,33.5
+,"Alabama","01","Pregnancy, childbirth and the puerperium","O00-O99",237,40152165,0.6
+,"Alabama","01","Certain conditions originating in the perinatal period","P00-P96",1390,40152165,3.5
+,"Alabama","01","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1209,40152165,3.0
+,"Alabama","01","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",7734,40152165,19.3
+,"Alabama","01","Codes for special purposes","U00-U99",21292,40152165,53.0
+,"Alabama","01","External causes of morbidity and mortality","V01-Y89",34753,40152165,86.6
+,"Alabama","01","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1581,40152165,3.9
+,"Alaska","02","Certain infectious and parasitic diseases","A00-B99",819,5866615,14.0
+,"Alaska","02","Neoplasms","C00-D48",8339,5866615,142.1
+,"Alaska","02","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",118,5866615,2.0
+,"Alaska","02","Endocrine, nutritional and metabolic diseases","E00-E88",2128,5866615,36.3
+,"Alaska","02","Mental and behavioural disorders","F01-F99",2289,5866615,39.0
+,"Alaska","02","Diseases of the nervous system","G00-G98",2350,5866615,40.1
+,"Alaska","02","Diseases of the circulatory system","I00-I99",9507,5866615,162.1
+,"Alaska","02","Diseases of the respiratory system","J00-J98",2906,5866615,49.5
+,"Alaska","02","Diseases of the digestive system","K00-K92",2310,5866615,39.4
+,"Alaska","02","Diseases of the skin and subcutaneous tissue","L00-L98",91,5866615,1.6
+,"Alaska","02","Diseases of the musculoskeletal system and connective tissue","M00-M99",270,5866615,4.6
+,"Alaska","02","Diseases of the genitourinary system","N00-N98",830,5866615,14.1
+,"Alaska","02","Pregnancy, childbirth and the puerperium","O00-O99",24,5866615,0.4
+,"Alaska","02","Certain conditions originating in the perinatal period","P00-P96",149,5866615,2.5
+,"Alaska","02","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",185,5866615,3.2
+,"Alaska","02","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",506,5866615,8.6
+,"Alaska","02","Codes for special purposes","U00-U99",1385,5866615,23.6
+,"Alaska","02","External causes of morbidity and mortality","V01-Y89",6256,5866615,106.6
+,"Alaska","02","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",341,5866615,5.8
+,"Arizona","04","Certain infectious and parasitic diseases","A00-B99",9521,58801309,16.2
+,"Arizona","04","Neoplasms","C00-D48",102315,58801309,174.0
+,"Arizona","04","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1601,58801309,2.7
+,"Arizona","04","Endocrine, nutritional and metabolic diseases","E00-E88",32660,58801309,55.5
+,"Arizona","04","Mental and behavioural disorders","F01-F99",14493,58801309,24.6
+,"Arizona","04","Diseases of the nervous system","G00-G98",53666,58801309,91.3
+,"Arizona","04","Diseases of the eye and adnexa","H00-H57",12,58801309,Unreliable
+,"Arizona","04","Diseases of the ear and mastoid process","H60-H93",14,58801309,Unreliable
+,"Arizona","04","Diseases of the circulatory system","I00-I99",146301,58801309,248.8
+,"Arizona","04","Diseases of the respiratory system","J00-J98",46102,58801309,78.4
+,"Arizona","04","Diseases of the digestive system","K00-K92",23842,58801309,40.5
+,"Arizona","04","Diseases of the skin and subcutaneous tissue","L00-L98",1023,58801309,1.7
+,"Arizona","04","Diseases of the musculoskeletal system and connective tissue","M00-M99",2638,58801309,4.5
+,"Arizona","04","Diseases of the genitourinary system","N00-N98",8935,58801309,15.2
+,"Arizona","04","Pregnancy, childbirth and the puerperium","O00-O99",234,58801309,0.4
+,"Arizona","04","Certain conditions originating in the perinatal period","P00-P96",1589,58801309,2.7
+,"Arizona","04","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1762,58801309,3.0
+,"Arizona","04","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",7797,58801309,13.3
+,"Arizona","04","Codes for special purposes","U00-U99",27594,58801309,46.9
+,"Arizona","04","External causes of morbidity and mortality","V01-Y89",56057,58801309,95.3
+,"Arizona","04","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",3184,58801309,5.4
+,"Arkansas","05","Certain infectious and parasitic diseases","A00-B99",6508,24336875,26.7
+,"Arkansas","05","Neoplasms","C00-D48",52026,24336875,213.8
+,"Arkansas","05","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",979,24336875,4.0
+,"Arkansas","05","Endocrine, nutritional and metabolic diseases","E00-E88",15987,24336875,65.7
+,"Arkansas","05","Mental and behavioural disorders","F01-F99",7828,24336875,32.2
+,"Arkansas","05","Diseases of the nervous system","G00-G98",24390,24336875,100.2
+,"Arkansas","05","Diseases of the circulatory system","I00-I99",85189,24336875,350.0
+,"Arkansas","05","Diseases of the respiratory system","J00-J98",28573,24336875,117.4
+,"Arkansas","05","Diseases of the digestive system","K00-K92",10803,24336875,44.4
+,"Arkansas","05","Diseases of the skin and subcutaneous tissue","L00-L98",470,24336875,1.9
+,"Arkansas","05","Diseases of the musculoskeletal system and connective tissue","M00-M99",1227,24336875,5.0
+,"Arkansas","05","Diseases of the genitourinary system","N00-N98",7828,24336875,32.2
+,"Arkansas","05","Pregnancy, childbirth and the puerperium","O00-O99",140,24336875,0.6
+,"Arkansas","05","Certain conditions originating in the perinatal period","P00-P96",947,24336875,3.9
+,"Arkansas","05","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",893,24336875,3.7
+,"Arkansas","05","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1991,24336875,8.2
+,"Arkansas","05","Codes for special purposes","U00-U99",11357,24336875,46.7
+,"Arkansas","05","External causes of morbidity and mortality","V01-Y89",20551,24336875,84.4
+,"Arkansas","05","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1015,24336875,4.2
+,"California","06","Certain infectious and parasitic diseases","A00-B99",36273,313600103,11.6
+,"California","06","Neoplasms","C00-D48",474317,313600103,151.2
+,"California","06","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",6508,313600103,2.1
+,"California","06","Endocrine, nutritional and metabolic diseases","E00-E88",124200,313600103,39.6
+,"California","06","Mental and behavioural disorders","F01-F99",64862,313600103,20.7
+,"California","06","Diseases of the nervous system","G00-G98",226951,313600103,72.4
+,"California","06","Diseases of the eye and adnexa","H00-H57",35,313600103,0.0
+,"California","06","Diseases of the ear and mastoid process","H60-H93",59,313600103,0.0
+,"California","06","Diseases of the circulatory system","I00-I99",699743,313600103,223.1
+,"California","06","Diseases of the respiratory system","J00-J98",176836,313600103,56.4
+,"California","06","Diseases of the digestive system","K00-K92",93510,313600103,29.8
+,"California","06","Diseases of the skin and subcutaneous tissue","L00-L98",3181,313600103,1.0
+,"California","06","Diseases of the musculoskeletal system and connective tissue","M00-M99",9430,313600103,3.0
+,"California","06","Diseases of the genitourinary system","N00-N98",50592,313600103,16.1
+,"California","06","Pregnancy, childbirth and the puerperium","O00-O99",597,313600103,0.2
+,"California","06","Certain conditions originating in the perinatal period","P00-P96",6961,313600103,2.2
+,"California","06","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",7514,313600103,2.4
+,"California","06","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",14989,313600103,4.8
+,"California","06","Codes for special purposes","U00-U99",102273,313600103,32.6
+,"California","06","External causes of morbidity and mortality","V01-Y89",183919,313600103,58.6
+,"California","06","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",8462,313600103,2.7
+,"Colorado","08","Certain infectious and parasitic diseases","A00-B99",6509,46546844,14.0
+,"Colorado","08","Neoplasms","C00-D48",65243,46546844,140.2
+,"Colorado","08","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1144,46546844,2.5
+,"Colorado","08","Endocrine, nutritional and metabolic diseases","E00-E88",16871,46546844,36.2
+,"Colorado","08","Mental and behavioural disorders","F01-F99",17619,46546844,37.9
+,"Colorado","08","Diseases of the nervous system","G00-G98",32937,46546844,70.8
+,"Colorado","08","Diseases of the ear and mastoid process","H60-H93",16,46546844,Unreliable
+,"Colorado","08","Diseases of the circulatory system","I00-I99",84025,46546844,180.5
+,"Colorado","08","Diseases of the respiratory system","J00-J98",29966,46546844,64.4
+,"Colorado","08","Diseases of the digestive system","K00-K92",17611,46546844,37.8
+,"Colorado","08","Diseases of the skin and subcutaneous tissue","L00-L98",733,46546844,1.6
+,"Colorado","08","Diseases of the musculoskeletal system and connective tissue","M00-M99",2121,46546844,4.6
+,"Colorado","08","Diseases of the genitourinary system","N00-N98",6176,46546844,13.3
+,"Colorado","08","Pregnancy, childbirth and the puerperium","O00-O99",110,46546844,0.2
+,"Colorado","08","Certain conditions originating in the perinatal period","P00-P96",1198,46546844,2.6
+,"Colorado","08","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1198,46546844,2.6
+,"Colorado","08","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2421,46546844,5.2
+,"Colorado","08","Codes for special purposes","U00-U99",13007,46546844,27.9
+,"Colorado","08","External causes of morbidity and mortality","V01-Y89",40232,46546844,86.4
+,"Colorado","08","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2216,46546844,4.8
+,"Connecticut","09","Certain infectious and parasitic diseases","A00-B99",6307,28778288,21.9
+,"Connecticut","09","Neoplasms","C00-D48",52081,28778288,181.0
+,"Connecticut","09","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1202,28778288,4.2
+,"Connecticut","09","Endocrine, nutritional and metabolic diseases","E00-E88",11670,28778288,40.6
+,"Connecticut","09","Mental and behavioural disorders","F01-F99",17468,28778288,60.7
+,"Connecticut","09","Diseases of the nervous system","G00-G98",19257,28778288,66.9
+,"Connecticut","09","Diseases of the eye and adnexa","H00-H57",11,28778288,Unreliable
+,"Connecticut","09","Diseases of the circulatory system","I00-I99",70223,28778288,244.0
+,"Connecticut","09","Diseases of the respiratory system","J00-J98",21153,28778288,73.5
+,"Connecticut","09","Diseases of the digestive system","K00-K92",10754,28778288,37.4
+,"Connecticut","09","Diseases of the skin and subcutaneous tissue","L00-L98",588,28778288,2.0
+,"Connecticut","09","Diseases of the musculoskeletal system and connective tissue","M00-M99",1387,28778288,4.8
+,"Connecticut","09","Diseases of the genitourinary system","N00-N98",7446,28778288,25.9
+,"Connecticut","09","Pregnancy, childbirth and the puerperium","O00-O99",67,28778288,0.2
+,"Connecticut","09","Certain conditions originating in the perinatal period","P00-P96",672,28778288,2.3
+,"Connecticut","09","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",672,28778288,2.3
+,"Connecticut","09","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",3109,28778288,10.8
+,"Connecticut","09","Codes for special purposes","U00-U99",11617,28778288,40.4
+,"Connecticut","09","External causes of morbidity and mortality","V01-Y89",21066,28778288,73.2
+,"Connecticut","09","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",949,28778288,3.3
+,"Delaware","10","Certain infectious and parasitic diseases","A00-B99",1761,8045194,21.9
+,"Delaware","10","Neoplasms","C00-D48",17577,8045194,218.5
+,"Delaware","10","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",333,8045194,4.1
+,"Delaware","10","Endocrine, nutritional and metabolic diseases","E00-E88",4152,8045194,51.6
+,"Delaware","10","Mental and behavioural disorders","F01-F99",3590,8045194,44.6
+,"Delaware","10","Diseases of the nervous system","G00-G98",5855,8045194,72.8
+,"Delaware","10","Diseases of the circulatory system","I00-I99",24434,8045194,303.7
+,"Delaware","10","Diseases of the respiratory system","J00-J98",6558,8045194,81.5
+,"Delaware","10","Diseases of the digestive system","K00-K92",3126,8045194,38.9
+,"Delaware","10","Diseases of the skin and subcutaneous tissue","L00-L98",177,8045194,2.2
+,"Delaware","10","Diseases of the musculoskeletal system and connective tissue","M00-M99",416,8045194,5.2
+,"Delaware","10","Diseases of the genitourinary system","N00-N98",1922,8045194,23.9
+,"Delaware","10","Pregnancy, childbirth and the puerperium","O00-O99",18,8045194,Unreliable
+,"Delaware","10","Certain conditions originating in the perinatal period","P00-P96",273,8045194,3.4
+,"Delaware","10","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",230,8045194,2.9
+,"Delaware","10","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",500,8045194,6.2
+,"Delaware","10","Codes for special purposes","U00-U99",3084,8045194,38.3
+,"Delaware","10","External causes of morbidity and mortality","V01-Y89",7126,8045194,88.6
+,"Delaware","10","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",297,8045194,3.7
+,"District of Columbia","11","Certain infectious and parasitic diseases","A00-B99",1403,5499789,25.5
+,"District of Columbia","11","Neoplasms","C00-D48",7731,5499789,140.6
+,"District of Columbia","11","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",178,5499789,3.2
+,"District of Columbia","11","Endocrine, nutritional and metabolic diseases","E00-E88",1840,5499789,33.5
+,"District of Columbia","11","Mental and behavioural disorders","F01-F99",2072,5499789,37.7
+,"District of Columbia","11","Diseases of the nervous system","G00-G98",1976,5499789,35.9
+,"District of Columbia","11","Diseases of the circulatory system","I00-I99",12421,5499789,225.8
+,"District of Columbia","11","Diseases of the respiratory system","J00-J98",2187,5499789,39.8
+,"District of Columbia","11","Diseases of the digestive system","K00-K92",1326,5499789,24.1
+,"District of Columbia","11","Diseases of the skin and subcutaneous tissue","L00-L98",121,5499789,2.2
+,"District of Columbia","11","Diseases of the musculoskeletal system and connective tissue","M00-M99",255,5499789,4.6
+,"District of Columbia","11","Diseases of the genitourinary system","N00-N98",671,5499789,12.2
+,"District of Columbia","11","Pregnancy, childbirth and the puerperium","O00-O99",34,5499789,0.6
+,"District of Columbia","11","Certain conditions originating in the perinatal period","P00-P96",181,5499789,3.3
+,"District of Columbia","11","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",135,5499789,2.5
+,"District of Columbia","11","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",300,5499789,5.5
+,"District of Columbia","11","Codes for special purposes","U00-U99",1630,5499789,29.6
+,"District of Columbia","11","External causes of morbidity and mortality","V01-Y89",5739,5499789,104.3
+,"District of Columbia","11","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",192,5499789,3.5
+,"Florida","12","Certain infectious and parasitic diseases","A00-B99",36094,176368503,20.5
+,"Florida","12","Neoplasms","C00-D48",371397,176368503,210.6
+,"Florida","12","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",6663,176368503,3.8
+,"Florida","12","Endocrine, nutritional and metabolic diseases","E00-E88",90062,176368503,51.1
+,"Florida","12","Mental and behavioural disorders","F01-F99",69321,176368503,39.3
+,"Florida","12","Diseases of the nervous system","G00-G98",133650,176368503,75.8
+,"Florida","12","Diseases of the eye and adnexa","H00-H57",36,176368503,0.0
+,"Florida","12","Diseases of the ear and mastoid process","H60-H93",55,176368503,0.0
+,"Florida","12","Diseases of the circulatory system","I00-I99",541165,176368503,306.8
+,"Florida","12","Diseases of the respiratory system","J00-J98",144335,176368503,81.8
+,"Florida","12","Diseases of the digestive system","K00-K92",63348,176368503,35.9
+,"Florida","12","Diseases of the skin and subcutaneous tissue","L00-L98",2751,176368503,1.6
+,"Florida","12","Diseases of the musculoskeletal system and connective tissue","M00-M99",7498,176368503,4.3
+,"Florida","12","Diseases of the genitourinary system","N00-N98",37610,176368503,21.3
+,"Florida","12","Pregnancy, childbirth and the puerperium","O00-O99",486,176368503,0.3
+,"Florida","12","Certain conditions originating in the perinatal period","P00-P96",5267,176368503,3.0
+,"Florida","12","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",4605,176368503,2.6
+,"Florida","12","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",27062,176368503,15.3
+,"Florida","12","Codes for special purposes","U00-U99",72828,176368503,41.3
+,"Florida","12","External causes of morbidity and mortality","V01-Y89",150649,176368503,85.4
+,"Florida","12","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",7128,176368503,4.0
+,"Georgia","13","Certain infectious and parasitic diseases","A00-B99",20049,86647038,23.1
+,"Georgia","13","Neoplasms","C00-D48",143855,86647038,166.0
+,"Georgia","13","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",3073,86647038,3.5
+,"Georgia","13","Endocrine, nutritional and metabolic diseases","E00-E88",37286,86647038,43.0
+,"Georgia","13","Mental and behavioural disorders","F01-F99",20881,86647038,24.1
+,"Georgia","13","Diseases of the nervous system","G00-G98",72970,86647038,84.2
+,"Georgia","13","Diseases of the eye and adnexa","H00-H57",16,86647038,Unreliable
+,"Georgia","13","Diseases of the ear and mastoid process","H60-H93",17,86647038,Unreliable
+,"Georgia","13","Diseases of the circulatory system","I00-I99",215986,86647038,249.3
+,"Georgia","13","Diseases of the respiratory system","J00-J98",67982,86647038,78.5
+,"Georgia","13","Diseases of the digestive system","K00-K92",27417,86647038,31.6
+,"Georgia","13","Diseases of the skin and subcutaneous tissue","L00-L98",1425,86647038,1.6
+,"Georgia","13","Diseases of the musculoskeletal system and connective tissue","M00-M99",3588,86647038,4.1
+,"Georgia","13","Diseases of the genitourinary system","N00-N98",21609,86647038,24.9
+,"Georgia","13","Pregnancy, childbirth and the puerperium","O00-O99",465,86647038,0.5
+,"Georgia","13","Certain conditions originating in the perinatal period","P00-P96",3201,86647038,3.7
+,"Georgia","13","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",2341,86647038,2.7
+,"Georgia","13","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",9154,86647038,10.6
+,"Georgia","13","Codes for special purposes","U00-U99",33445,86647038,38.6
+,"Georgia","13","External causes of morbidity and mortality","V01-Y89",61585,86647038,71.1
+,"Georgia","13","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2819,86647038,3.3
+,"Hawaii","15","Certain infectious and parasitic diseases","A00-B99",1813,11430532,15.9
+,"Hawaii","15","Neoplasms","C00-D48",20078,11430532,175.7
+,"Hawaii","15","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",308,11430532,2.7
+,"Hawaii","15","Endocrine, nutritional and metabolic diseases","E00-E88",3958,11430532,34.6
+,"Hawaii","15","Mental and behavioural disorders","F01-F99",6404,11430532,56.0
+,"Hawaii","15","Diseases of the nervous system","G00-G98",7327,11430532,64.1
+,"Hawaii","15","Diseases of the circulatory system","I00-I99",29791,11430532,260.6
+,"Hawaii","15","Diseases of the respiratory system","J00-J98",7405,11430532,64.8
+,"Hawaii","15","Diseases of the digestive system","K00-K92",3467,11430532,30.3
+,"Hawaii","15","Diseases of the skin and subcutaneous tissue","L00-L98",352,11430532,3.1
+,"Hawaii","15","Diseases of the musculoskeletal system and connective tissue","M00-M99",447,11430532,3.9
+,"Hawaii","15","Diseases of the genitourinary system","N00-N98",2428,11430532,21.2
+,"Hawaii","15","Pregnancy, childbirth and the puerperium","O00-O99",28,11430532,0.2
+,"Hawaii","15","Certain conditions originating in the perinatal period","P00-P96",315,11430532,2.8
+,"Hawaii","15","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",267,11430532,2.3
+,"Hawaii","15","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1779,11430532,15.6
+,"Hawaii","15","Codes for special purposes","U00-U99",1832,11430532,16.0
+,"Hawaii","15","External causes of morbidity and mortality","V01-Y89",7111,11430532,62.2
+,"Hawaii","15","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",327,11430532,2.9
+,"Idaho","16","Certain infectious and parasitic diseases","A00-B99",1938,15102320,12.8
+,"Idaho","16","Neoplasms","C00-D48",25038,15102320,165.8
+,"Idaho","16","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",395,15102320,2.6
+,"Idaho","16","Endocrine, nutritional and metabolic diseases","E00-E88",6765,15102320,44.8
+,"Idaho","16","Mental and behavioural disorders","F01-F99",5850,15102320,38.7
+,"Idaho","16","Diseases of the nervous system","G00-G98",11540,15102320,76.4
+,"Idaho","16","Diseases of the circulatory system","I00-I99",33745,15102320,223.4
+,"Idaho","16","Diseases of the respiratory system","J00-J98",11324,15102320,75.0
+,"Idaho","16","Diseases of the digestive system","K00-K92",6131,15102320,40.6
+,"Idaho","16","Diseases of the skin and subcutaneous tissue","L00-L98",279,15102320,1.8
+,"Idaho","16","Diseases of the musculoskeletal system and connective tissue","M00-M99",813,15102320,5.4
+,"Idaho","16","Diseases of the genitourinary system","N00-N98",2243,15102320,14.9
+,"Idaho","16","Pregnancy, childbirth and the puerperium","O00-O99",45,15102320,0.3
+,"Idaho","16","Certain conditions originating in the perinatal period","P00-P96",394,15102320,2.6
+,"Idaho","16","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",511,15102320,3.4
+,"Idaho","16","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1345,15102320,8.9
+,"Idaho","16","Codes for special purposes","U00-U99",4980,15102320,33.0
+,"Idaho","16","External causes of morbidity and mortality","V01-Y89",11582,15102320,76.7
+,"Idaho","16","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",677,15102320,4.5
+,"Illinois","17","Certain infectious and parasitic diseases","A00-B99",20380,100902999,20.2
+,"Illinois","17","Neoplasms","C00-D48",187860,100902999,186.2
+,"Illinois","17","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",3583,100902999,3.6
+,"Illinois","17","Endocrine, nutritional and metabolic diseases","E00-E88",39397,100902999,39.0
+,"Illinois","17","Mental and behavioural disorders","F01-F99",42933,100902999,42.5
+,"Illinois","17","Diseases of the nervous system","G00-G98",67957,100902999,67.3
+,"Illinois","17","Diseases of the ear and mastoid process","H60-H93",25,100902999,0.0
+,"Illinois","17","Diseases of the circulatory system","I00-I99",273144,100902999,270.7
+,"Illinois","17","Diseases of the respiratory system","J00-J98",76565,100902999,75.9
+,"Illinois","17","Diseases of the digestive system","K00-K92",33060,100902999,32.8
+,"Illinois","17","Diseases of the skin and subcutaneous tissue","L00-L98",1754,100902999,1.7
+,"Illinois","17","Diseases of the musculoskeletal system and connective tissue","M00-M99",4252,100902999,4.2
+,"Illinois","17","Diseases of the genitourinary system","N00-N98",27572,100902999,27.3
+,"Illinois","17","Pregnancy, childbirth and the puerperium","O00-O99",249,100902999,0.2
+,"Illinois","17","Certain conditions originating in the perinatal period","P00-P96",3204,100902999,3.2
+,"Illinois","17","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",2618,100902999,2.6
+,"Illinois","17","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",10795,100902999,10.7
+,"Illinois","17","Codes for special purposes","U00-U99",37372,100902999,37.0
+,"Illinois","17","External causes of morbidity and mortality","V01-Y89",70978,100902999,70.3
+,"Illinois","17","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",3082,100902999,3.1
+,"Indiana","18","Certain infectious and parasitic diseases","A00-B99",11571,54404669,21.3
+,"Indiana","18","Neoplasms","C00-D48",108823,54404669,200.0
+,"Indiana","18","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",2240,54404669,4.1
+,"Indiana","18","Endocrine, nutritional and metabolic diseases","E00-E88",30244,54404669,55.6
+,"Indiana","18","Mental and behavioural disorders","F01-F99",25718,54404669,47.3
+,"Indiana","18","Diseases of the nervous system","G00-G98",43243,54404669,79.5
+,"Indiana","18","Diseases of the ear and mastoid process","H60-H93",23,54404669,0.0
+,"Indiana","18","Diseases of the circulatory system","I00-I99",154339,54404669,283.7
+,"Indiana","18","Diseases of the respiratory system","J00-J98",55336,54404669,101.7
+,"Indiana","18","Diseases of the digestive system","K00-K92",22131,54404669,40.7
+,"Indiana","18","Diseases of the skin and subcutaneous tissue","L00-L98",1085,54404669,2.0
+,"Indiana","18","Diseases of the musculoskeletal system and connective tissue","M00-M99",2762,54404669,5.1
+,"Indiana","18","Diseases of the genitourinary system","N00-N98",15661,54404669,28.8
+,"Indiana","18","Pregnancy, childbirth and the puerperium","O00-O99",223,54404669,0.4
+,"Indiana","18","Certain conditions originating in the perinatal period","P00-P96",1905,54404669,3.5
+,"Indiana","18","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1880,54404669,3.5
+,"Indiana","18","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",3570,54404669,6.6
+,"Indiana","18","Codes for special purposes","U00-U99",23814,54404669,43.8
+,"Indiana","18","External causes of morbidity and mortality","V01-Y89",46110,54404669,84.8
+,"Indiana","18","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2093,54404669,3.8
+,"Iowa","19","Certain infectious and parasitic diseases","A00-B99",4722,25489384,18.5
+,"Iowa","19","Neoplasms","C00-D48",50783,25489384,199.2
+,"Iowa","19","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",888,25489384,3.5
+,"Iowa","19","Endocrine, nutritional and metabolic diseases","E00-E88",13289,25489384,52.1
+,"Iowa","19","Mental and behavioural disorders","F01-F99",14078,25489384,55.2
+,"Iowa","19","Diseases of the nervous system","G00-G98",19825,25489384,77.8
+,"Iowa","19","Diseases of the circulatory system","I00-I99",75934,25489384,297.9
+,"Iowa","19","Diseases of the respiratory system","J00-J98",23375,25489384,91.7
+,"Iowa","19","Diseases of the digestive system","K00-K92",10306,25489384,40.4
+,"Iowa","19","Diseases of the skin and subcutaneous tissue","L00-L98",549,25489384,2.2
+,"Iowa","19","Diseases of the musculoskeletal system and connective tissue","M00-M99",1434,25489384,5.6
+,"Iowa","19","Diseases of the genitourinary system","N00-N98",5559,25489384,21.8
+,"Iowa","19","Pregnancy, childbirth and the puerperium","O00-O99",73,25489384,0.3
+,"Iowa","19","Certain conditions originating in the perinatal period","P00-P96",606,25489384,2.4
+,"Iowa","19","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",882,25489384,3.5
+,"Iowa","19","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2995,25489384,11.7
+,"Iowa","19","Codes for special purposes","U00-U99",10142,25489384,39.8
+,"Iowa","19","External causes of morbidity and mortality","V01-Y89",17751,25489384,69.6
+,"Iowa","19","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",988,25489384,3.9
+,"Kansas","20","Certain infectious and parasitic diseases","A00-B99",4189,23431994,17.9
+,"Kansas","20","Neoplasms","C00-D48",44158,23431994,188.5
+,"Kansas","20","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",810,23431994,3.5
+,"Kansas","20","Endocrine, nutritional and metabolic diseases","E00-E88",11868,23431994,50.6
+,"Kansas","20","Mental and behavioural disorders","F01-F99",12886,23431994,55.0
+,"Kansas","20","Diseases of the nervous system","G00-G98",18612,23431994,79.4
+,"Kansas","20","Diseases of the circulatory system","I00-I99",63959,23431994,273.0
+,"Kansas","20","Diseases of the respiratory system","J00-J98",21909,23431994,93.5
+,"Kansas","20","Diseases of the digestive system","K00-K92",9550,23431994,40.8
+,"Kansas","20","Diseases of the skin and subcutaneous tissue","L00-L98",451,23431994,1.9
+,"Kansas","20","Diseases of the musculoskeletal system and connective tissue","M00-M99",1443,23431994,6.2
+,"Kansas","20","Diseases of the genitourinary system","N00-N98",6089,23431994,26.0
+,"Kansas","20","Pregnancy, childbirth and the puerperium","O00-O99",78,23431994,0.3
+,"Kansas","20","Certain conditions originating in the perinatal period","P00-P96",709,23431994,3.0
+,"Kansas","20","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",804,23431994,3.4
+,"Kansas","20","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2957,23431994,12.6
+,"Kansas","20","Codes for special purposes","U00-U99",9928,23431994,42.4
+,"Kansas","20","External causes of morbidity and mortality","V01-Y89",18714,23431994,79.9
+,"Kansas","20","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",960,23431994,4.1
+,"Kentucky","21","Certain infectious and parasitic diseases","A00-B99",10731,36013492,29.8
+,"Kentucky","21","Neoplasms","C00-D48",81159,36013492,225.4
+,"Kentucky","21","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1642,36013492,4.6
+,"Kentucky","21","Endocrine, nutritional and metabolic diseases","E00-E88",20914,36013492,58.1
+,"Kentucky","21","Mental and behavioural disorders","F01-F99",22889,36013492,63.6
+,"Kentucky","21","Diseases of the nervous system","G00-G98",27484,36013492,76.3
+,"Kentucky","21","Diseases of the eye and adnexa","H00-H57",12,36013492,Unreliable
+,"Kentucky","21","Diseases of the ear and mastoid process","H60-H93",10,36013492,Unreliable
+,"Kentucky","21","Diseases of the circulatory system","I00-I99",111117,36013492,308.5
+,"Kentucky","21","Diseases of the respiratory system","J00-J98",42233,36013492,117.3
+,"Kentucky","21","Diseases of the digestive system","K00-K92",17200,36013492,47.8
+,"Kentucky","21","Diseases of the skin and subcutaneous tissue","L00-L98",724,36013492,2.0
+,"Kentucky","21","Diseases of the musculoskeletal system and connective tissue","M00-M99",1872,36013492,5.2
+,"Kentucky","21","Diseases of the genitourinary system","N00-N98",11896,36013492,33.0
+,"Kentucky","21","Pregnancy, childbirth and the puerperium","O00-O99",165,36013492,0.5
+,"Kentucky","21","Certain conditions originating in the perinatal period","P00-P96",960,36013492,2.7
+,"Kentucky","21","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1239,36013492,3.4
+,"Kentucky","21","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",5346,36013492,14.8
+,"Kentucky","21","Codes for special purposes","U00-U99",17616,36013492,48.9
+,"Kentucky","21","External causes of morbidity and mortality","V01-Y89",36241,36013492,100.6
+,"Kentucky","21","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1646,36013492,4.6
+,"Louisiana","22","Certain infectious and parasitic diseases","A00-B99",11415,36889625,30.9
+,"Louisiana","22","Neoplasms","C00-D48",73020,36889625,197.9
+,"Louisiana","22","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1296,36889625,3.5
+,"Louisiana","22","Endocrine, nutritional and metabolic diseases","E00-E88",20677,36889625,56.1
+,"Louisiana","22","Mental and behavioural disorders","F01-F99",10181,36889625,27.6
+,"Louisiana","22","Diseases of the nervous system","G00-G98",33183,36889625,90.0
+,"Louisiana","22","Diseases of the circulatory system","I00-I99",118176,36889625,320.4
+,"Louisiana","22","Diseases of the respiratory system","J00-J98",31904,36889625,86.5
+,"Louisiana","22","Diseases of the digestive system","K00-K92",12452,36889625,33.8
+,"Louisiana","22","Diseases of the skin and subcutaneous tissue","L00-L98",740,36889625,2.0
+,"Louisiana","22","Diseases of the musculoskeletal system and connective tissue","M00-M99",2290,36889625,6.2
+,"Louisiana","22","Diseases of the genitourinary system","N00-N98",11056,36889625,30.0
+,"Louisiana","22","Pregnancy, childbirth and the puerperium","O00-O99",204,36889625,0.6
+,"Louisiana","22","Certain conditions originating in the perinatal period","P00-P96",1432,36889625,3.9
+,"Louisiana","22","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1149,36889625,3.1
+,"Louisiana","22","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",4743,36889625,12.9
+,"Louisiana","22","Codes for special purposes","U00-U99",16299,36889625,44.2
+,"Louisiana","22","External causes of morbidity and mortality","V01-Y89",38291,36889625,103.8
+,"Louisiana","22","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1538,36889625,4.2
+,"Maine","23","Certain infectious and parasitic diseases","A00-B99",1402,10977510,12.8
+,"Maine","23","Neoplasms","C00-D48",27142,10977510,247.3
+,"Maine","23","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",427,10977510,3.9
+,"Maine","23","Endocrine, nutritional and metabolic diseases","E00-E88",6827,10977510,62.2
+,"Maine","23","Mental and behavioural disorders","F01-F99",10819,10977510,98.6
+,"Maine","23","Diseases of the nervous system","G00-G98",8749,10977510,79.7
+,"Maine","23","Diseases of the circulatory system","I00-I99",33143,10977510,301.9
+,"Maine","23","Diseases of the respiratory system","J00-J98",11477,10977510,104.6
+,"Maine","23","Diseases of the digestive system","K00-K92",5609,10977510,51.1
+,"Maine","23","Diseases of the skin and subcutaneous tissue","L00-L98",247,10977510,2.3
+,"Maine","23","Diseases of the musculoskeletal system and connective tissue","M00-M99",740,10977510,6.7
+,"Maine","23","Diseases of the genitourinary system","N00-N98",2769,10977510,25.2
+,"Maine","23","Pregnancy, childbirth and the puerperium","O00-O99",17,10977510,Unreliable
+,"Maine","23","Certain conditions originating in the perinatal period","P00-P96",255,10977510,2.3
+,"Maine","23","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",394,10977510,3.6
+,"Maine","23","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",591,10977510,5.4
+,"Maine","23","Codes for special purposes","U00-U99",3150,10977510,28.7
+,"Maine","23","External causes of morbidity and mortality","V01-Y89",11125,10977510,101.3
+,"Maine","23","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",536,10977510,4.9
+,"Maryland","24","Certain infectious and parasitic diseases","A00-B99",12053,49014748,24.6
+,"Maryland","24","Neoplasms","C00-D48",86028,49014748,175.5
+,"Maryland","24","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1954,49014748,4.0
+,"Maryland","24","Endocrine, nutritional and metabolic diseases","E00-E88",21533,49014748,43.9
+,"Maryland","24","Mental and behavioural disorders","F01-F99",25028,49014748,51.1
+,"Maryland","24","Diseases of the nervous system","G00-G98",25923,49014748,52.9
+,"Maryland","24","Diseases of the eye and adnexa","H00-H57",13,49014748,Unreliable
+,"Maryland","24","Diseases of the circulatory system","I00-I99",126167,49014748,257.4
+,"Maryland","24","Diseases of the respiratory system","J00-J98",29638,49014748,60.5
+,"Maryland","24","Diseases of the digestive system","K00-K92",15408,49014748,31.4
+,"Maryland","24","Diseases of the skin and subcutaneous tissue","L00-L98",1101,49014748,2.2
+,"Maryland","24","Diseases of the musculoskeletal system and connective tissue","M00-M99",2712,49014748,5.5
+,"Maryland","24","Diseases of the genitourinary system","N00-N98",9102,49014748,18.6
+,"Maryland","24","Pregnancy, childbirth and the puerperium","O00-O99",166,49014748,0.3
+,"Maryland","24","Certain conditions originating in the perinatal period","P00-P96",1705,49014748,3.5
+,"Maryland","24","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1341,49014748,2.7
+,"Maryland","24","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1944,49014748,4.0
+,"Maryland","24","Codes for special purposes","U00-U99",16047,49014748,32.7
+,"Maryland","24","External causes of morbidity and mortality","V01-Y89",40987,49014748,83.6
+,"Maryland","24","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1795,49014748,3.7
+,"Massachusetts","25","Certain infectious and parasitic diseases","A00-B99",11931,55659120,21.4
+,"Massachusetts","25","Neoplasms","C00-D48",98902,55659120,177.7
+,"Massachusetts","25","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1836,55659120,3.3
+,"Massachusetts","25","Endocrine, nutritional and metabolic diseases","E00-E88",20900,55659120,37.6
+,"Massachusetts","25","Mental and behavioural disorders","F01-F99",45518,55659120,81.8
+,"Massachusetts","25","Diseases of the nervous system","G00-G98",30291,55659120,54.4
+,"Massachusetts","25","Diseases of the eye and adnexa","H00-H57",12,55659120,Unreliable
+,"Massachusetts","25","Diseases of the ear and mastoid process","H60-H93",15,55659120,Unreliable
+,"Massachusetts","25","Diseases of the circulatory system","I00-I99",119615,55659120,214.9
+,"Massachusetts","25","Diseases of the respiratory system","J00-J98",41506,55659120,74.6
+,"Massachusetts","25","Diseases of the digestive system","K00-K92",19076,55659120,34.3
+,"Massachusetts","25","Diseases of the skin and subcutaneous tissue","L00-L98",922,55659120,1.7
+,"Massachusetts","25","Diseases of the musculoskeletal system and connective tissue","M00-M99",2337,55659120,4.2
+,"Massachusetts","25","Diseases of the genitourinary system","N00-N98",13800,55659120,24.8
+,"Massachusetts","25","Pregnancy, childbirth and the puerperium","O00-O99",104,55659120,0.2
+,"Massachusetts","25","Certain conditions originating in the perinatal period","P00-P96",1081,55659120,1.9
+,"Massachusetts","25","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1225,55659120,2.2
+,"Massachusetts","25","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",8908,55659120,16.0
+,"Massachusetts","25","Codes for special purposes","U00-U99",19495,55659120,35.0
+,"Massachusetts","25","External causes of morbidity and mortality","V01-Y89",37694,55659120,67.7
+,"Massachusetts","25","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",905,55659120,1.6
+,"Michigan","26","Certain infectious and parasitic diseases","A00-B99",14934,80146034,18.6
+,"Michigan","26","Neoplasms","C00-D48",167617,80146034,209.1
+,"Michigan","26","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",3000,80146034,3.7
+,"Michigan","26","Endocrine, nutritional and metabolic diseases","E00-E88",41526,80146034,51.8
+,"Michigan","26","Mental and behavioural disorders","F01-F99",30651,80146034,38.2
+,"Michigan","26","Diseases of the nervous system","G00-G98",64406,80146034,80.4
+,"Michigan","26","Diseases of the eye and adnexa","H00-H57",23,80146034,0.0
+,"Michigan","26","Diseases of the ear and mastoid process","H60-H93",29,80146034,0.0
+,"Michigan","26","Diseases of the circulatory system","I00-I99",266158,80146034,332.1
+,"Michigan","26","Diseases of the respiratory system","J00-J98",68719,80146034,85.7
+,"Michigan","26","Diseases of the digestive system","K00-K92",30557,80146034,38.1
+,"Michigan","26","Diseases of the skin and subcutaneous tissue","L00-L98",1764,80146034,2.2
+,"Michigan","26","Diseases of the musculoskeletal system and connective tissue","M00-M99",4116,80146034,5.1
+,"Michigan","26","Diseases of the genitourinary system","N00-N98",20433,80146034,25.5
+,"Michigan","26","Pregnancy, childbirth and the puerperium","O00-O99",242,80146034,0.3
+,"Michigan","26","Certain conditions originating in the perinatal period","P00-P96",2607,80146034,3.3
+,"Michigan","26","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",2526,80146034,3.2
+,"Michigan","26","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",6005,80146034,7.5
+,"Michigan","26","Codes for special purposes","U00-U99",34017,80146034,42.4
+,"Michigan","26","External causes of morbidity and mortality","V01-Y89",62462,80146034,77.9
+,"Michigan","26","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2930,80146034,3.7
+,"Minnesota","27","Certain infectious and parasitic diseases","A00-B99",6689,45546472,14.7
+,"Minnesota","27","Neoplasms","C00-D48",80997,45546472,177.8
+,"Minnesota","27","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1618,45546472,3.6
+,"Minnesota","27","Endocrine, nutritional and metabolic diseases","E00-E88",17889,45546472,39.3
+,"Minnesota","27","Mental and behavioural disorders","F01-F99",25887,45546472,56.8
+,"Minnesota","27","Diseases of the nervous system","G00-G98",35217,45546472,77.3
+,"Minnesota","27","Diseases of the eye and adnexa","H00-H57",10,45546472,Unreliable
+,"Minnesota","27","Diseases of the ear and mastoid process","H60-H93",20,45546472,0.0
+,"Minnesota","27","Diseases of the circulatory system","I00-I99",96635,45546472,212.2
+,"Minnesota","27","Diseases of the respiratory system","J00-J98",28344,45546472,62.2
+,"Minnesota","27","Diseases of the digestive system","K00-K92",16060,45546472,35.3
+,"Minnesota","27","Diseases of the skin and subcutaneous tissue","L00-L98",827,45546472,1.8
+,"Minnesota","27","Diseases of the musculoskeletal system and connective tissue","M00-M99",2419,45546472,5.3
+,"Minnesota","27","Diseases of the genitourinary system","N00-N98",6707,45546472,14.7
+,"Minnesota","27","Pregnancy, childbirth and the puerperium","O00-O99",101,45546472,0.2
+,"Minnesota","27","Certain conditions originating in the perinatal period","P00-P96",1079,45546472,2.4
+,"Minnesota","27","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1728,45546472,3.8
+,"Minnesota","27","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",8792,45546472,19.3
+,"Minnesota","27","Codes for special purposes","U00-U99",13570,45546472,29.8
+,"Minnesota","27","External causes of morbidity and mortality","V01-Y89",33312,45546472,73.1
+,"Minnesota","27","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1825,45546472,4.0
+,"Mississippi","28","Certain infectious and parasitic diseases","A00-B99",5331,23638557,22.6
+,"Mississippi","28","Neoplasms","C00-D48",51549,23638557,218.1
+,"Mississippi","28","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1008,23638557,4.3
+,"Mississippi","28","Endocrine, nutritional and metabolic diseases","E00-E88",13433,23638557,56.8
+,"Mississippi","28","Mental and behavioural disorders","F01-F99",7331,23638557,31.0
+,"Mississippi","28","Diseases of the nervous system","G00-G98",22176,23638557,93.8
+,"Mississippi","28","Diseases of the circulatory system","I00-I99",87029,23638557,368.2
+,"Mississippi","28","Diseases of the respiratory system","J00-J98",28244,23638557,119.5
+,"Mississippi","28","Diseases of the digestive system","K00-K92",10723,23638557,45.4
+,"Mississippi","28","Diseases of the skin and subcutaneous tissue","L00-L98",788,23638557,3.3
+,"Mississippi","28","Diseases of the musculoskeletal system and connective tissue","M00-M99",1012,23638557,4.3
+,"Mississippi","28","Diseases of the genitourinary system","N00-N98",8652,23638557,36.6
+,"Mississippi","28","Pregnancy, childbirth and the puerperium","O00-O99",148,23638557,0.6
+,"Mississippi","28","Certain conditions originating in the perinatal period","P00-P96",1041,23638557,4.4
+,"Mississippi","28","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",852,23638557,3.6
+,"Mississippi","28","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2733,23638557,11.6
+,"Mississippi","28","Codes for special purposes","U00-U99",12930,23638557,54.7
+,"Mississippi","28","External causes of morbidity and mortality","V01-Y89",23560,23638557,99.7
+,"Mississippi","28","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1222,23638557,5.2
+,"Missouri","29","Certain infectious and parasitic diseases","A00-B99",11435,49350040,23.2
+,"Missouri","29","Neoplasms","C00-D48",104248,49350040,211.2
+,"Missouri","29","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1968,49350040,4.0
+,"Missouri","29","Endocrine, nutritional and metabolic diseases","E00-E88",24814,49350040,50.3
+,"Missouri","29","Mental and behavioural disorders","F01-F99",20866,49350040,42.3
+,"Missouri","29","Diseases of the nervous system","G00-G98",42834,49350040,86.8
+,"Missouri","29","Diseases of the ear and mastoid process","H60-H93",17,49350040,Unreliable
+,"Missouri","29","Diseases of the circulatory system","I00-I99",152488,49350040,309.0
+,"Missouri","29","Diseases of the respiratory system","J00-J98",51424,49350040,104.2
+,"Missouri","29","Diseases of the digestive system","K00-K92",19328,49350040,39.2
+,"Missouri","29","Diseases of the skin and subcutaneous tissue","L00-L98",963,49350040,2.0
+,"Missouri","29","Diseases of the musculoskeletal system and connective tissue","M00-M99",2617,49350040,5.3
+,"Missouri","29","Diseases of the genitourinary system","N00-N98",15926,49350040,32.3
+,"Missouri","29","Pregnancy, childbirth and the puerperium","O00-O99",210,49350040,0.4
+,"Missouri","29","Certain conditions originating in the perinatal period","P00-P96",1444,49350040,2.9
+,"Missouri","29","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1499,49350040,3.0
+,"Missouri","29","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",3671,49350040,7.4
+,"Missouri","29","Codes for special purposes","U00-U99",21181,49350040,42.9
+,"Missouri","29","External causes of morbidity and mortality","V01-Y89",46671,49350040,94.6
+,"Missouri","29","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2125,49350040,4.3
+,"Montana","30","Certain infectious and parasitic diseases","A00-B99",1464,8837234,16.6
+,"Montana","30","Neoplasms","C00-D48",17221,8837234,194.9
+,"Montana","30","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",327,8837234,3.7
+,"Montana","30","Endocrine, nutritional and metabolic diseases","E00-E88",4655,8837234,52.7
+,"Montana","30","Mental and behavioural disorders","F01-F99",5612,8837234,63.5
+,"Montana","30","Diseases of the nervous system","G00-G98",5935,8837234,67.2
+,"Montana","30","Diseases of the circulatory system","I00-I99",23840,8837234,269.8
+,"Montana","30","Diseases of the respiratory system","J00-J98",8077,8837234,91.4
+,"Montana","30","Diseases of the digestive system","K00-K92",4225,8837234,47.8
+,"Montana","30","Diseases of the skin and subcutaneous tissue","L00-L98",214,8837234,2.4
+,"Montana","30","Diseases of the musculoskeletal system and connective tissue","M00-M99",662,8837234,7.5
+,"Montana","30","Diseases of the genitourinary system","N00-N98",1753,8837234,19.8
+,"Montana","30","Pregnancy, childbirth and the puerperium","O00-O99",35,8837234,0.4
+,"Montana","30","Certain conditions originating in the perinatal period","P00-P96",191,8837234,2.2
+,"Montana","30","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",266,8837234,3.0
+,"Montana","30","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",645,8837234,7.3
+,"Montana","30","Codes for special purposes","U00-U99",3546,8837234,40.1
+,"Montana","30","External causes of morbidity and mortality","V01-Y89",8227,8837234,93.1
+,"Montana","30","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",518,8837234,5.9
+,"Nebraska","31","Certain infectious and parasitic diseases","A00-B99",2886,15667980,18.4
+,"Nebraska","31","Neoplasms","C00-D48",28130,15667980,179.5
+,"Nebraska","31","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",540,15667980,3.4
+,"Nebraska","31","Endocrine, nutritional and metabolic diseases","E00-E88",7822,15667980,49.9
+,"Nebraska","31","Mental and behavioural disorders","F01-F99",7687,15667980,49.1
+,"Nebraska","31","Diseases of the nervous system","G00-G98",12578,15667980,80.3
+,"Nebraska","31","Diseases of the circulatory system","I00-I99",38770,15667980,247.4
+,"Nebraska","31","Diseases of the respiratory system","J00-J98",13602,15667980,86.8
+,"Nebraska","31","Diseases of the digestive system","K00-K92",5983,15667980,38.2
+,"Nebraska","31","Diseases of the skin and subcutaneous tissue","L00-L98",327,15667980,2.1
+,"Nebraska","31","Diseases of the musculoskeletal system and connective tissue","M00-M99",820,15667980,5.2
+,"Nebraska","31","Diseases of the genitourinary system","N00-N98",3162,15667980,20.2
+,"Nebraska","31","Pregnancy, childbirth and the puerperium","O00-O99",50,15667980,0.3
+,"Nebraska","31","Certain conditions originating in the perinatal period","P00-P96",484,15667980,3.1
+,"Nebraska","31","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",539,15667980,3.4
+,"Nebraska","31","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1738,15667980,11.1
+,"Nebraska","31","Codes for special purposes","U00-U99",5038,15667980,32.2
+,"Nebraska","31","External causes of morbidity and mortality","V01-Y89",9358,15667980,59.7
+,"Nebraska","31","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",508,15667980,3.2
+,"Nevada","32","Certain infectious and parasitic diseases","A00-B99",3715,25157098,14.8
+,"Nevada","32","Neoplasms","C00-D48",43159,25157098,171.6
+,"Nevada","32","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",585,25157098,2.3
+,"Nevada","32","Endocrine, nutritional and metabolic diseases","E00-E88",11775,25157098,46.8
+,"Nevada","32","Mental and behavioural disorders","F01-F99",7051,25157098,28.0
+,"Nevada","32","Diseases of the nervous system","G00-G98",15912,25157098,63.3
+,"Nevada","32","Diseases of the circulatory system","I00-I99",69685,25157098,277.0
+,"Nevada","32","Diseases of the respiratory system","J00-J98",19446,25157098,77.3
+,"Nevada","32","Diseases of the digestive system","K00-K92",9418,25157098,37.4
+,"Nevada","32","Diseases of the skin and subcutaneous tissue","L00-L98",335,25157098,1.3
+,"Nevada","32","Diseases of the musculoskeletal system and connective tissue","M00-M99",1070,25157098,4.3
+,"Nevada","32","Diseases of the genitourinary system","N00-N98",3749,25157098,14.9
+,"Nevada","32","Pregnancy, childbirth and the puerperium","O00-O99",64,25157098,0.3
+,"Nevada","32","Certain conditions originating in the perinatal period","P00-P96",606,25157098,2.4
+,"Nevada","32","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",608,25157098,2.4
+,"Nevada","32","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2840,25157098,11.3
+,"Nevada","32","Codes for special purposes","U00-U99",11313,25157098,45.0
+,"Nevada","32","External causes of morbidity and mortality","V01-Y89",21419,25157098,85.1
+,"Nevada","32","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1147,25157098,4.6
+,"New Hampshire","33","Certain infectious and parasitic diseases","A00-B99",1933,11072829,17.5
+,"New Hampshire","33","Neoplasms","C00-D48",22638,11072829,204.4
+,"New Hampshire","33","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",407,11072829,3.7
+,"New Hampshire","33","Endocrine, nutritional and metabolic diseases","E00-E88",5291,11072829,47.8
+,"New Hampshire","33","Mental and behavioural disorders","F01-F99",7898,11072829,71.3
+,"New Hampshire","33","Diseases of the nervous system","G00-G98",8094,11072829,73.1
+,"New Hampshire","33","Diseases of the circulatory system","I00-I99",28607,11072829,258.4
+,"New Hampshire","33","Diseases of the respiratory system","J00-J98",9575,11072829,86.5
+,"New Hampshire","33","Diseases of the digestive system","K00-K92",4504,11072829,40.7
+,"New Hampshire","33","Diseases of the skin and subcutaneous tissue","L00-L98",188,11072829,1.7
+,"New Hampshire","33","Diseases of the musculoskeletal system and connective tissue","M00-M99",547,11072829,4.9
+,"New Hampshire","33","Diseases of the genitourinary system","N00-N98",2280,11072829,20.6
+,"New Hampshire","33","Pregnancy, childbirth and the puerperium","O00-O99",20,11072829,0.2
+,"New Hampshire","33","Certain conditions originating in the perinatal period","P00-P96",181,11072829,1.6
+,"New Hampshire","33","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",257,11072829,2.3
+,"New Hampshire","33","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1275,11072829,11.5
+,"New Hampshire","33","Codes for special purposes","U00-U99",2979,11072829,26.9
+,"New Hampshire","33","External causes of morbidity and mortality","V01-Y89",8973,11072829,81.0
+,"New Hampshire","33","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",482,11072829,4.4
+,"New Jersey","34","Certain infectious and parasitic diseases","A00-B99",20858,73074433,28.5
+,"New Jersey","34","Neoplasms","C00-D48",122906,73074433,168.2
+,"New Jersey","34","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",2812,73074433,3.8
+,"New Jersey","34","Endocrine, nutritional and metabolic diseases","E00-E88",28459,73074433,38.9
+,"New Jersey","34","Mental and behavioural disorders","F01-F99",28489,73074433,39.0
+,"New Jersey","34","Diseases of the nervous system","G00-G98",43235,73074433,59.2
+,"New Jersey","34","Diseases of the eye and adnexa","H00-H57",11,73074433,Unreliable
+,"New Jersey","34","Diseases of the ear and mastoid process","H60-H93",17,73074433,Unreliable
+,"New Jersey","34","Diseases of the circulatory system","I00-I99",183587,73074433,251.2
+,"New Jersey","34","Diseases of the respiratory system","J00-J98",51754,73074433,70.8
+,"New Jersey","34","Diseases of the digestive system","K00-K92",21572,73074433,29.5
+,"New Jersey","34","Diseases of the skin and subcutaneous tissue","L00-L98",1359,73074433,1.9
+,"New Jersey","34","Diseases of the musculoskeletal system and connective tissue","M00-M99",2596,73074433,3.6
+,"New Jersey","34","Diseases of the genitourinary system","N00-N98",17450,73074433,23.9
+,"New Jersey","34","Pregnancy, childbirth and the puerperium","O00-O99",269,73074433,0.4
+,"New Jersey","34","Certain conditions originating in the perinatal period","P00-P96",1562,73074433,2.1
+,"New Jersey","34","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1414,73074433,1.9
+,"New Jersey","34","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",10917,73074433,14.9
+,"New Jersey","34","Codes for special purposes","U00-U99",32446,73074433,44.4
+,"New Jersey","34","External causes of morbidity and mortality","V01-Y89",42609,73074433,58.3
+,"New Jersey","34","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1792,73074433,2.5
+,"New Mexico","35","Certain infectious and parasitic diseases","A00-B99",3512,16870910,20.8
+,"New Mexico","35","Neoplasms","C00-D48",29434,16870910,174.5
+,"New Mexico","35","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",495,16870910,2.9
+,"New Mexico","35","Endocrine, nutritional and metabolic diseases","E00-E88",10750,16870910,63.7
+,"New Mexico","35","Mental and behavioural disorders","F01-F99",8154,16870910,48.3
+,"New Mexico","35","Diseases of the nervous system","G00-G98",11444,16870910,67.8
+,"New Mexico","35","Diseases of the circulatory system","I00-I99",43549,16870910,258.1
+,"New Mexico","35","Diseases of the respiratory system","J00-J98",14933,16870910,88.5
+,"New Mexico","35","Diseases of the digestive system","K00-K92",11040,16870910,65.4
+,"New Mexico","35","Diseases of the skin and subcutaneous tissue","L00-L98",389,16870910,2.3
+,"New Mexico","35","Diseases of the musculoskeletal system and connective tissue","M00-M99",1124,16870910,6.7
+,"New Mexico","35","Diseases of the genitourinary system","N00-N98",3923,16870910,23.3
+,"New Mexico","35","Pregnancy, childbirth and the puerperium","O00-O99",62,16870910,0.4
+,"New Mexico","35","Certain conditions originating in the perinatal period","P00-P96",414,16870910,2.5
+,"New Mexico","35","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",514,16870910,3.0
+,"New Mexico","35","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",1517,16870910,9.0
+,"New Mexico","35","Codes for special purposes","U00-U99",8794,16870910,52.1
+,"New Mexico","35","External causes of morbidity and mortality","V01-Y89",20071,16870910,119.0
+,"New Mexico","35","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",879,16870910,5.2
+,"New York","36","Certain infectious and parasitic diseases","A00-B99",32173,156559258,20.6
+,"New York","36","Neoplasms","C00-D48",261493,156559258,167.0
+,"New York","36","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",4860,156559258,3.1
+,"New York","36","Endocrine, nutritional and metabolic diseases","E00-E88",60825,156559258,38.9
+,"New York","36","Mental and behavioural disorders","F01-F99",67111,156559258,42.9
+,"New York","36","Diseases of the nervous system","G00-G98",69124,156559258,44.2
+,"New York","36","Diseases of the eye and adnexa","H00-H57",29,156559258,0.0
+,"New York","36","Diseases of the ear and mastoid process","H60-H93",31,156559258,0.0
+,"New York","36","Diseases of the circulatory system","I00-I99",418324,156559258,267.2
+,"New York","36","Diseases of the respiratory system","J00-J98",112565,156559258,71.9
+,"New York","36","Diseases of the digestive system","K00-K92",46173,156559258,29.5
+,"New York","36","Diseases of the skin and subcutaneous tissue","L00-L98",3571,156559258,2.3
+,"New York","36","Diseases of the musculoskeletal system and connective tissue","M00-M99",6371,156559258,4.1
+,"New York","36","Diseases of the genitourinary system","N00-N98",30277,156559258,19.3
+,"New York","36","Pregnancy, childbirth and the puerperium","O00-O99",531,156559258,0.3
+,"New York","36","Certain conditions originating in the perinatal period","P00-P96",3424,156559258,2.2
+,"New York","36","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",3629,156559258,2.3
+,"New York","36","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",21602,156559258,13.8
+,"New York","36","Codes for special purposes","U00-U99",74231,156559258,47.4
+,"New York","36","External causes of morbidity and mortality","V01-Y89",88249,156559258,56.4
+,"New York","36","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",3970,156559258,2.5
+,"North Carolina","37","Certain infectious and parasitic diseases","A00-B99",18859,85229135,22.1
+,"North Carolina","37","Neoplasms","C00-D48",161074,85229135,189.0
+,"North Carolina","37","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",3474,85229135,4.1
+,"North Carolina","37","Endocrine, nutritional and metabolic diseases","E00-E88",47371,85229135,55.6
+,"North Carolina","37","Mental and behavioural disorders","F01-F99",41246,85229135,48.4
+,"North Carolina","37","Diseases of the nervous system","G00-G98",66845,85229135,78.4
+,"North Carolina","37","Diseases of the eye and adnexa","H00-H57",12,85229135,Unreliable
+,"North Carolina","37","Diseases of the ear and mastoid process","H60-H93",16,85229135,Unreliable
+,"North Carolina","37","Diseases of the circulatory system","I00-I99",222102,85229135,260.6
+,"North Carolina","37","Diseases of the respiratory system","J00-J98",72327,85229135,84.9
+,"North Carolina","37","Diseases of the digestive system","K00-K92",33785,85229135,39.6
+,"North Carolina","37","Diseases of the skin and subcutaneous tissue","L00-L98",1908,85229135,2.2
+,"North Carolina","37","Diseases of the musculoskeletal system and connective tissue","M00-M99",4550,85229135,5.3
+,"North Carolina","37","Diseases of the genitourinary system","N00-N98",22303,85229135,26.2
+,"North Carolina","37","Pregnancy, childbirth and the puerperium","O00-O99",416,85229135,0.5
+,"North Carolina","37","Certain conditions originating in the perinatal period","P00-P96",3162,85229135,3.7
+,"North Carolina","37","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",2443,85229135,2.9
+,"North Carolina","37","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",10598,85229135,12.4
+,"North Carolina","37","Codes for special purposes","U00-U99",31071,85229135,36.5
+,"North Carolina","37","External causes of morbidity and mortality","V01-Y89",73168,85229135,85.8
+,"North Carolina","37","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",3559,85229135,4.2
+,"North Dakota","38","Certain infectious and parasitic diseases","A00-B99",1050,6193435,17.0
+,"North Dakota","38","Neoplasms","C00-D48",10410,6193435,168.1
+,"North Dakota","38","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",256,6193435,4.1
+,"North Dakota","38","Endocrine, nutritional and metabolic diseases","E00-E88",3050,6193435,49.2
+,"North Dakota","38","Mental and behavioural disorders","F01-F99",2478,6193435,40.0
+,"North Dakota","38","Diseases of the nervous system","G00-G98",4679,6193435,75.5
+,"North Dakota","38","Diseases of the circulatory system","I00-I99",15168,6193435,244.9
+,"North Dakota","38","Diseases of the respiratory system","J00-J98",4792,6193435,77.4
+,"North Dakota","38","Diseases of the digestive system","K00-K92",2559,6193435,41.3
+,"North Dakota","38","Diseases of the skin and subcutaneous tissue","L00-L98",136,6193435,2.2
+,"North Dakota","38","Diseases of the musculoskeletal system and connective tissue","M00-M99",313,6193435,5.1
+,"North Dakota","38","Diseases of the genitourinary system","N00-N98",1296,6193435,20.9
+,"North Dakota","38","Pregnancy, childbirth and the puerperium","O00-O99",20,6193435,0.3
+,"North Dakota","38","Certain conditions originating in the perinatal period","P00-P96",175,6193435,2.8
+,"North Dakota","38","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",210,6193435,3.4
+,"North Dakota","38","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",682,6193435,11.0
+,"North Dakota","38","Codes for special purposes","U00-U99",2385,6193435,38.5
+,"North Dakota","38","External causes of morbidity and mortality","V01-Y89",4450,6193435,71.9
+,"North Dakota","38","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",271,6193435,4.4
+,"Ohio","39","Certain infectious and parasitic diseases","A00-B99",22400,93965639,23.8
+,"Ohio","39","Neoplasms","C00-D48",197343,93965639,210.0
+,"Ohio","39","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",3547,93965639,3.8
+,"Ohio","39","Endocrine, nutritional and metabolic diseases","E00-E88",54590,93965639,58.1
+,"Ohio","39","Mental and behavioural disorders","F01-F99",46513,93965639,49.5
+,"Ohio","39","Diseases of the nervous system","G00-G98",77673,93965639,82.7
+,"Ohio","39","Diseases of the eye and adnexa","H00-H57",14,93965639,Unreliable
+,"Ohio","39","Diseases of the ear and mastoid process","H60-H93",33,93965639,0.0
+,"Ohio","39","Diseases of the circulatory system","I00-I99",303230,93965639,322.7
+,"Ohio","39","Diseases of the respiratory system","J00-J98",92978,93965639,98.9
+,"Ohio","39","Diseases of the digestive system","K00-K92",37352,93965639,39.8
+,"Ohio","39","Diseases of the skin and subcutaneous tissue","L00-L98",1901,93965639,2.0
+,"Ohio","39","Diseases of the musculoskeletal system and connective tissue","M00-M99",4887,93965639,5.2
+,"Ohio","39","Diseases of the genitourinary system","N00-N98",24198,93965639,25.8
+,"Ohio","39","Pregnancy, childbirth and the puerperium","O00-O99",333,93965639,0.4
+,"Ohio","39","Certain conditions originating in the perinatal period","P00-P96",3429,93965639,3.6
+,"Ohio","39","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",3050,93965639,3.2
+,"Ohio","39","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",14356,93965639,15.3
+,"Ohio","39","Codes for special purposes","U00-U99",45148,93965639,48.0
+,"Ohio","39","External causes of morbidity and mortality","V01-Y89",85486,93965639,91.0
+,"Ohio","39","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",3532,93965639,3.8
+,"Oklahoma","40","Certain infectious and parasitic diseases","A00-B99",6280,32048744,19.6
+,"Oklahoma","40","Neoplasms","C00-D48",66405,32048744,207.2
+,"Oklahoma","40","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",828,32048744,2.6
+,"Oklahoma","40","Endocrine, nutritional and metabolic diseases","E00-E88",15944,32048744,49.7
+,"Oklahoma","40","Mental and behavioural disorders","F01-F99",11575,32048744,36.1
+,"Oklahoma","40","Diseases of the nervous system","G00-G98",26034,32048744,81.2
+,"Oklahoma","40","Diseases of the ear and mastoid process","H60-H93",12,32048744,Unreliable
+,"Oklahoma","40","Diseases of the circulatory system","I00-I99",111345,32048744,347.4
+,"Oklahoma","40","Diseases of the respiratory system","J00-J98",33468,32048744,104.4
+,"Oklahoma","40","Diseases of the digestive system","K00-K92",13860,32048744,43.2
+,"Oklahoma","40","Diseases of the skin and subcutaneous tissue","L00-L98",756,32048744,2.4
+,"Oklahoma","40","Diseases of the musculoskeletal system and connective tissue","M00-M99",2542,32048744,7.9
+,"Oklahoma","40","Diseases of the genitourinary system","N00-N98",6740,32048744,21.0
+,"Oklahoma","40","Pregnancy, childbirth and the puerperium","O00-O99",119,32048744,0.4
+,"Oklahoma","40","Certain conditions originating in the perinatal period","P00-P96",1165,32048744,3.6
+,"Oklahoma","40","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1209,32048744,3.8
+,"Oklahoma","40","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2787,32048744,8.7
+,"Oklahoma","40","Codes for special purposes","U00-U99",16889,32048744,52.7
+,"Oklahoma","40","External causes of morbidity and mortality","V01-Y89",30612,32048744,95.5
+,"Oklahoma","40","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1492,32048744,4.7
+,"Oregon","41","Certain infectious and parasitic diseases","A00-B99",5233,33836323,15.5
+,"Oregon","41","Neoplasms","C00-D48",66406,33836323,196.3
+,"Oregon","41","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1151,33836323,3.4
+,"Oregon","41","Endocrine, nutritional and metabolic diseases","E00-E88",17672,33836323,52.2
+,"Oregon","41","Mental and behavioural disorders","F01-F99",19534,33836323,57.7
+,"Oregon","41","Diseases of the nervous system","G00-G98",30067,33836323,88.9
+,"Oregon","41","Diseases of the ear and mastoid process","H60-H93",20,33836323,0.1
+,"Oregon","41","Diseases of the circulatory system","I00-I99",84442,33836323,249.6
+,"Oregon","41","Diseases of the respiratory system","J00-J98",23502,33836323,69.5
+,"Oregon","41","Diseases of the digestive system","K00-K92",15547,33836323,45.9
+,"Oregon","41","Diseases of the skin and subcutaneous tissue","L00-L98",803,33836323,2.4
+,"Oregon","41","Diseases of the musculoskeletal system and connective tissue","M00-M99",1911,33836323,5.6
+,"Oregon","41","Diseases of the genitourinary system","N00-N98",5533,33836323,16.4
+,"Oregon","41","Pregnancy, childbirth and the puerperium","O00-O99",89,33836323,0.3
+,"Oregon","41","Certain conditions originating in the perinatal period","P00-P96",673,33836323,2.0
+,"Oregon","41","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",963,33836323,2.8
+,"Oregon","41","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",4988,33836323,14.7
+,"Oregon","41","Codes for special purposes","U00-U99",8158,33836323,24.1
+,"Oregon","41","External causes of morbidity and mortality","V01-Y89",29574,33836323,87.4
+,"Oregon","41","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1369,33836323,4.0
+,"Pennsylvania","42","Certain infectious and parasitic diseases","A00-B99",27433,103213416,26.6
+,"Pennsylvania","42","Neoplasms","C00-D48",220272,103213416,213.4
+,"Pennsylvania","42","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",4850,103213416,4.7
+,"Pennsylvania","42","Endocrine, nutritional and metabolic diseases","E00-E88",53253,103213416,51.6
+,"Pennsylvania","42","Mental and behavioural disorders","F01-F99",61573,103213416,59.7
+,"Pennsylvania","42","Diseases of the nervous system","G00-G98",73263,103213416,71.0
+,"Pennsylvania","42","Diseases of the eye and adnexa","H00-H57",20,103213416,0.0
+,"Pennsylvania","42","Diseases of the ear and mastoid process","H60-H93",32,103213416,0.0
+,"Pennsylvania","42","Diseases of the circulatory system","I00-I99",319655,103213416,309.7
+,"Pennsylvania","42","Diseases of the respiratory system","J00-J98",92006,103213416,89.1
+,"Pennsylvania","42","Diseases of the digestive system","K00-K92",41078,103213416,39.8
+,"Pennsylvania","42","Diseases of the skin and subcutaneous tissue","L00-L98",2393,103213416,2.3
+,"Pennsylvania","42","Diseases of the musculoskeletal system and connective tissue","M00-M99",5634,103213416,5.5
+,"Pennsylvania","42","Diseases of the genitourinary system","N00-N98",31372,103213416,30.4
+,"Pennsylvania","42","Pregnancy, childbirth and the puerperium","O00-O99",254,103213416,0.2
+,"Pennsylvania","42","Certain conditions originating in the perinatal period","P00-P96",3038,103213416,2.9
+,"Pennsylvania","42","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",2806,103213416,2.7
+,"Pennsylvania","42","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",17960,103213416,17.4
+,"Pennsylvania","42","Codes for special purposes","U00-U99",48058,103213416,46.6
+,"Pennsylvania","42","External causes of morbidity and mortality","V01-Y89",89579,103213416,86.8
+,"Pennsylvania","42","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",4086,103213416,4.0
+,"Rhode Island","44","Certain infectious and parasitic diseases","A00-B99",1439,8651031,16.6
+,"Rhode Island","44","Neoplasms","C00-D48",16817,8651031,194.4
+,"Rhode Island","44","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",284,8651031,3.3
+,"Rhode Island","44","Endocrine, nutritional and metabolic diseases","E00-E88",3909,8651031,45.2
+,"Rhode Island","44","Mental and behavioural disorders","F01-F99",5444,8651031,62.9
+,"Rhode Island","44","Diseases of the nervous system","G00-G98",6386,8651031,73.8
+,"Rhode Island","44","Diseases of the circulatory system","I00-I99",23697,8651031,273.9
+,"Rhode Island","44","Diseases of the respiratory system","J00-J98",6328,8651031,73.1
+,"Rhode Island","44","Diseases of the digestive system","K00-K92",3750,8651031,43.3
+,"Rhode Island","44","Diseases of the skin and subcutaneous tissue","L00-L98",155,8651031,1.8
+,"Rhode Island","44","Diseases of the musculoskeletal system and connective tissue","M00-M99",473,8651031,5.5
+,"Rhode Island","44","Diseases of the genitourinary system","N00-N98",1773,8651031,20.5
+,"Rhode Island","44","Pregnancy, childbirth and the puerperium","O00-O99",19,8651031,Unreliable
+,"Rhode Island","44","Certain conditions originating in the perinatal period","P00-P96",205,8651031,2.4
+,"Rhode Island","44","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",272,8651031,3.1
+,"Rhode Island","44","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",629,8651031,7.3
+,"Rhode Island","44","Codes for special purposes","U00-U99",3378,8651031,39.0
+,"Rhode Island","44","External causes of morbidity and mortality","V01-Y89",6836,8651031,79.0
+,"Rhode Island","44","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",241,8651031,2.8
+,"South Carolina","45","Certain infectious and parasitic diseases","A00-B99",11022,42044885,26.2
+,"South Carolina","45","Neoplasms","C00-D48",86334,42044885,205.3
+,"South Carolina","45","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",2089,42044885,5.0
+,"South Carolina","45","Endocrine, nutritional and metabolic diseases","E00-E88",25894,42044885,61.6
+,"South Carolina","45","Mental and behavioural disorders","F01-F99",16820,42044885,40.0
+,"South Carolina","45","Diseases of the nervous system","G00-G98",43025,42044885,102.3
+,"South Carolina","45","Diseases of the eye and adnexa","H00-H57",11,42044885,Unreliable
+,"South Carolina","45","Diseases of the ear and mastoid process","H60-H93",12,42044885,Unreliable
+,"South Carolina","45","Diseases of the circulatory system","I00-I99",122499,42044885,291.4
+,"South Carolina","45","Diseases of the respiratory system","J00-J98",37833,42044885,90.0
+,"South Carolina","45","Diseases of the digestive system","K00-K92",18536,42044885,44.1
+,"South Carolina","45","Diseases of the skin and subcutaneous tissue","L00-L98",896,42044885,2.1
+,"South Carolina","45","Diseases of the musculoskeletal system and connective tissue","M00-M99",2202,42044885,5.2
+,"South Carolina","45","Diseases of the genitourinary system","N00-N98",10533,42044885,25.1
+,"South Carolina","45","Pregnancy, childbirth and the puerperium","O00-O99",186,42044885,0.4
+,"South Carolina","45","Certain conditions originating in the perinatal period","P00-P96",1556,42044885,3.7
+,"South Carolina","45","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1240,42044885,2.9
+,"South Carolina","45","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",4140,42044885,9.8
+,"South Carolina","45","Codes for special purposes","U00-U99",19600,42044885,46.6
+,"South Carolina","45","External causes of morbidity and mortality","V01-Y89",41124,42044885,97.8
+,"South Carolina","45","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2072,42044885,4.9
+,"South Dakota","46","Certain infectious and parasitic diseases","A00-B99",1407,7222765,19.5
+,"South Dakota","46","Neoplasms","C00-D48",13672,7222765,189.3
+,"South Dakota","46","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",250,7222765,3.5
+,"South Dakota","46","Endocrine, nutritional and metabolic diseases","E00-E88",3968,7222765,54.9
+,"South Dakota","46","Mental and behavioural disorders","F01-F99",2129,7222765,29.5
+,"South Dakota","46","Diseases of the nervous system","G00-G98",5867,7222765,81.2
+,"South Dakota","46","Diseases of the circulatory system","I00-I99",18485,7222765,255.9
+,"South Dakota","46","Diseases of the respiratory system","J00-J98",6078,7222765,84.2
+,"South Dakota","46","Diseases of the digestive system","K00-K92",3766,7222765,52.1
+,"South Dakota","46","Diseases of the skin and subcutaneous tissue","L00-L98",212,7222765,2.9
+,"South Dakota","46","Diseases of the musculoskeletal system and connective tissue","M00-M99",520,7222765,7.2
+,"South Dakota","46","Diseases of the genitourinary system","N00-N98",1238,7222765,17.1
+,"South Dakota","46","Pregnancy, childbirth and the puerperium","O00-O99",31,7222765,0.4
+,"South Dakota","46","Certain conditions originating in the perinatal period","P00-P96",220,7222765,3.0
+,"South Dakota","46","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",308,7222765,4.3
+,"South Dakota","46","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",326,7222765,4.5
+,"South Dakota","46","Codes for special purposes","U00-U99",3027,7222765,41.9
+,"South Dakota","46","External causes of morbidity and mortality","V01-Y89",5771,7222765,79.9
+,"South Dakota","46","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",330,7222765,4.6
+,"Tennessee","47","Certain infectious and parasitic diseases","A00-B99",12614,55892042,22.6
+,"Tennessee","47","Neoplasms","C00-D48",115822,55892042,207.2
+,"Tennessee","47","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1938,55892042,3.5
+,"Tennessee","47","Endocrine, nutritional and metabolic diseases","E00-E88",32523,55892042,58.2
+,"Tennessee","47","Mental and behavioural disorders","F01-F99",22751,55892042,40.7
+,"Tennessee","47","Diseases of the nervous system","G00-G98",54184,55892042,96.9
+,"Tennessee","47","Diseases of the ear and mastoid process","H60-H93",19,55892042,Unreliable
+,"Tennessee","47","Diseases of the circulatory system","I00-I99",179380,55892042,320.9
+,"Tennessee","47","Diseases of the respiratory system","J00-J98",57605,55892042,103.1
+,"Tennessee","47","Diseases of the digestive system","K00-K92",25028,55892042,44.8
+,"Tennessee","47","Diseases of the skin and subcutaneous tissue","L00-L98",1268,55892042,2.3
+,"Tennessee","47","Diseases of the musculoskeletal system and connective tissue","M00-M99",2769,55892042,5.0
+,"Tennessee","47","Diseases of the genitourinary system","N00-N98",13751,55892042,24.6
+,"Tennessee","47","Pregnancy, childbirth and the puerperium","O00-O99",309,55892042,0.6
+,"Tennessee","47","Certain conditions originating in the perinatal period","P00-P96",1751,55892042,3.1
+,"Tennessee","47","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1923,55892042,3.4
+,"Tennessee","47","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",6686,55892042,12.0
+,"Tennessee","47","Codes for special purposes","U00-U99",26640,55892042,47.7
+,"Tennessee","47","External causes of morbidity and mortality","V01-Y89",59402,55892042,106.3
+,"Tennessee","47","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2913,55892042,5.2
+,"Texas","48","Certain infectious and parasitic diseases","A00-B99",44302,238125901,18.6
+,"Texas","48","Neoplasms","C00-D48",339510,238125901,142.6
+,"Texas","48","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",6663,238125901,2.8
+,"Texas","48","Endocrine, nutritional and metabolic diseases","E00-E88",98864,238125901,41.5
+,"Texas","48","Mental and behavioural disorders","F01-F99",48057,238125901,20.2
+,"Texas","48","Diseases of the nervous system","G00-G98",180483,238125901,75.8
+,"Texas","48","Diseases of the eye and adnexa","H00-H57",26,238125901,0.0
+,"Texas","48","Diseases of the ear and mastoid process","H60-H93",72,238125901,0.0
+,"Texas","48","Diseases of the circulatory system","I00-I99",505245,238125901,212.2
+,"Texas","48","Diseases of the respiratory system","J00-J98",143853,238125901,60.4
+,"Texas","48","Diseases of the digestive system","K00-K92",75178,238125901,31.6
+,"Texas","48","Diseases of the skin and subcutaneous tissue","L00-L98",3530,238125901,1.5
+,"Texas","48","Diseases of the musculoskeletal system and connective tissue","M00-M99",9195,238125901,3.9
+,"Texas","48","Diseases of the genitourinary system","N00-N98",46193,238125901,19.4
+,"Texas","48","Pregnancy, childbirth and the puerperium","O00-O99",1019,238125901,0.4
+,"Texas","48","Certain conditions originating in the perinatal period","P00-P96",7843,238125901,3.3
+,"Texas","48","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",6974,238125901,2.9
+,"Texas","48","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",18171,238125901,7.6
+,"Texas","48","Codes for special purposes","U00-U99",95728,238125901,40.2
+,"Texas","48","External causes of morbidity and mortality","V01-Y89",147859,238125901,62.1
+,"Texas","48","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",7418,238125901,3.1
+,"Utah","49","Certain infectious and parasitic diseases","A00-B99",2984,26588919,11.2
+,"Utah","49","Neoplasms","C00-D48",28078,26588919,105.6
+,"Utah","49","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",561,26588919,2.1
+,"Utah","49","Endocrine, nutritional and metabolic diseases","E00-E88",10733,26588919,40.4
+,"Utah","49","Mental and behavioural disorders","F01-F99",7846,26588919,29.5
+,"Utah","49","Diseases of the nervous system","G00-G98",16331,26588919,61.4
+,"Utah","49","Diseases of the eye and adnexa","H00-H57",13,26588919,Unreliable
+,"Utah","49","Diseases of the circulatory system","I00-I99",42900,26588919,161.3
+,"Utah","49","Diseases of the respiratory system","J00-J98",12573,26588919,47.3
+,"Utah","49","Diseases of the digestive system","K00-K92",6747,26588919,25.4
+,"Utah","49","Diseases of the skin and subcutaneous tissue","L00-L98",338,26588919,1.3
+,"Utah","49","Diseases of the musculoskeletal system and connective tissue","M00-M99",1249,26588919,4.7
+,"Utah","49","Diseases of the genitourinary system","N00-N98",4045,26588919,15.2
+,"Utah","49","Pregnancy, childbirth and the puerperium","O00-O99",74,26588919,0.3
+,"Utah","49","Certain conditions originating in the perinatal period","P00-P96",917,26588919,3.4
+,"Utah","49","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",910,26588919,3.4
+,"Utah","49","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2409,26588919,9.1
+,"Utah","49","Codes for special purposes","U00-U99",5051,26588919,19.0
+,"Utah","49","External causes of morbidity and mortality","V01-Y89",16771,26588919,63.1
+,"Utah","49","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",976,26588919,3.7
+,"Vermont","50","Certain infectious and parasitic diseases","A00-B99",839,5108661,16.4
+,"Vermont","50","Neoplasms","C00-D48",11393,5108661,223.0
+,"Vermont","50","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",171,5108661,3.3
+,"Vermont","50","Endocrine, nutritional and metabolic diseases","E00-E88",2529,5108661,49.5
+,"Vermont","50","Mental and behavioural disorders","F01-F99",2649,5108661,51.9
+,"Vermont","50","Diseases of the nervous system","G00-G98",4454,5108661,87.2
+,"Vermont","50","Diseases of the circulatory system","I00-I99",14681,5108661,287.4
+,"Vermont","50","Diseases of the respiratory system","J00-J98",3945,5108661,77.2
+,"Vermont","50","Diseases of the digestive system","K00-K92",2218,5108661,43.4
+,"Vermont","50","Diseases of the skin and subcutaneous tissue","L00-L98",94,5108661,1.8
+,"Vermont","50","Diseases of the musculoskeletal system and connective tissue","M00-M99",350,5108661,6.9
+,"Vermont","50","Diseases of the genitourinary system","N00-N98",635,5108661,12.4
+,"Vermont","50","Certain conditions originating in the perinatal period","P00-P96",92,5108661,1.8
+,"Vermont","50","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",191,5108661,3.7
+,"Vermont","50","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",366,5108661,7.2
+,"Vermont","50","Codes for special purposes","U00-U99",876,5108661,17.1
+,"Vermont","50","External causes of morbidity and mortality","V01-Y89",4857,5108661,95.1
+,"Vermont","50","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",270,5108661,5.3
+,"Virginia","51","Certain infectious and parasitic diseases","A00-B99",13703,69116754,19.8
+,"Virginia","51","Neoplasms","C00-D48",123832,69116754,179.2
+,"Virginia","51","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",2434,69116754,3.5
+,"Virginia","51","Endocrine, nutritional and metabolic diseases","E00-E88",32190,69116754,46.6
+,"Virginia","51","Mental and behavioural disorders","F01-F99",32638,69116754,47.2
+,"Virginia","51","Diseases of the nervous system","G00-G98",50453,69116754,73.0
+,"Virginia","51","Diseases of the eye and adnexa","H00-H57",13,69116754,Unreliable
+,"Virginia","51","Diseases of the ear and mastoid process","H60-H93",15,69116754,Unreliable
+,"Virginia","51","Diseases of the circulatory system","I00-I99",168582,69116754,243.9
+,"Virginia","51","Diseases of the respiratory system","J00-J98",49696,69116754,71.9
+,"Virginia","51","Diseases of the digestive system","K00-K92",23222,69116754,33.6
+,"Virginia","51","Diseases of the skin and subcutaneous tissue","L00-L98",1083,69116754,1.6
+,"Virginia","51","Diseases of the musculoskeletal system and connective tissue","M00-M99",3042,69116754,4.4
+,"Virginia","51","Diseases of the genitourinary system","N00-N98",16626,69116754,24.1
+,"Virginia","51","Pregnancy, childbirth and the puerperium","O00-O99",310,69116754,0.4
+,"Virginia","51","Certain conditions originating in the perinatal period","P00-P96",2183,69116754,3.2
+,"Virginia","51","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1804,69116754,2.6
+,"Virginia","51","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",6983,69116754,10.1
+,"Virginia","51","Codes for special purposes","U00-U99",22115,69116754,32.0
+,"Virginia","51","External causes of morbidity and mortality","V01-Y89",47262,69116754,68.4
+,"Virginia","51","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1811,69116754,2.6
+,"Washington","53","Certain infectious and parasitic diseases","A00-B99",9083,61807214,14.7
+,"Washington","53","Neoplasms","C00-D48",105616,61807214,170.9
+,"Washington","53","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1788,61807214,2.9
+,"Washington","53","Endocrine, nutritional and metabolic diseases","E00-E88",26965,61807214,43.6
+,"Washington","53","Mental and behavioural disorders","F01-F99",19206,61807214,31.1
+,"Washington","53","Diseases of the nervous system","G00-G98",50868,61807214,82.3
+,"Washington","53","Diseases of the ear and mastoid process","H60-H93",27,61807214,0.0
+,"Washington","53","Diseases of the circulatory system","I00-I99",132475,61807214,214.3
+,"Washington","53","Diseases of the respiratory system","J00-J98",39397,61807214,63.7
+,"Washington","53","Diseases of the digestive system","K00-K92",23392,61807214,37.8
+,"Washington","53","Diseases of the skin and subcutaneous tissue","L00-L98",1294,61807214,2.1
+,"Washington","53","Diseases of the musculoskeletal system and connective tissue","M00-M99",3004,61807214,4.9
+,"Washington","53","Diseases of the genitourinary system","N00-N98",7663,61807214,12.4
+,"Washington","53","Pregnancy, childbirth and the puerperium","O00-O99",169,61807214,0.3
+,"Washington","53","Certain conditions originating in the perinatal period","P00-P96",1379,61807214,2.2
+,"Washington","53","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1843,61807214,3.0
+,"Washington","53","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",5180,61807214,8.4
+,"Washington","53","Codes for special purposes","U00-U99",13433,61807214,21.7
+,"Washington","53","External causes of morbidity and mortality","V01-Y89",48727,61807214,78.8
+,"Washington","53","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",2825,61807214,4.6
+,"West Virginia","54","Certain infectious and parasitic diseases","A00-B99",4128,14251094,29.0
+,"West Virginia","54","Neoplasms","C00-D48",37381,14251094,262.3
+,"West Virginia","54","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",723,14251094,5.1
+,"West Virginia","54","Endocrine, nutritional and metabolic diseases","E00-E88",12660,14251094,88.8
+,"West Virginia","54","Mental and behavioural disorders","F01-F99",8867,14251094,62.2
+,"West Virginia","54","Diseases of the nervous system","G00-G98",12935,14251094,90.8
+,"West Virginia","54","Diseases of the circulatory system","I00-I99",53083,14251094,372.5
+,"West Virginia","54","Diseases of the respiratory system","J00-J98",19992,14251094,140.3
+,"West Virginia","54","Diseases of the digestive system","K00-K92",8335,14251094,58.5
+,"West Virginia","54","Diseases of the skin and subcutaneous tissue","L00-L98",391,14251094,2.7
+,"West Virginia","54","Diseases of the musculoskeletal system and connective tissue","M00-M99",926,14251094,6.5
+,"West Virginia","54","Diseases of the genitourinary system","N00-N98",5738,14251094,40.3
+,"West Virginia","54","Pregnancy, childbirth and the puerperium","O00-O99",57,14251094,0.4
+,"West Virginia","54","Certain conditions originating in the perinatal period","P00-P96",360,14251094,2.5
+,"West Virginia","54","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",546,14251094,3.8
+,"West Virginia","54","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",3392,14251094,23.8
+,"West Virginia","54","Codes for special purposes","U00-U99",7815,14251094,54.8
+,"West Virginia","54","External causes of morbidity and mortality","V01-Y89",18579,14251094,130.4
+,"West Virginia","54","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",666,14251094,4.7
+,"Wisconsin","55","Certain infectious and parasitic diseases","A00-B99",8197,46989969,17.4
+,"Wisconsin","55","Neoplasms","C00-D48",92514,46989969,196.9
+,"Wisconsin","55","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",1700,46989969,3.6
+,"Wisconsin","55","Endocrine, nutritional and metabolic diseases","E00-E88",23334,46989969,49.7
+,"Wisconsin","55","Mental and behavioural disorders","F01-F99",25522,46989969,54.3
+,"Wisconsin","55","Diseases of the nervous system","G00-G98",35518,46989969,75.6
+,"Wisconsin","55","Diseases of the ear and mastoid process","H60-H93",10,46989969,Unreliable
+,"Wisconsin","55","Diseases of the circulatory system","I00-I99",128517,46989969,273.5
+,"Wisconsin","55","Diseases of the respiratory system","J00-J98",35295,46989969,75.1
+,"Wisconsin","55","Diseases of the digestive system","K00-K92",18170,46989969,38.7
+,"Wisconsin","55","Diseases of the skin and subcutaneous tissue","L00-L98",1108,46989969,2.4
+,"Wisconsin","55","Diseases of the musculoskeletal system and connective tissue","M00-M99",2728,46989969,5.8
+,"Wisconsin","55","Diseases of the genitourinary system","N00-N98",9891,46989969,21.0
+,"Wisconsin","55","Pregnancy, childbirth and the puerperium","O00-O99",110,46989969,0.2
+,"Wisconsin","55","Certain conditions originating in the perinatal period","P00-P96",1322,46989969,2.8
+,"Wisconsin","55","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",1654,46989969,3.5
+,"Wisconsin","55","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",2955,46989969,6.3
+,"Wisconsin","55","Codes for special purposes","U00-U99",15082,46989969,32.1
+,"Wisconsin","55","External causes of morbidity and mortality","V01-Y89",41957,46989969,89.3
+,"Wisconsin","55","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",1999,46989969,4.3
+,"Wyoming","56","Certain infectious and parasitic diseases","A00-B99",807,4651179,17.4
+,"Wyoming","56","Neoplasms","C00-D48",8421,4651179,181.1
+,"Wyoming","56","Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89",186,4651179,4.0
+,"Wyoming","56","Endocrine, nutritional and metabolic diseases","E00-E88",2215,4651179,47.6
+,"Wyoming","56","Mental and behavioural disorders","F01-F99",2163,4651179,46.5
+,"Wyoming","56","Diseases of the nervous system","G00-G98",3050,4651179,65.6
+,"Wyoming","56","Diseases of the circulatory system","I00-I99",11226,4651179,241.4
+,"Wyoming","56","Diseases of the respiratory system","J00-J98",4667,4651179,100.3
+,"Wyoming","56","Diseases of the digestive system","K00-K92",2509,4651179,53.9
+,"Wyoming","56","Diseases of the skin and subcutaneous tissue","L00-L98",138,4651179,3.0
+,"Wyoming","56","Diseases of the musculoskeletal system and connective tissue","M00-M99",387,4651179,8.3
+,"Wyoming","56","Diseases of the genitourinary system","N00-N98",948,4651179,20.4
+,"Wyoming","56","Pregnancy, childbirth and the puerperium","O00-O99",20,4651179,0.4
+,"Wyoming","56","Certain conditions originating in the perinatal period","P00-P96",127,4651179,2.7
+,"Wyoming","56","Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99",169,4651179,3.6
+,"Wyoming","56","Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99",393,4651179,8.4
+,"Wyoming","56","Codes for special purposes","U00-U99",1966,4651179,42.3
+,"Wyoming","56","External causes of morbidity and mortality","V01-Y89",4311,4651179,92.7
+,"Wyoming","56","Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999",270,4651179,5.8
+"---"
+"Dataset: Provisional Mortality Statistics, 2018 through Last Week"
+"Query Parameters:"
+"Group By: Residence State; UCD - ICD Chapter"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/mcd-provisional.html for more information."
+"---"
+"Query Date: Nov 21, 2025 4:06:30 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-2023,"
+"and from provisional data for years 2024 and later, as compiled from data provided by the 57 vital statistics jurisdictions"
+"through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-provisional.html on Nov 21, 2025"
+"4:06:30 PM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"2. Rows with zero Deaths are hidden. Use Quick Options above to show zero rows."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Assurance of Confidentiality."
+"2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Unreliable."
+"3. The population figures for years 2023 and later are single-race estimates of the July 1 resident population, from the Vintage"
+"2023 postcensal series released by the Census Bureau on June 27, 2024. The population figures for years 2022 and later are"
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau"
+"on June 22, 2023. The 2022 and 2023 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the"
+"April 1, 2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population"
+"estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File"
+"(CEF). The population figures for years 2021 are single-race estimates of the July 1 resident population, based on the Blended"
+"Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal"
+"series released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the"
+"July 1 resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on"
+"July 27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the"
+"Vintage 2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population"
+"figures for year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based"
+"on April 2010 Census, released by the Census Bureau on June 20, 2019. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Population Data."
+"4. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the"
+"resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Age"
+"Group."
+"5. Beginning with the 2018 data, changes have been implemented that affect the counts for ICD-10 cause of death codes O00-O99"
+"compared to previous practice. In addition, data for the cause of death codes O00-O99 for 2003 through 2017 reflect differences"
+"in information available to individual states and probable errors. Deaths with the underlying cause classified with O00-O99 are"
+"subject to further processing before these deaths records are considered final. Provisional deaths have not undergone full"
+"processing and review and therefore should not be considered final for statistical purposes. Caution should be used in"
+"interpreting these data. More information can be found at: https://www.cdc.gov/nchs/maternal-mortality/."
+"6. On March 11, 2021, the 2019 mortality data on CDC WONDER was updated with the 2019 mortality data updated by NCHS on March 4,"
+"2021 to include corrected information for residents of Texas affecting 5 records previously coded to cause code *U01.4,"
+"Terrorism involving firearms (homicide). The underlying and multiple cause of death codes for 5 records were corrected in the"
+"2019 data. Underlying and multiple cause of death codes for those 5 records were recoded to Assault (homicide) by other and"
+"unspecified firearm discharge, ICD-10 code X95. The corrected final death records replaces the data released on December 22,"
+"2020."
+"7. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Connecticut-2022."
+"8. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"9. Deaths related to external causes of injury or sudden death: In the provisional mortality data, causes of death classified as"
+"external causes of injury (ICD-10 codes V01-Y89), sudden deaths (ICD-10 codes R95 and R96), or drug poisoning (ICD-10 codes"
+"T36-T50), have the cause of death labeled as 'Data not shown due to 6 month lag to account for delays in death certificate"
+"completion for certain causes of death.' For these deaths occurring 24 weeks prior to the final date in the provisional data,"
+"the number of deaths and related statistics are not available by specific cause of death for ICD-10 codes V01-Y89, R95, R96, or"
+"T36-T50. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#999."
+"10. Deaths occurring through September 20, 2025 as of September 28, 2025."

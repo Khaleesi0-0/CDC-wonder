@@ -1,10 +1,12 @@
 // urban-trends.js
 // Creates the stacked area "trends" visualization powered by the Urban dataset.
 (function () {
-  const localPath = '../Data/Urban.csv';
-   const remotePath = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
+  const urbanLocalPath = '../Data/Urban.csv';
+  const urbanRemotePath = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
+  const ageLocationLocalPath = '../Data/ageLocation.csv';
+  const ageLocationRemotePath = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/refs/heads/main/Data/ageLocation.csv';
 
-  async function loadUrbanCsv() {
+  async function loadWithFallback(localPath, remotePath) {
     async function tryLoad(path) {
       const rows = await d3.csv(path);
       if (!rows || !rows.length) throw new Error('Empty CSV');
@@ -13,20 +15,30 @@
     try {
       return await tryLoad(localPath);
     } catch (err) {
-      console.warn(`Urban trends: local load failed (${err.message}). Trying remote.`);
+      console.warn(`Urban trends: local load failed (${err.message}). Trying remote at ${remotePath}.`);
       return await tryLoad(remotePath);
     }
   }
 
+  async function loadUrbanCsv() {
+    return loadWithFallback(urbanLocalPath, urbanRemotePath);
+  }
+
+  async function loadAgeLocationCsv() {
+    return loadWithFallback(ageLocationLocalPath, ageLocationRemotePath);
+  }
+
   const fieldConfigs = [
-    { id: 'gender', field: 'Sex', label: 'Gender', button: '#gender-button' },
-    { id: 'place', field: 'Residence 2013 Urbanization', label: 'Place', button: '#place-button' },
-    { id: 'ethnicity', field: 'Single Race 6', label: 'Ethnicity', button: '#ethnicity-button' },
-    { id: 'cause', field: 'UCD - ICD Chapter', label: 'Cause Chapter', button: '#cause-button' },
-    { id: 'total', field: null, label: 'Total', button: '#total-button' }
+    { id: 'gender', label: 'Gender', button: '#gender-button', dataset: 'urban', accessor: r => r.sex },
+    { id: 'urbanization', label: 'Urbanization', button: '#urban-button', dataset: 'urban', accessor: r => r.place },
+    { id: 'ethnicity', label: 'Ethnicity', button: '#ethnicity-button', dataset: 'urban', accessor: r => r.race },
+    { id: 'cause', label: 'Cause Chapter', button: '#cause-button', dataset: 'urban', accessor: r => r.cause },
+    { id: 'age', label: 'Age Group', button: '#age-button', dataset: 'agePlace', accessor: r => r.ageGroup },
+    { id: 'placeOfDeath', label: 'Place of Death', button: '#place-death-button', dataset: 'agePlace', accessor: r => r.placeOfDeath },
+    { id: 'total', label: 'Total', button: '#total-button', dataset: 'urban', accessor: null }
   ];
 
-  function normalizeRows(rows) {
+  function normalizeUrbanRows(rows) {
     return rows.map(r => {
       const rawYear = (r.Year || '').toString().trim();
       const fallback = r['Year Code'] ? String(r['Year Code']) : '';
@@ -45,7 +57,26 @@
     }).filter(r => r.year && r.deaths > 0);
   }
 
-  function buildStackData(rows, field, maxSegments = 6) {
+  function normalizeAgeLocationRows(rows) {
+    return rows.map(r => {
+      const rawYear = (r.Year || '').toString().trim();
+      const fallback = r['Year Code'] ? String(r['Year Code']) : '';
+      const label = rawYear || fallback;
+      const numericYearString = label.replace(/[^\d]/g, '');
+      const yearValue = numericYearString ? +numericYearString : +r['Year Code'] || null;
+      const age = (r['Ten-Year Age Groups'] || '').trim();
+      const pod = (r['Place of Death'] || '').trim();
+      return {
+        year: yearValue,
+        yearLabel: label || (yearValue ? String(yearValue) : ''),
+        deaths: +r.Deaths || 0,
+        ageGroup: age || '(missing)',
+        placeOfDeath: pod || '(missing)'
+      };
+    }).filter(r => r.year && r.deaths > 0 && r.ageGroup);
+  }
+
+  function buildStackData(rows, accessor, maxSegments = 6) {
     const rowsGrouped = d3.group(rows, r => r.year);
     const yearsMeta = Array.from(rowsGrouped.keys()).map(year => {
       const groupRows = rowsGrouped.get(year) || [];
@@ -53,23 +84,15 @@
       return { year, label };
     }).sort((a, b) => a.year - b.year);
     const totalByKey = new Map();
-    const fieldAccessor = field
-      ? r => {
-        if (field === 'Sex') return r.sex;
-        if (field === 'Residence 2013 Urbanization') return r.place;
-        if (field === 'Single Race 6') return r.race;
-        if (field === 'UCD - ICD Chapter') return r.cause;
-        return r[field] || '(missing)';
-      }
-      : () => 'Total';
+    const fieldAccessor = accessor ? accessor : () => 'Total';
 
     rows.forEach(r => {
-      const key = field ? (fieldAccessor(r) || '(missing)') : 'Total';
+      const key = accessor ? (fieldAccessor(r) || '(missing)') : 'Total';
       totalByKey.set(key, (totalByKey.get(key) || 0) + r.deaths);
     });
 
     let keys;
-    if (!field) {
+    if (!accessor) {
       keys = ['Total'];
     } else {
       const ordered = Array.from(totalByKey.entries()).sort((a, b) => b[1] - a[1]);
@@ -79,14 +102,14 @@
 
     const data = yearsMeta.map((meta, idx) => {
       const rowsInYear = rowsGrouped.get(meta.year) || [];
-      const sums = d3.rollup(rowsInYear, v => d3.sum(v, d => d.deaths), r => field ? fieldAccessor(r) || '(missing)' : 'Total');
+      const sums = d3.rollup(rowsInYear, v => d3.sum(v, d => d.deaths), r => accessor ? fieldAccessor(r) || '(missing)' : 'Total');
       const entry = { year: meta.year, yearLabel: meta.label, position: idx };
       let otherTotal = 0;
       keys.forEach(key => {
         if (key === 'Other') return;
         entry[key] = sums.get(key) || 0;
       });
-      if (field) {
+      if (accessor) {
         sums.forEach((value, key) => {
           if (!keys.includes(key)) otherTotal += value;
         });
@@ -107,9 +130,26 @@
   }
 
   window.renderUrbanTrends = async function renderUrbanTrends(containerSelector = '#trends-container', preloadedRows = null) {
-    const rowsRaw = preloadedRows && preloadedRows.length ? preloadedRows : await loadUrbanCsv();
-    const rows = normalizeRows(rowsRaw);
-    if (!rows.length) throw new Error('Urban dataset empty for trends module');
+    let urbanRowsRaw = [];
+    let ageLocationRowsRaw = [];
+    try {
+      urbanRowsRaw = preloadedRows && preloadedRows.length ? preloadedRows : await loadUrbanCsv();
+    } catch (err) {
+      console.warn('Urban trends: failed to load urban dataset', err && err.message ? err.message : err);
+    }
+    try {
+      ageLocationRowsRaw = await loadAgeLocationCsv();
+    } catch (err) {
+      console.warn('Urban trends: failed to load age/place dataset', err && err.message ? err.message : err);
+    }
+
+    const datasets = {
+      urban: normalizeUrbanRows(urbanRowsRaw),
+      agePlace: normalizeAgeLocationRows(ageLocationRowsRaw)
+    };
+    if (!datasets.urban.length && !datasets.agePlace.length) {
+      throw new Error('Urban trends datasets empty for trends module');
+    }
 
     const container = d3.select(containerSelector);
     if (container.empty()) return;
@@ -151,6 +191,11 @@
     let currentKeys = [];
     let activeFocusKey = null;
 
+    function getRowsForConfig(cfg) {
+      const datasetId = cfg && cfg.dataset ? cfg.dataset : 'urban';
+      return datasets[datasetId] || [];
+    }
+
     function updateLegend(keys) {
       const items = legend.selectAll('.legend-item').data(keys, d => d);
       const enter = items.enter().append('div').attr('class', 'legend-item');
@@ -170,12 +215,13 @@
       totalsLatest.sort((a, b) => b.value - a.value);
       const totalLatest = latest.total || d3.sum(totalsLatest, d => d.value);
       const top = totalsLatest[0];
-      const messageOne = def.field
-        ? `In ${latest.year}, ${top.key} accounted for ${formatPercent(top.value / totalLatest || 0)} of urban deaths.`
+      const viewLabel = def.dataset === 'urban' ? 'urban deaths' : 'deaths in this view';
+      const messageOne = def.accessor
+        ? `In ${latest.year}, ${top.key} accounted for ${formatPercent(top.value / totalLatest || 0)} of ${viewLabel}.`
         : `In ${latest.year}, total recorded urban deaths reached ${formatNumber(totalLatest)}.`;
 
       const deltas = keys
-        .filter(key => key !== 'Other' || def.field)
+        .filter(key => key !== 'Other' || def.accessor)
         .map(key => ({
           key,
           delta: (latest[key] || 0) - (earliest[key] || 0),
@@ -241,7 +287,7 @@
           `<div><strong>${layer.key}</strong> — ${closest.year}</div>` +
           (closest.yearLabel && closest.yearLabel !== String(closest.year) ? `<div>${closest.yearLabel}</div>` : '') +
           `<div>${formatNumber(value)} deaths</div>` +
-          (activeConfig.field ? `<div>${formatPercent(share)} of year</div>` : '') +
+          (activeConfig.accessor ? `<div>${formatPercent(share)} of year</div>` : '') +
           `<div style="margin-top:4px;font-size:0.75rem;color:#cbd5f5;">Click layer to pin its trend</div>`
         );
     }
@@ -333,7 +379,19 @@
     }
 
     function updateChart() {
-      const { data, keys, yearMeta } = buildStackData(rows, activeConfig.field);
+      const rowsForConfig = getRowsForConfig(activeConfig);
+      if (!rowsForConfig.length) {
+        currentStackData = [];
+        currentKeys = [];
+        legend.selectAll('.legend-item').remove();
+        g.selectAll('.stack-layer').remove();
+        toggleFocusVisibility(false);
+        insightMessages = [];
+        insightText.text('Data unavailable for this view.');
+        return;
+      }
+
+      const { data, keys } = buildStackData(rowsForConfig, activeConfig.accessor);
       if (!data.length) return;
       stack.keys(keys);
       const layers = stack(data);
@@ -414,3 +472,4 @@
     updateChart();
   };
 })();
+
