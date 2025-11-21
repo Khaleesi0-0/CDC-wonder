@@ -6,12 +6,16 @@
     // Use the standard raw.githubusercontent.com pattern: /<owner>/<repo>/<branch>/<path>
     const deathUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/MortalitybyRace.csv";
     const causeUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/deathcause.csv";
+    const stateTotalsUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/stateDeathTotal.csv";
+    const totalStateUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/totalState.csv";
     const usUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-    let Death, Cause, us;
+    let Death, Cause, stateTotals, totalState, us;
     try {
-      [Death, Cause, us] = await Promise.all([
+      [Death, Cause, stateTotals, totalState, us] = await Promise.all([
         d3.csv(deathUrl),
         d3.csv(causeUrl),
+        d3.csv(stateTotalsUrl),
+        d3.csv(totalStateUrl),
         d3.json(usUrl)
       ]);
     } catch (err) {
@@ -30,11 +34,25 @@
       const e = new Error(`Loaded Cause CSV is empty or invalid from: ${causeUrl}`);
       throw e;
     }
+    if (!Array.isArray(stateTotals) || stateTotals.length === 0) {
+      throw new Error(`Loaded state totals CSV is empty or invalid from: ${stateTotalsUrl}`);
+    }
+    if (!Array.isArray(totalState) || totalState.length === 0) {
+      throw new Error(`Loaded cause-state totals CSV is empty or invalid from: ${totalStateUrl}`);
+    }
+
+    function computeCrudeRate(deaths, population, rawRate) {
+      if (Number.isFinite(rawRate)) return rawRate;
+      if (!population) return NaN;
+      return (deaths / population) * 100000;
+    }
 
     const deathData = Death.map(d => {
       const rateRaw = (d["Crude Rate"] ?? "").trim();
-      const rate = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
-
+      const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
+      const deaths = +d["Deaths"] || 0;
+      const population = +d["Population"] || 0;
+      const rate = computeCrudeRate(deaths, population, rateParsed);
       return {
         state: d["Residence State"],
         stateFips: d["Residence State Code"]?.padStart(2, "0"),
@@ -42,12 +60,42 @@
         causeCode: d["UCD - ICD Chapter Code"],
         sex: d["Sex"],
         race: d["Single Race 6"],
-        deaths: +d["Deaths"] || 0,
-        population: +d["Population"] || 0,
+        deaths,
+        population,
         rate
       };
     });
 
-    return { deathData, Cause, us };
+    const stateTotalsData = stateTotals.map(d => {
+      const deaths = +d.Deaths || 0;
+      const population = +d.Population || 0;
+      const rateRaw = (d["Crude Rate"] ?? "").trim();
+      const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
+      return {
+        state: d["Residence State"],
+        stateFips: d["Residence State Code"]?.padStart(2, "0"),
+        deaths,
+        population,
+        rate: computeCrudeRate(deaths, population, rateParsed)
+      };
+    });
+
+    const causeTotalsByState = totalState.map(d => {
+      const deaths = +d.Deaths || 0;
+      const population = +d.Population || 0;
+      const rateRaw = (d["Crude Rate"] ?? "").trim();
+      const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
+      return {
+        state: d["Residence State"],
+        stateFips: d["Residence State Code"]?.padStart(2, "0"),
+        cause: d["UCD - ICD Chapter"],
+        causeCode: d["UCD - ICD Chapter Code"],
+        deaths,
+        population,
+        rate: computeCrudeRate(deaths, population, rateParsed)
+      };
+    });
+
+    return { deathData, Cause, us, stateTotals: stateTotalsData, causeTotalsByState };
   };
 })();

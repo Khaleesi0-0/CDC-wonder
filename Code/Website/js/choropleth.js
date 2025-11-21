@@ -2,7 +2,7 @@
 // Renders a US choropleth into a container using normalized deathData and a topojson 'us' object.
 (function () {
   window.renderChoropleth = function (containerId, deathData, us, options = {}) {
-    const { race = null, sex = null, cause = null, width = 900, height = 600 } = options;
+    const { race = null, sex = null, cause = null, causeLabel = null, width = 900, height = 600 } = options;
 
     // Filter data by selections
     const filtered = deathData.filter(d =>
@@ -72,7 +72,7 @@
       .attr('font-weight', 700)
       .attr('fill', '#222')
       .attr('dominant-baseline', 'middle')
-      .text(cause || 'All causes');
+      .text(causeLabel || cause || 'All causes');
 
     svg.append('text')
       .attr('x', width / 2)

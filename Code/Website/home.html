@@ -370,6 +370,10 @@
         // Render UCD/MCD interactive chart (uses the Cause CSV)
         renderUcdMcd('#timeSeries', data.Cause);
 
+        const ALL_CAUSES = 'All causes';
+        const ALL_RACES = 'All races';
+        const ALL_SEXES = 'All sexes';
+
         // Helper to get unique, sorted values for dropdowns
         function getUniqueSorted(arr, key) {
           return Array.from(new Set(arr.map(d => d[key]).filter(Boolean))).sort();
@@ -389,9 +393,9 @@
         }
 
         // Populate all dropdowns from data, filtering out unwanted cause label
-        const causes = getUniqueSorted(data.deathData, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag'));
-        const races = getUniqueSorted(data.deathData, 'race');
-        const sexes = getUniqueSorted(data.deathData, 'sex');
+        const causes = [ALL_CAUSES].concat(getUniqueSorted(data.deathData, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag')));
+        const races = [ALL_RACES].concat(getUniqueSorted(data.deathData, 'race'));
+        const sexes = [ALL_SEXES].concat(getUniqueSorted(data.deathData, 'sex'));
         populateDropdown('causeSelect', causes);
         populateDropdown('raceSelect', races);
         populateDropdown('sexSelect', sexes);
@@ -401,17 +405,67 @@
           document.getElementById('causeSelect').value = causes[0];
 
         // Render choropleth using normalized deathData and wire controls
+        function computeCrudeRate(deaths, population) {
+          if (!population) return NaN;
+          return (deaths / population) * 100000;
+        }
+
+        function aggregateByState(rows, meta = {}) {
+          const grouped = d3.group(rows, d => d.stateFips);
+          return Array.from(grouped, ([stateFips, stateRows]) => {
+            const deaths = d3.sum(stateRows, d => d.deaths || 0);
+            const population = d3.sum(stateRows, d => d.population || 0);
+            return {
+              state: stateRows[0]?.state,
+              stateFips,
+              cause: meta.cause || null,
+              race: meta.race || null,
+              sex: meta.sex || null,
+              deaths,
+              population,
+              rate: computeCrudeRate(deaths, population)
+            };
+          }).filter(d => d.stateFips);
+        }
+
         function renderMapFromControls(localDeathData) {
           const cause = document.getElementById('causeSelect').value;
           const race = document.getElementById('raceSelect').value;
           const sex = document.getElementById('sexSelect').value;
-          const ddata = localDeathData || data.deathData;
-          const filtered = ddata.filter(d =>
-            (!cause || d.cause === cause) &&
-            (!race || d.race === race) &&
-            (!sex || d.sex === sex)
-          );
-          renderChoropleth('#choropleth', filtered, data.us, { cause, race, sex });
+
+          // Determine dataset based on selections
+          let dataset = [];
+          if (cause === ALL_CAUSES) {
+            dataset = data.stateTotals;
+          } else if (race === ALL_RACES && sex === ALL_SEXES) {
+            dataset = (data.causeTotalsByState || []).filter(d => d.cause === cause);
+            if (!dataset.length) {
+              const base = (localDeathData || data.deathData).filter(d => d.cause === cause);
+              dataset = aggregateByState(base, { cause });
+            }
+          } else {
+            const base = (localDeathData || data.deathData).filter(d =>
+              d.cause === cause &&
+              (race === ALL_RACES || d.race === race) &&
+              (sex === ALL_SEXES || d.sex === sex)
+            );
+            dataset = aggregateByState(base, {
+              cause,
+              race: race === ALL_RACES ? null : race,
+              sex: sex === ALL_SEXES ? null : sex
+            });
+          }
+
+          const causeFilter = cause === ALL_CAUSES ? null : cause;
+          const raceFilter = race === ALL_RACES ? null : race;
+          const sexFilter = sex === ALL_SEXES ? null : sex;
+
+          renderChoropleth('#choropleth', dataset, data.us, {
+            cause: causeFilter,
+            causeLabel: cause,
+            race: raceFilter,
+            sex: sexFilter
+          });
         }
 
         renderMapFromControls();
@@ -424,9 +478,9 @@
 
         // Summary cards
         document.getElementById('total-deaths').textContent = d3.format(',')(d3.sum(data.deathData, d => d.deaths));
-        document.getElementById('unique-causes').textContent = d3.format(',')(new Set(data.deathData.map(d => d.cause)).size);
-        document.getElementById('unique-races').textContent = d3.format(',')(new Set(data.deathData.map(d => d.race)).size);
-        document.getElementById('unique-sexes').textContent = d3.format(',')(new Set(data.deathData.map(d => d.sex)).size);
+        document.getElementById('unique-causes').textContent = d3.format(',')(causes.length - 1); // exclude "All causes"
+        document.getElementById('unique-races').textContent = d3.format(',')(races.length - 1); // exclude "All races"
+        document.getElementById('unique-sexes').textContent = d3.format(',')(sexes.length - 1); // exclude "All sexes"
 
         // Pie chart for deaths by sex
         const pieData = Array.from(d3.rollup(data.deathData, v => d3.sum(v, d => d.deaths), d => d.sex), ([sex, deaths]) => ({ sex, deaths }));
