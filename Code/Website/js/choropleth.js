@@ -70,7 +70,10 @@
       .attr('text-anchor', 'middle')
       .attr('font-size', 18)
       .attr('font-weight', 700)
-      .attr('fill', '#222')
+      .attr('fill', '#f8fafc')
+      .attr('stroke', '#0b1020')
+      .attr('stroke-width', 0.4)
+      .attr('paint-order', 'stroke')
       .attr('dominant-baseline', 'middle')
       .text(causeLabel || cause || 'All causes');
 
@@ -80,21 +83,31 @@
       .attr('text-anchor', 'middle')
       .attr('font-size', 14)
       .attr('font-weight', 500)
-      .attr('fill', '#444')
+      .attr('fill', '#e5e7eb')
       .attr('dominant-baseline', 'middle')
-      .text([race || 'All races', sex || 'All sexes'].filter(Boolean).join(' — '));
+      .text([race || 'All races', sex || 'All sexes'].filter(Boolean).join(' - '));
 
     // Legend using rects for each color bucket, moved to the right below the title
-    const legendG = svg.append('g').attr('transform', `translate(${width - 320}, 70)`);
+    const legendG = svg.append('g').attr('transform', `translate(${width - 340}, 70)`);
+    legendG.append('rect')
+      .attr('x', -10)
+      .attr('y', -18)
+      .attr('width', 320)
+      .attr('height', 64)
+      .attr('fill', 'rgba(5,8,22,0.85)')
+      .attr('stroke', 'rgba(148,163,184,0.35)')
+      .attr('rx', 10);
     const buckets = color.range();
     const legendItemW = 20;
-    legendG.selectAll('rect').data(buckets).join('rect')
+    legendG.selectAll('rect.legend-swatch').data(buckets).join('rect')
+      .attr('class', 'legend-swatch')
       .attr('x', (d, i) => i * (legendItemW + 2))
       .attr('y', 0)
       .attr('width', legendItemW)
       .attr('height', 12)
+      .attr('rx', 0)
       .attr('fill', d => d);
-    legendG.append('text').attr('x', 0).attr('y', -6).text('Crude rate per 100,000').attr('font-size', 11);
+    legendG.append('text').attr('x', 0).attr('y', -6).text('Crude rate per 100,000').attr('font-size', 11).attr('fill', '#e5e7eb');
 
     // Add tick labels under each color
     if (buckets.length > 1) {
@@ -109,7 +122,7 @@
         .attr('y', 36)
         .attr('text-anchor', 'middle')
         .attr('font-size', 10)
-        .attr('fill', '#222')
+        .attr('fill', '#e5e7eb')
         .attr('transform', (d, i) => `rotate(35 ${(i * (legendItemW + 2))},36)`)
         .text((d, i) => d3.format('.1f')(d));
     }

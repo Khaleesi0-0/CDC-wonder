@@ -14,7 +14,7 @@
         console.info('Loaded Urban.csv from local path:', localPath);
         return rows;
       }
-      console.warn('Local Urban.csv loaded but empty — falling back to remote URL');
+      console.warn('Local Urban.csv loaded but empty - falling back to remote URL');
     } catch (err) {
       console.warn(`Could not load local Urban.csv at ${localPath}: ${err.message}`);
     }
@@ -181,9 +181,28 @@
       btns.exit().remove();
     }
 
-    const focusBar = wrapper.append('div').attr('class', 'sunburst-focus').style('display', 'none').style('align-items', 'center').style('gap', '8px').style('margin', '8px 0').style('padding', '6px 14px').style('border-radius', '999px').style('background', 'rgba(15,23,42,0.08)').style('color', '#0f172a');
-    const focusText = focusBar.append('span').style('font-size', '13px');
-    focusBar.append('button').attr('type', 'button').text('Show all').attr('class', 'btn btn-sm btn-outline-secondary').on('click', () => {
+    const focusBar = wrapper.append('div').attr('class', 'sunburst-focus')
+      .style('display', 'none')
+      .style('align-items', 'center')
+      .style('gap', '8px')
+      .style('margin', '8px 0')
+      .style('padding', '6px 14px')
+      .style('border-radius', '999px')
+      .style('background', 'rgba(5,8,22,0.72)')
+      .style('color', '#e5e7eb')
+      .style('border', '1px solid rgba(148,163,184,0.35)')
+      .style('box-shadow', '0 12px 28px rgba(0,0,0,0.35)');
+    const focusText = focusBar.append('span')
+      .style('font-size', '13px')
+      .style('color', '#e5e7eb');
+    focusBar.append('button')
+      .attr('type', 'button')
+      .text('Show all')
+      .attr('class', 'btn btn-sm btn-outline-primary')
+      .style('color', '#e5e7eb')
+      .style('border-color', 'rgba(99,102,241,0.7)')
+      .style('background', 'rgba(99,102,241,0.18)')
+      .on('click', () => {
       focusSelection = null;
       updateChart();
     });
@@ -239,13 +258,15 @@
       .attr('class', 'sunburst-tooltip')
       .style('position', 'absolute')
       .style('pointer-events', 'none')
-      .style('background', '#fff')
-      .style('padding', '6px 10px')
-      .style('border', '1px solid #ccc')
-      .style('border-radius', '4px')
-      .style('box-shadow', '0 4px 12px rgba(0,0,0,0.15)')
+      .style('background', 'rgba(5,8,22,0.95)')
+      .style('padding', '8px 11px')
+      .style('border', '1px solid rgba(148,163,184,0.3)')
+      .style('border-radius', '12px')
+      .style('box-shadow', '0 14px 28px rgba(0,0,0,0.35)')
+      .style('color', '#f8fafc')
       .style('white-space', 'nowrap')
       .style('font-size', '13px')
+      .style('line-height', '1.45')
       .style('display', 'none');
 
     const chartNode = chartDiv.node();
@@ -313,7 +334,7 @@
         .select('span').text(d => d.label);
       crumbs.exit().remove();
       const value = node && node.value ? node.value : total;
-      const share = total ? formatShare(value / total) : '—';
+      const share = total ? formatShare(value / total) : '-';
       crumbPercent.text(`${share} ${yearText}`);
     }
 
@@ -424,8 +445,17 @@
       // Center label showing total for year
       const centerText = g.selectAll('text.center').data([total]);
       centerText.join(
-        enter => enter.append('text').attr('class', 'center').attr('text-anchor', 'middle').attr('dy', '0.35em').style('font-size', '14px').text(d => `Total deaths: ${formatDeaths(d)}`),
+        enter => enter.append('text')
+          .attr('class', 'center')
+          .attr('text-anchor', 'middle')
+          .attr('dy', '0.35em')
+          .style('font-size', '16px')
+          .style('font-weight', '700')
+          .style('fill', '#f8fafc')
+          .style('filter', 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))')
+          .text(d => `Total deaths: ${formatDeaths(d)}`),
         update => update.text(d => `Total deaths: ${formatDeaths(d)}`)
+          .style('fill', '#f8fafc')
       );
 
       updateFocusIndicator(f1);
