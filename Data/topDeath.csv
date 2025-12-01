@@ -1,0 +1,255 @@
+Notes,UCD - ICD Chapter,UCD - ICD Chapter Code,UCD - ICD Sub-Chapter,UCD - ICD Sub-Chapter Code,Deaths,Population,Crude Rate
+,Certain infectious and parasitic diseases,A00-B99,Intestinal infectious diseases,A00-A09,56372,2654817067,2.1
+,Certain infectious and parasitic diseases,A00-B99,Tuberculosis,A16-A19,4425,2654817067,0.2
+,Certain infectious and parasitic diseases,A00-B99,Certain zoonotic bacterial diseases,A20-A28,349,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Other bacterial diseases,A30-A49,346104,2654817067,13
+,Certain infectious and parasitic diseases,A00-B99,Infections with a predominantly sexual mode of transmission,A50-A64,405,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Other spirochaetal diseases,A65-A69,120,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Rickettsioses,A75-A79,235,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Viral infections of the central nervous system,A80-A89,5877,2654817067,0.2
+,Certain infectious and parasitic diseases,A00-B99,Arthropod-borne viral fevers and viral haemorrhagic fevers,A90-A99,984,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Viral infections characterized by skin and mucous membrane lesions,B00-B09,3964,2654817067,0.1
+,Certain infectious and parasitic diseases,A00-B99,Viral hepatitis,B15-B19,26577,2654817067,1
+,Certain infectious and parasitic diseases,A00-B99,Human immunodeficiency virus [HIV] disease,B20-B24,37913,2654817067,1.4
+,Certain infectious and parasitic diseases,A00-B99,Other viral diseases,B25-B34,18291,2654817067,0.7
+,Certain infectious and parasitic diseases,A00-B99,Mycoses,B35-B49,11547,2654817067,0.4
+,Certain infectious and parasitic diseases,A00-B99,Protozoal diseases,B50-B64,2175,2654817067,0.1
+,Certain infectious and parasitic diseases,A00-B99,Helminthiases,B65-B83,140,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,"Pediculosis, acariasis and other infestations",B85-B89,68,2654817067,0
+,Certain infectious and parasitic diseases,A00-B99,Sequelae of infectious and parasitic diseases,B90-B94,5967,2654817067,0.2
+,Certain infectious and parasitic diseases,A00-B99,Other infectious diseases,B99-B99,4163,2654817067,0.2
+,Neoplasms,C00-D48,Malignant neoplasms,C00-C97,4687491,2654817067,176.6
+,Neoplasms,C00-D48,In situ neoplasms,D00-D09,797,2654817067,0
+,Neoplasms,C00-D48,Benign neoplasms,D10-D36,12514,2654817067,0.5
+,Neoplasms,C00-D48,Neoplasms of uncertain or unknown behaviour,D37-D48,110253,2654817067,4.2
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,Nutritional anaemias,D50-D53,3953,2654817067,0.1
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,Haemolytic anaemias,D55-D59,6785,2654817067,0.3
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,Aplastic and other anaemias,D60-D64,33336,2654817067,1.3
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,"Coagulation defects, purpura and other haemorrhagic conditions",D65-D69,21339,2654817067,0.8
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,Other diseases of blood and blood-forming organs,D70-D76,10390,2654817067,0.4
+,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,D50-D89,Certain disorders involving the immune mechanism,D80-D89,13555,2654817067,0.5
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Disorders of thyroid gland,E00-E07,17543,2654817067,0.7
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Diabetes mellitus,E10-E14,735706,2654817067,27.7
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Other disorders of glucose regulation and pancreatic internal secretion,E15-E16,4504,2654817067,0.2
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Disorders of other endocrine glands,E20-E34,6214,2654817067,0.2
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Malnutrition,E40-E46,138374,2654817067,5.2
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Other nutritional deficiencies,E50-E64,3088,2654817067,0.1
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Obesity and other hyperalimentation,E65-E68,72527,2654817067,2.7
+,"Endocrine, nutritional and metabolic diseases",E00-E88,Metabolic disorders,E70-E88,270790,2654817067,10.2
+,Mental and behavioural disorders,F01-F99,"Organic, including symptomatic, mental disorders",F01-F09,888871,2654817067,33.5
+,Mental and behavioural disorders,F01-F99,Mental and behavioural disorders due to psychoactive substance use,F10-F19,142394,2654817067,5.4
+,Mental and behavioural disorders,F01-F99,"Schizophrenia, schizotypal and delusional disorders",F20-F29,5053,2654817067,0.2
+,Mental and behavioural disorders,F01-F99,Mood [affective] disorders,F30-F39,5507,2654817067,0.2
+,Mental and behavioural disorders,F01-F99,"Neurotic, stress-related and somatoform disorders",F40-F48,2282,2654817067,0.1
+,Mental and behavioural disorders,F01-F99,Behavioural syndromes associated with physiological disturbances and physical factors,F50-F59,2563,2654817067,0.1
+,Mental and behavioural disorders,F01-F99,Disorders of adult personality and behaviour,F60-F69,41,2654817067,0
+,Mental and behavioural disorders,F01-F99,Mental retardation,F70-F79,1509,2654817067,0.1
+,Mental and behavioural disorders,F01-F99,Disorders of psychological development,F80-F89,1518,2654817067,0.1
+,Mental and behavioural disorders,F01-F99,Behavioural and emotional disorders with onset usually occurring in childhood and adolescence,F90-F98,268,2654817067,0
+,Mental and behavioural disorders,F01-F99,Unspecified mental disorder,F99-F99,262,2654817067,0
+,Diseases of the nervous system,G00-G98,Inflammatory diseases of the central nervous system,G00-G09,12780,2654817067,0.5
+,Diseases of the nervous system,G00-G98,Systemic atrophies primarily affecting the central nervous system,G10-G14,70042,2654817067,2.6
+,Diseases of the nervous system,G00-G98,Extrapyramidal and movement disorders,G20-G25,314324,2654817067,11.8
+,Diseases of the nervous system,G00-G98,Other degenerative diseases of the nervous system,G30-G31,1342251,2654817067,50.6
+,Diseases of the nervous system,G00-G98,Demyelinating diseases of the central nervous system,G35-G37,37280,2654817067,1.4
+,Diseases of the nervous system,G00-G98,Episodic and paroxysmal disorders,G40-G47,38412,2654817067,1.4
+,Diseases of the nervous system,G00-G98,"Nerve, nerve root and plexus disorders",G50-G58,382,2654817067,0
+,Diseases of the nervous system,G00-G98,Polyneuropathies and other disorders of the peripheral nervous system,G60-G64,7109,2654817067,0.3
+,Diseases of the nervous system,G00-G98,Diseases of myoneural junction and muscle,G70-G72,23212,2654817067,0.9
+,Diseases of the nervous system,G00-G98,Cerebral palsy and other paralytic syndromes,G80-G83,27625,2654817067,1
+,Diseases of the nervous system,G00-G98,Other disorders of the nervous system,G90-G98,109124,2654817067,4.1
+,Diseases of the eye and adnexa,H00-H57,"Disorders of eyelid, lacrimal system and orbit",H00-H05,118,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Disorders of conjunctiva,H10-H11,11,2654817067,Unreliable
+,Diseases of the eye and adnexa,H00-H57,"Disorders of sclera, cornea, iris and ciliary body",H15-H21,23,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Disorders of lens,H25-H27,14,2654817067,Unreliable
+,Diseases of the eye and adnexa,H00-H57,Disorders of choroid and retina,H30-H35,56,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Glaucoma,H40-H40,27,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Disorders of vitreous body and globe,H43-H44,55,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Disorders of optic nerve and visual pathways,H46-H47,14,2654817067,Unreliable
+,Diseases of the eye and adnexa,H00-H57,"Disorders of ocular muscles, binocular movement, accommodation and refraction",H49-H52,61,2654817067,0
+,Diseases of the eye and adnexa,H00-H57,Visual disturbances and blindness,H53-H54,82,2654817067,0
+,Diseases of the ear and mastoid process,H60-H93,Diseases of external ear,H60-H61,74,2654817067,0
+,Diseases of the ear and mastoid process,H60-H93,Diseases of middle ear and mastoid,H65-H74,610,2654817067,0
+,Diseases of the ear and mastoid process,H60-H93,Diseases of inner ear,H80-H83,40,2654817067,0
+,Diseases of the ear and mastoid process,H60-H93,Other disorders of ear,H90-H93,37,2654817067,0
+,Diseases of the circulatory system,I00-I99,Acute rheumatic fever,I00-I02,309,2654817067,0
+,Diseases of the circulatory system,I00-I99,Chronic rheumatic heart diseases,I05-I09,31001,2654817067,1.2
+,Diseases of the circulatory system,I00-I99,Hypertensive diseases,I10-I15,945070,2654817067,35.6
+,Diseases of the circulatory system,I00-I99,Ischaemic heart diseases,I20-I25,2790847,2654817067,105.1
+,Diseases of the circulatory system,I00-I99,Pulmonary heart disease and diseases of pulmonary circulation,I26-I28,149198,2654817067,5.6
+,Diseases of the circulatory system,I00-I99,Other forms of heart disease,I30-I51,1658387,2654817067,62.5
+,Diseases of the circulatory system,I00-I99,Cerebrovascular diseases,I60-I69,1236530,2654817067,46.6
+,Diseases of the circulatory system,I00-I99,"Diseases of arteries, arterioles and capillaries",I70-I78,189964,2654817067,7.2
+,Diseases of the circulatory system,I00-I99,"Diseases of veins, lymphatic vessels and lymph nodes, not elsewhere classified",I80-I89,33752,2654817067,1.3
+,Diseases of the circulatory system,I00-I99,Other and unspecified disorders of the circulatory system,I95-I99,5245,2654817067,0.2
+,Diseases of the respiratory system,J00-J98,Acute upper respiratory infections,J00-J06,1764,2654817067,0.1
+,Diseases of the respiratory system,J00-J98,Influenza and pneumonia,J09-J18,387907,2654817067,14.6
+,Diseases of the respiratory system,J00-J98,Other acute lower respiratory infections,J20-J22,2000,2654817067,0.1
+,Diseases of the respiratory system,J00-J98,Other diseases of upper respiratory tract,J30-J39,5034,2654817067,0.2
+,Diseases of the respiratory system,J00-J98,Chronic lower respiratory diseases,J40-J47,1157172,2654817067,43.6
+,Diseases of the respiratory system,J00-J98,Lung diseases due to external agents,J60-J70,154892,2654817067,5.8
+,Diseases of the respiratory system,J00-J98,Other respiratory diseases principally affecting the interstitium,J80-J84,184626,2654817067,7
+,Diseases of the respiratory system,J00-J98,Suppurative and necrotic conditions of lower respiratory tract,J85-J86,8843,2654817067,0.3
+,Diseases of the respiratory system,J00-J98,Other diseases of pleura,J90-J94,17533,2654817067,0.7
+,Diseases of the respiratory system,J00-J98,Other diseases of the respiratory system,J96-J98,147205,2654817067,5.5
+,Diseases of the digestive system,K00-K92,"Diseases of oral cavity, salivary glands and jaws",K00-K14,2369,2654817067,0.1
+,Diseases of the digestive system,K00-K92,"Diseases of oesophagus, stomach and duodenum",K20-K31,61412,2654817067,2.3
+,Diseases of the digestive system,K00-K92,Diseases of appendix,K35-K38,3430,2654817067,0.1
+,Diseases of the digestive system,K00-K92,Hernia,K40-K46,19192,2654817067,0.7
+,Diseases of the digestive system,K00-K92,Noninfective enteritis and colitis,K50-K52,11615,2654817067,0.4
+,Diseases of the digestive system,K00-K92,Other diseases of intestines,K55-K63,182977,2654817067,6.9
+,Diseases of the digestive system,K00-K92,Diseases of peritoneum,K65-K66,18830,2654817067,0.7
+,Diseases of the digestive system,K00-K92,Diseases of liver,K70-K76,499494,2654817067,18.8
+,Diseases of the digestive system,K00-K92,"Disorders of gallbladder, biliary tract and pancreas",K80-K86,80028,2654817067,3
+,Diseases of the digestive system,K00-K92,Other diseases of the digestive system,K90-K92,80397,2654817067,3
+,Diseases of the skin and subcutaneous tissue,L00-L98,Infections of the skin and subcutaneous tissue,L00-L08,26449,2654817067,1
+,Diseases of the skin and subcutaneous tissue,L00-L98,Bullous disorders,L10-L13,1100,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Dermatitis and eczema,L20-L30,206,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Papulosquamous disorders,L40-L44,392,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Urticaria and erythema,L50-L53,997,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Radiation-related disorders of the skin and subcutaneous tissue,L55-L59,22,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Disorders of skin appendages,L60-L75,220,2654817067,0
+,Diseases of the skin and subcutaneous tissue,L00-L98,Other disorders of the skin and subcutaneous tissue,L80-L98,19276,2654817067,0.7
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Arthropathies,M00-M25,24868,2654817067,0.9
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Systemic connective tissue disorders,M30-M35,26365,2654817067,1
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Dorsopathies,M40-M54,15125,2654817067,0.6
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Soft tissue disorders,M60-M79,25383,2654817067,1
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Osteopathies and chondropathies,M80-M94,30626,2654817067,1.2
+,Diseases of the musculoskeletal system and connective tissue,M00-M99,Other disorders of the musculoskeletal system and connective tissue,M95-M99,28,2654817067,0
+,Diseases of the genitourinary system,N00-N98,Glomerular diseases,N00-N07,7710,2654817067,0.3
+,Diseases of the genitourinary system,N00-N98,Renal tubulo-interstitial diseases,N10-N15,15265,2654817067,0.6
+,Diseases of the genitourinary system,N00-N98,Renal failure,N17-N19,409399,2654817067,15.4
+,Diseases of the genitourinary system,N00-N98,Urolithiasis,N20-N23,6929,2654817067,0.3
+,Diseases of the genitourinary system,N00-N98,Other disorders of kidney and ureter,N25-N28,29332,2654817067,1.1
+,Diseases of the genitourinary system,N00-N98,Other diseases of urinary system,N30-N39,106855,2654817067,4
+,Diseases of the genitourinary system,N00-N98,Diseases of male genital organs,N40-N50,9562,2654817067,0.4
+,Diseases of the genitourinary system,N00-N98,Disorders of breast,N60-N64,913,2654817067,0
+,Diseases of the genitourinary system,N00-N98,Inflammatory diseases of female pelvic organs,N70-N76,1570,2654817067,0.1
+,Diseases of the genitourinary system,N00-N98,Noninflammatory disorders of female genital tract,N80-N98,2501,2654817067,0.1
+,"Pregnancy, childbirth and the puerperium",O00-O99,Pregnancy with abortive outcome,O00-O07,273,2654817067,0
+,"Pregnancy, childbirth and the puerperium",O00-O99,"Oedema, proteinuria and hypertensive disorders in pregnancy, childbirth and the puerperium",O10-O16,513,2654817067,0
+,"Pregnancy, childbirth and the puerperium",O00-O99,Other maternal disorders predominantly related to pregnancy,O20-O29,1396,2654817067,0.1
+,"Pregnancy, childbirth and the puerperium",O00-O99,Maternal care related to the fetus and amniotic cavity and possible delivery problems,O30-O48,255,2654817067,0
+,"Pregnancy, childbirth and the puerperium",O00-O99,Complications of labour and delivery,O60-O75,324,2654817067,0
+,"Pregnancy, childbirth and the puerperium",O00-O99,Complications predominantly related to the puerperium,O85-O92,565,2654817067,0
+,"Pregnancy, childbirth and the puerperium",O00-O99,"Other obstetric conditions, not elsewhere classified",O95-O99,5707,2654817067,0.2
+,Certain conditions originating in the perinatal period,P00-P96,"Newborn affected by maternal factors and by complications of pregnancy, labour and delivery",P00-P04,16587,2654817067,0.6
+,Certain conditions originating in the perinatal period,P00-P96,Disorders related to length of gestation and fetal growth,P05-P08,24671,2654817067,0.9
+,Certain conditions originating in the perinatal period,P00-P96,Birth trauma,P10-P15,147,2654817067,0
+,Certain conditions originating in the perinatal period,P00-P96,Respiratory and cardiovascular disorders specific to the perinatal period,P20-P29,17949,2654817067,0.7
+,Certain conditions originating in the perinatal period,P00-P96,Infections specific to the perinatal period,P35-P39,5931,2654817067,0.2
+,Certain conditions originating in the perinatal period,P00-P96,Haemorrhagic and haematological disorders of newborn,P50-P61,3572,2654817067,0.1
+,Certain conditions originating in the perinatal period,P00-P96,Transitory endocrine and metabolic disorders specific to newborn,P70-P74,71,2654817067,0
+,Certain conditions originating in the perinatal period,P00-P96,Digestive system disorders of newborn,P76-P78,3297,2654817067,0.1
+,Certain conditions originating in the perinatal period,P00-P96,Conditions involving the integument and temperature regulation of newborn,P80-P83,1403,2654817067,0.1
+,Certain conditions originating in the perinatal period,P00-P96,Other disorders originating in the perinatal period,P90-P96,3396,2654817067,0.1
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations of the nervous system,Q00-Q07,9377,2654817067,0.4
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,"Congenital malformations of eye, ear, face and neck",Q10-Q18,39,2654817067,0
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations of the circulatory system,Q20-Q28,23129,2654817067,0.9
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations of the respiratory system,Q30-Q34,2482,2654817067,0.1
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Cleft lip and cleft palate,Q35-Q37,35,2654817067,0
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Other congenital malformations of the digestive system,Q38-Q45,1708,2654817067,0.1
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations of genital organs,Q50-Q56,40,2654817067,0
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations of the urinary system,Q60-Q64,6712,2654817067,0.3
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Congenital malformations and deformations of the musculoskeletal system,Q65-Q79,4599,2654817067,0.2
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,Other congenital malformations,Q80-Q89,9435,2654817067,0.4
+,"Congenital malformations, deformations and chromosomal abnormalities",Q00-Q99,"Chromosomal abnormalities, not elsewhere classified",Q90-Q99,17845,2654817067,0.7
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving the circulatory and respiratory systems,R00-R09,27203,2654817067,1
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving the digestive system and abdomen,R10-R19,5136,2654817067,0.2
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving the skin and subcutaneous tissue,R20-R23,170,2654817067,0
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving the nervous and musculoskeletal systems,R25-R29,1607,2654817067,0.1
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving the urinary system,R30-R39,119,2654817067,0
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,"Symptoms and signs involving cognition, perception, emotional state and behaviour",R40-R46,2120,2654817067,0.1
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Symptoms and signs involving speech and voice,R47-R49,293,2654817067,0
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,General symptoms and signs,R50-R68,109673,2654817067,4.1
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,"Abnormal findings on examination of blood, without diagnosis",R70-R79,280,2654817067,0
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,"Abnormal findings on diagnostic imaging and in function studies, without diagnosis",R90-R94,3051,2654817067,0.1
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",R00-R99,Ill-defined and unknown causes of mortality,R95-R99,135616,2654817067,5.1
+,Codes for special purposes,U00-U99,Provisional assignment of new diseases of uncertain etiology,U00-U49,1046652,2654817067,39.4
+,External causes of morbidity and mortality,V01-Y89,Transport accidents,V01-V99,324380,2654817067,12.2
+,External causes of morbidity and mortality,V01-Y89,Other external causes of accidental injury,W00-X59,1117413,2654817067,42.1
+,External causes of morbidity and mortality,V01-Y89,Intentional self-harm,X60-X84,348785,2654817067,13.1
+,External causes of morbidity and mortality,V01-Y89,Assault,X85-Y09,158161,2654817067,6
+,External causes of morbidity and mortality,V01-Y89,Event of undetermined intent,Y10-Y34,39369,2654817067,1.5
+,External causes of morbidity and mortality,V01-Y89,Legal intervention and operations of war,Y35-Y36,5285,2654817067,0.2
+,External causes of morbidity and mortality,V01-Y89,Complications of medical and surgical care,Y40-Y84,31260,2654817067,1.2
+,External causes of morbidity and mortality,V01-Y89,Sequelae of external causes of morbidity and mortality,Y85-Y89,21100,2654817067,0.8
+,Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.,999--999,Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.,999-999,96229,2654817067,3.6
+---,,,,,,,
+"Dataset: Provisional Mortality Statistics, 2018 through Last Week",,,,,,,
+Query Parameters:,,,,,,,
+Group By: UCD - ICD Chapter; UCD - ICD Sub-Chapter,,,,,,,
+Show Totals: Disabled,,,,,,,
+Show Zero Values: False,,,,,,,
+Show Suppressed: False,,,,,,,
+"Calculate Rates Per: 100,000",,,,,,,
+Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups),,,,,,,
+---,,,,,,,
+Help: See http://wonder.cdc.gov/wonder/help/mcd-provisional.html for more information.,,,,,,,
+---,,,,,,,
+"Query Date: Dec 1, 2025 5:02:31 PM",,,,,,,
+---,,,,,,,
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics",,,,,,,
+"System, Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-2023,",,,,,,,
+"and from provisional data for years 2024 and later, as compiled from data provided by the 57 vital statistics jurisdictions",,,,,,,
+"through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-provisional.html on Dec 1, 2025",,,,,,,
+5:02:31 PM,,,,,,,
+---,,,,,,,
+Messages:,,,,,,,
+1. Totals are not available for these results due to suppression constraints. More Information:,,,,,,,
+http://wonder.cdc.gov/wonder/help/faq.html#Privacy.,,,,,,,
+2. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows.,,,,,,,
+---,,,,,,,
+Caveats:,,,,,,,
+1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:,,,,,,,
+http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Assurance of Confidentiality.,,,,,,,
+2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:,,,,,,,
+http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Unreliable.,,,,,,,
+"3. The population figures for years 2023 and later are single-race estimates of the July 1 resident population, from the Vintage",,,,,,,
+"2023 postcensal series released by the Census Bureau on June 27, 2024. The population figures for years 2022 and later are",,,,,,,
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau",,,,,,,
+"on June 22, 2023. The 2022 and 2023 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the",,,,,,,
+"April 1, 2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population",,,,,,,
+"estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File",,,,,,,
+"(CEF). The population figures for years 2021 are single-race estimates of the July 1 resident population, based on the Blended",,,,,,,
+"Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal",,,,,,,
+"series released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the",,,,,,,
+"July 1 resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on",,,,,,,
+"July 27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the",,,,,,,
+"Vintage 2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population",,,,,,,
+"figures for year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based",,,,,,,
+"on April 2010 Census, released by the Census Bureau on June 20, 2019. More information:",,,,,,,
+http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Population Data.,,,,,,,
+4. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the,,,,,,,
+resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Age,,,,,,,
+Group.,,,,,,,
+"5. Beginning with the 2018 data, changes have been implemented that affect the counts for ICD-10 cause of death codes O00-O99",,,,,,,
+"compared to previous practice. In addition, data for the cause of death codes O00-O99 for 2003 through 2017 reflect differences",,,,,,,
+in information available to individual states and probable errors. Deaths with the underlying cause classified with O00-O99 are,,,,,,,
+subject to further processing before these deaths records are considered final. Provisional deaths have not undergone full,,,,,,,
+processing and review and therefore should not be considered final for statistical purposes. Caution should be used in,,,,,,,
+interpreting these data. More information can be found at: https://www.cdc.gov/nchs/maternal-mortality/.,,,,,,,
+"6. On March 11, 2021, the 2019 mortality data on CDC WONDER was updated with the 2019 mortality data updated by NCHS on March 4,",,,,,,,
+"2021 to include corrected information for residents of Texas affecting 5 records previously coded to cause code *U01.4,",,,,,,,
+Terrorism involving firearms (homicide). The underlying and multiple cause of death codes for 5 records were corrected in the,,,,,,,
+2019 data. Underlying and multiple cause of death codes for those 5 records were recoded to Assault (homicide) by other and,,,,,,,
+"unspecified firearm discharge, ICD-10 code X95. The corrected final death records replaces the data released on December 22,",,,,,,,
+2020,,,,,,,
+"7. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,",,,,,,,
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,",,,,,,,
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former",,,,,,,
+counties are not available for 2022 and later years. More information:,,,,,,,
+http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Connecticut-2022.,,,,,,,
+"8. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death",,,,,,,
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,",,,,,,,
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As",,,,,,,
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400",,,,,,,
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per",,,,,,,
+"100,000 population. These deaths will not be updated on the final mortality datasets.",,,,,,,
+"9. Deaths related to external causes of injury or sudden death: In the provisional mortality data, causes of death classified as",,,,,,,
+"external causes of injury (ICD-10 codes V01-Y89), sudden deaths (ICD-10 codes R95 and R96), or drug poisoning (ICD-10 codes",,,,,,,
+"T36-T50), have the cause of death labeled as 'Data not shown due to 6 month lag to account for delays in death certificate",,,,,,,
+"completion for certain causes of death.' For these deaths occurring 24 weeks prior to the final date in the provisional data,",,,,,,,
+"the number of deaths and related statistics are not available by specific cause of death for ICD-10 codes V01-Y89, R95, R96, or",,,,,,,
+T36-T50. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#999.,,,,,,,
+"10. Deaths occurring through September 20, 2025 as of September 28, 2025.",,,,,,,
