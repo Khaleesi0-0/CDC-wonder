@@ -5,7 +5,7 @@
     // URLs from the user's repo
     // Use the standard raw.githubusercontent.com pattern: /<owner>/<repo>/<branch>/<path>
     const deathUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/MortalitybyRace.csv";
-    const causeUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/deathcause.csv";
+    const causeUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/topDeath.csv";
     const stateTotalsUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/stateDeathTotal.csv";
     const totalStateUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/totalState.csv";
     const stateTrendUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/statedeathtrend.csv";

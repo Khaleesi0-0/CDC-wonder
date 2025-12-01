@@ -2,7 +2,7 @@
 // Renders a US choropleth into a container using normalized deathData and a topojson 'us' object.
 (function () {
   window.renderChoropleth = function (containerId, deathData, us, options = {}) {
-    const { race = null, sex = null, cause = null, causeLabel = null, width = 900, height = 600 } = options;
+    const { race = null, sex = null, cause = null, causeLabel = null, width = 900, height = 600, onStateClick = null } = options;
 
     // Filter data by selections
     const filtered = deathData.filter(d =>
@@ -142,6 +142,13 @@
       .attr('stroke', '#fff')
       .attr('stroke-width', 1)
       .attr('d', path)
+      .style('cursor', onStateClick ? 'pointer' : 'default')
+      .on('click', function (event, d) {
+        if (typeof onStateClick === 'function') {
+          const id = String(d.id).padStart(2, '0');
+          onStateClick(d.properties.name, id);
+        }
+      })
       .on('mouseover', function () { d3.select(this).attr('stroke', '#000').attr('stroke-width', 2); })
       .on('mouseout', function () { d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1); })
       .append('title')

@@ -565,7 +565,7 @@
       try {
         const data = await window.loadMortalityData();
 
-        // Render UCD/MCD interactive chart (uses the Cause CSV)
+        // Render UCD/Sub-Chapter interactive chart (uses the Cause CSV)
         renderUcdMcd('#timeSeries', data.Cause);
 
         const ALL_CAUSES = 'All causes';
@@ -664,7 +664,15 @@
             cause: causeFilter,
             causeLabel: cause,
             race: raceFilter,
-            sex: sexFilter
+            sex: sexFilter,
+            onStateClick: (stateName) => {
+              const stateSelectEl = document.getElementById('stateSelect');
+              if (stateSelectEl) {
+                stateSelectEl.value = stateName;
+                stateSelectEl.dispatchEvent(new Event('change'));
+              }
+              renderStateTrend(stateName);
+            }
           });
         }
 
@@ -685,12 +693,33 @@
         function renderStateTrend(stateName) {
           const container = d3.select('#state-trend-chart');
           container.selectAll('*').remove();
-          const rows = (data.stateTrends || []).filter(d => d.state === stateName);
+          const rows = (data.stateTrends || []).filter(d => d.state === stateName).sort((a, b) => a.year - b.year);
           if (!rows.length) {
             container.append('div').attr('class','text-center text-muted').text('No data for this state.');
             return;
           }
-          const width = 320, height = 300, margin = { top: 20, right: 18, bottom: 32, left: 48 };
+          const width = 320, height = 300, margin = { top: 32, right: 18, bottom: 32, left: 56 };
+          const totalDeaths = d3.sum(rows, d => d.deaths || 0);
+          container.append('div')
+            .attr('class', 'small text-muted mb-1')
+            .text(`${stateName} total deaths (all years): ${d3.format(',')(totalDeaths)}`);
+
+          let trendTooltip = d3.select('body').select('.state-trend-tooltip');
+          if (trendTooltip.empty()) {
+            trendTooltip = d3.select('body').append('div')
+              .attr('class', 'state-trend-tooltip')
+              .style('position', 'absolute')
+              .style('z-index', 2000)
+              .style('background', 'rgba(15,23,42,0.92)')
+              .style('color', '#e5e7eb')
+              .style('padding', '8px 10px')
+              .style('border-radius', '8px')
+              .style('border', '1px solid rgba(148,163,184,0.35)')
+              .style('font-size', '12px')
+              .style('pointer-events', 'none')
+              .style('display', 'none');
+          }
+
           const svg = container.append('svg')
             .attr('width', width)
             .attr('height', height)
@@ -707,6 +736,27 @@
             .attr('stroke', '#2563eb')
             .attr('stroke-width', 2)
             .attr('d', line);
+          svg.selectAll('circle')
+            .data(rows)
+            .join('circle')
+            .attr('cx', d => x(d.year))
+            .attr('cy', d => y(d.rate))
+            .attr('r', 4)
+            .attr('fill', '#38bdf8')
+            .attr('stroke', '#0f172a')
+            .attr('stroke-width', 1)
+            .on('mouseover', function(event, d) {
+              trendTooltip.style('display', 'block')
+                .html(`<strong>${stateName}</strong><br/>Year: ${d.year}<br/>Crude rate: ${d3.format('.1f')(d.rate || 0)}<br/>Deaths: ${d3.format(',')(d.deaths || 0)}`);
+            })
+            .on('mousemove', function(event) {
+              trendTooltip
+                .style('left', (event.pageX + 12) + 'px')
+                .style('top', (event.pageY - 18) + 'px');
+            })
+            .on('mouseout', function() {
+              trendTooltip.style('display', 'none');
+            });
           svg.append('g')
             .attr('transform', `translate(0,${height - margin.bottom})`)
             .call(d3.axisBottom(x).ticks(5).tickFormat(d3.format('d')));
@@ -715,7 +765,7 @@
             .call(d3.axisLeft(y).ticks(4).tickFormat(d3.format('.1f')));
           svg.append('text')
             .attr('x', width / 2)
-            .attr('y', margin.top)
+            .attr('y', margin.top - 12)
             .attr('text-anchor', 'middle')
             .attr('font-size', 12)
             .attr('fill', '#0f172a')

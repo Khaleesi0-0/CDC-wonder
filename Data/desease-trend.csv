@@ -1,0 +1,240 @@
+"Notes","UCD - ICD Chapter","UCD - ICD Chapter Code","Year","Year Code",Deaths,Population,Crude Rate
+,"Certain infectious and parasitic diseases","A00-B99","2018","2018",67971,327167434,20.8
+,"Certain infectious and parasitic diseases","A00-B99","2019","2019",64706,328239523,19.7
+,"Certain infectious and parasitic diseases","A00-B99","2020","2020",68316,329484123,20.7
+,"Certain infectious and parasitic diseases","A00-B99","2021","2021",68562,331893745,20.7
+,"Certain infectious and parasitic diseases","A00-B99","2022","2022",69937,333287557,21.0
+,"Certain infectious and parasitic diseases","A00-B99","2023","2023",69207,334914895,20.7
+,"Certain infectious and parasitic diseases","A00-B99","2024 (provisional)","2024",67897,334914895,20.3
+,"Certain infectious and parasitic diseases","A00-B99","2025 (provisional and partial)","2025",49084,334914895,14.7
+,"Neoplasms","C00-D48","2018","2018",614914,327167434,188.0
+,"Neoplasms","C00-D48","2019","2019",615191,328239523,187.4
+,"Neoplasms","C00-D48","2020","2020",618579,329484123,187.7
+,"Neoplasms","C00-D48","2021","2021",621450,331893745,187.2
+,"Neoplasms","C00-D48","2022","2022",624405,333287557,187.3
+,"Neoplasms","C00-D48","2023","2023",629491,334914895,188.0
+,"Neoplasms","C00-D48","2024 (provisional)","2024",636120,334914895,189.9
+,"Neoplasms","C00-D48","2025 (provisional and partial)","2025",450905,334914895,134.6
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2018","2018",10906,327167434,3.3
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2019","2019",10815,328239523,3.3
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2020","2020",11466,329484123,3.5
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2021","2021",11947,331893745,3.6
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2022","2022",12069,333287557,3.6
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2023","2023",11949,334914895,3.6
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2024 (provisional)","2024",11864,334914895,3.5
+,"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism","D50-D89","2025 (provisional and partial)","2025",8342,334914895,2.5
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2018","2018",133156,327167434,40.7
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2019","2019",140107,328239523,42.7
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2020","2020",164128,329484123,49.8
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2021","2021",171890,331893745,51.8
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2022","2022",174196,333287557,52.3
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2023","2023",169098,334914895,50.5
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2024 (provisional)","2024",171954,334914895,51.3
+,"Endocrine, nutritional and metabolic diseases","E00-E88","2025 (provisional and partial)","2025",124217,334914895,37.1
+,"Mental and behavioural disorders","F01-F99","2018","2018",135426,327167434,41.4
+,"Mental and behavioural disorders","F01-F99","2019","2019",133959,328239523,40.8
+,"Mental and behavioural disorders","F01-F99","2020","2020",148432,329484123,45.0
+,"Mental and behavioural disorders","F01-F99","2021","2021",136344,331893745,41.1
+,"Mental and behavioural disorders","F01-F99","2022","2022",138927,333287557,41.7
+,"Mental and behavioural disorders","F01-F99","2023","2023",133075,334914895,39.7
+,"Mental and behavioural disorders","F01-F99","2024 (provisional)","2024",131356,334914895,39.2
+,"Mental and behavioural disorders","F01-F99","2025 (provisional and partial)","2025",92749,334914895,27.7
+,"Diseases of the nervous system","G00-G98","2018","2018",224937,327167434,68.8
+,"Diseases of the nervous system","G00-G98","2019","2019",233715,328239523,71.2
+,"Diseases of the nervous system","G00-G98","2020","2020",262344,329484123,79.6
+,"Diseases of the nervous system","G00-G98","2021","2021",251546,331893745,75.8
+,"Diseases of the nervous system","G00-G98","2022","2022",264446,333287557,79.3
+,"Diseases of the nervous system","G00-G98","2023","2023",263614,334914895,78.7
+,"Diseases of the nervous system","G00-G98","2024 (provisional)","2024",277632,334914895,82.9
+,"Diseases of the nervous system","G00-G98","2025 (provisional and partial)","2025",204307,334914895,61.0
+,"Diseases of the eye and adnexa","H00-H57","2018","2018",66,327167434,0.0
+,"Diseases of the eye and adnexa","H00-H57","2019","2019",56,328239523,0.0
+,"Diseases of the eye and adnexa","H00-H57","2020","2020",52,329484123,0.0
+,"Diseases of the eye and adnexa","H00-H57","2021","2021",62,331893745,0.0
+,"Diseases of the eye and adnexa","H00-H57","2022","2022",58,333287557,0.0
+,"Diseases of the eye and adnexa","H00-H57","2023","2023",67,334914895,0.0
+,"Diseases of the eye and adnexa","H00-H57","2024 (provisional)","2024",54,334914895,0.0
+,"Diseases of the eye and adnexa","H00-H57","2025 (provisional and partial)","2025",53,334914895,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2018","2018",80,327167434,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2019","2019",90,328239523,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2020","2020",86,329484123,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2021","2021",88,331893745,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2022","2022",96,333287557,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2023","2023",114,334914895,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2024 (provisional)","2024",114,334914895,0.0
+,"Diseases of the ear and mastoid process","H60-H93","2025 (provisional and partial)","2025",93,334914895,0.0
+,"Diseases of the circulatory system","I00-I99","2018","2018",868662,327167434,265.5
+,"Diseases of the circulatory system","I00-I99","2019","2019",874613,328239523,266.5
+,"Diseases of the circulatory system","I00-I99","2020","2020",928741,329484123,281.9
+,"Diseases of the circulatory system","I00-I99","2021","2021",931578,331893745,280.7
+,"Diseases of the circulatory system","I00-I99","2022","2022",941652,333287557,282.5
+,"Diseases of the circulatory system","I00-I99","2023","2023",915973,334914895,273.5
+,"Diseases of the circulatory system","I00-I99","2024 (provisional)","2024",922408,334914895,275.4
+,"Diseases of the circulatory system","I00-I99","2025 (provisional and partial)","2025",656676,334914895,196.1
+,"Diseases of the respiratory system","J00-J98","2018","2018",282641,327167434,86.4
+,"Diseases of the respiratory system","J00-J98","2019","2019",271026,328239523,82.6
+,"Diseases of the respiratory system","J00-J98","2020","2020",270506,329484123,82.1
+,"Diseases of the respiratory system","J00-J98","2021","2021",250835,331893745,75.6
+,"Diseases of the respiratory system","J00-J98","2022","2022",263381,333287557,79.0
+,"Diseases of the respiratory system","J00-J98","2023","2023",261113,334914895,78.0
+,"Diseases of the respiratory system","J00-J98","2024 (provisional)","2024",264752,334914895,79.1
+,"Diseases of the respiratory system","J00-J98","2025 (provisional and partial)","2025",202722,334914895,60.5
+,"Diseases of the digestive system","K00-K92","2018","2018",109780,327167434,33.6
+,"Diseases of the digestive system","K00-K92","2019","2019",112894,328239523,34.4
+,"Diseases of the digestive system","K00-K92","2020","2020",123940,329484123,37.6
+,"Diseases of the digestive system","K00-K92","2021","2021",133859,331893745,40.3
+,"Diseases of the digestive system","K00-K92","2022","2022",132739,333287557,39.8
+,"Diseases of the digestive system","K00-K92","2023","2023",128455,334914895,38.4
+,"Diseases of the digestive system","K00-K92","2024 (provisional)","2024",128495,334914895,38.4
+,"Diseases of the digestive system","K00-K92","2025 (provisional and partial)","2025",89582,334914895,26.7
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2018","2018",5208,327167434,1.6
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2019","2019",5229,328239523,1.6
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2020","2020",5689,329484123,1.7
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2021","2021",6367,331893745,1.9
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2022","2022",7275,333287557,2.2
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2023","2023",7159,334914895,2.1
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2024 (provisional)","2024",6962,334914895,2.1
+,"Diseases of the skin and subcutaneous tissue","L00-L98","2025 (provisional and partial)","2025",4773,334914895,1.4
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2018","2018",13788,327167434,4.2
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2019","2019",14553,328239523,4.4
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2020","2020",15421,329484123,4.7
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2021","2021",16238,331893745,4.9
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2022","2022",16479,333287557,4.9
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2023","2023",16693,334914895,5.0
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2024 (provisional)","2024",17003,334914895,5.1
+,"Diseases of the musculoskeletal system and connective tissue","M00-M99","2025 (provisional and partial)","2025",12220,334914895,3.6
+,"Diseases of the genitourinary system","N00-N98","2018","2018",72526,327167434,22.2
+,"Diseases of the genitourinary system","N00-N98","2019","2019",72871,328239523,22.2
+,"Diseases of the genitourinary system","N00-N98","2020","2020",76772,329484123,23.3
+,"Diseases of the genitourinary system","N00-N98","2021","2021",78968,331893745,23.8
+,"Diseases of the genitourinary system","N00-N98","2022","2022",80382,333287557,24.1
+,"Diseases of the genitourinary system","N00-N98","2023","2023",76899,334914895,23.0
+,"Diseases of the genitourinary system","N00-N98","2024 (provisional)","2024",76811,334914895,22.9
+,"Diseases of the genitourinary system","N00-N98","2025 (provisional and partial)","2025",54807,334914895,16.4
+,"Pregnancy, childbirth and the puerperium","O00-O99","2018","2018",973,327167434,0.3
+,"Pregnancy, childbirth and the puerperium","O00-O99","2019","2019",1103,328239523,0.3
+,"Pregnancy, childbirth and the puerperium","O00-O99","2020","2020",1288,329484123,0.4
+,"Pregnancy, childbirth and the puerperium","O00-O99","2021","2021",1687,331893745,0.5
+,"Pregnancy, childbirth and the puerperium","O00-O99","2022","2022",1263,333287557,0.4
+,"Pregnancy, childbirth and the puerperium","O00-O99","2023","2023",1056,334914895,0.3
+,"Pregnancy, childbirth and the puerperium","O00-O99","2024 (provisional)","2024",998,334914895,0.3
+,"Pregnancy, childbirth and the puerperium","O00-O99","2025 (provisional and partial)","2025",665,334914895,0.2
+,"Certain conditions originating in the perinatal period","P00-P96","2018","2018",10718,327167434,3.3
+,"Certain conditions originating in the perinatal period","P00-P96","2019","2019",10412,328239523,3.2
+,"Certain conditions originating in the perinatal period","P00-P96","2020","2020",9672,329484123,2.9
+,"Certain conditions originating in the perinatal period","P00-P96","2021","2021",9579,331893745,2.9
+,"Certain conditions originating in the perinatal period","P00-P96","2022","2022",10203,333287557,3.1
+,"Certain conditions originating in the perinatal period","P00-P96","2023","2023",10004,334914895,3.0
+,"Certain conditions originating in the perinatal period","P00-P96","2024 (provisional)","2024",10000,334914895,3.0
+,"Certain conditions originating in the perinatal period","P00-P96","2025 (provisional and partial)","2025",6436,334914895,1.9
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2018","2018",9729,327167434,3.0
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2019","2019",9713,328239523,3.0
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2020","2020",9573,329484123,2.9
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2021","2021",9664,331893745,2.9
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2022","2022",10149,333287557,3.0
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2023","2023",9892,334914895,3.0
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2024 (provisional)","2024",10014,334914895,3.0
+,"Congenital malformations, deformations and chromosomal abnormalities","Q00-Q99","2025 (provisional and partial)","2025",6667,334914895,2.0
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2018","2018",32537,327167434,9.9
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2019","2019",32408,328239523,9.9
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2020","2020",34098,329484123,10.3
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2021","2021",34503,331893745,10.4
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2022","2022",34110,333287557,10.2
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2023","2023",33292,334914895,9.9
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2024 (provisional)","2024",31764,334914895,9.5
+,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified","R00-R99","2025 (provisional and partial)","2025",52560,334914895,15.7
+,"Codes for special purposes","U00-U99","2019","2019",27,328239523,0.0
+,"Codes for special purposes","U00-U99","2020","2020",350921,329484123,106.5
+,"Codes for special purposes","U00-U99","2021","2021",416927,331893745,125.6
+,"Codes for special purposes","U00-U99","2022","2022",186579,333287557,56.0
+,"Codes for special purposes","U00-U99","2023","2023",49955,334914895,14.9
+,"Codes for special purposes","U00-U99","2024 (provisional)","2024",31455,334914895,9.4
+,"Codes for special purposes","U00-U99","2025 (provisional and partial)","2025",10787,334914895,3.2
+,"External causes of morbidity and mortality","V01-Y89","2018","2018",245186,327167434,74.9
+,"External causes of morbidity and mortality","V01-Y89","2019","2019",251350,328239523,76.6
+,"External causes of morbidity and mortality","V01-Y89","2020","2020",283705,329484123,86.1
+,"External causes of morbidity and mortality","V01-Y89","2021","2021",312137,331893745,94.0
+,"External causes of morbidity and mortality","V01-Y89","2022","2022",311511,333287557,93.5
+,"External causes of morbidity and mortality","V01-Y89","2023","2023",303858,334914895,90.7
+,"External causes of morbidity and mortality","V01-Y89","2024 (provisional)","2024",275013,334914895,82.1
+,"External causes of morbidity and mortality","V01-Y89","2025 (provisional and partial)","2025",62993,334914895,18.8
+,"Data not shown due to 6 month lag to account for delays in death certificate completion for certain causes of death.","999--999","2025 (provisional and partial)","2025",96229,334914895,28.7
+"---"
+"Dataset: Provisional Mortality Statistics, 2018 through Last Week"
+"Query Parameters:"
+"Group By: UCD - ICD Chapter; Year"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/mcd-provisional.html for more information."
+"---"
+"Query Date: Dec 1, 2025 5:35:14 PM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-2023,"
+"and from provisional data for years 2024 and later, as compiled from data provided by the 57 vital statistics jurisdictions"
+"through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-provisional.html on Dec 1, 2025"
+"5:35:14 PM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"2. Rows with zero Deaths are hidden. Use Quick Options above to show zero rows."
+"3. Rows with suppressed Deaths are hidden. Use Quick Options above to show suppressed rows."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Assurance of Confidentiality."
+"2. Death rates are flagged as Unreliable when the rate is calculated with a numerator of 20 or less. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Unreliable."
+"3. The population figures for years 2023 and later are single-race estimates of the July 1 resident population, from the Vintage"
+"2023 postcensal series released by the Census Bureau on June 27, 2024. The population figures for years 2022 and later are"
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau"
+"on June 22, 2023. The 2022 and 2023 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the"
+"April 1, 2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population"
+"estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File"
+"(CEF). The population figures for years 2021 are single-race estimates of the July 1 resident population, based on the Blended"
+"Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal"
+"series released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the"
+"July 1 resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on"
+"July 27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the"
+"Vintage 2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population"
+"figures for year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based"
+"on April 2010 Census, released by the Census Bureau on June 20, 2019. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Population Data."
+"4. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the"
+"resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Age"
+"Group."
+"5. Beginning with the 2018 data, changes have been implemented that affect the counts for ICD-10 cause of death codes O00-O99"
+"compared to previous practice. In addition, data for the cause of death codes O00-O99 for 2003 through 2017 reflect differences"
+"in information available to individual states and probable errors. Deaths with the underlying cause classified with O00-O99 are"
+"subject to further processing before these deaths records are considered final. Provisional deaths have not undergone full"
+"processing and review and therefore should not be considered final for statistical purposes. Caution should be used in"
+"interpreting these data. More information can be found at: https://www.cdc.gov/nchs/maternal-mortality/."
+"6. On March 11, 2021, the 2019 mortality data on CDC WONDER was updated with the 2019 mortality data updated by NCHS on March 4,"
+"2021 to include corrected information for residents of Texas affecting 5 records previously coded to cause code *U01.4,"
+"Terrorism involving firearms (homicide). The underlying and multiple cause of death codes for 5 records were corrected in the"
+"2019 data. Underlying and multiple cause of death codes for those 5 records were recoded to Assault (homicide) by other and"
+"unspecified firearm discharge, ICD-10 code X95. The corrected final death records replaces the data released on December 22,"
+"2020."
+"7. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-provisional.html#Connecticut-2022."
+"8. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"9. Deaths related to external causes of injury or sudden death: In the provisional mortality data, causes of death classified as"
+"external causes of injury (ICD-10 codes V01-Y89), sudden deaths (ICD-10 codes R95 and R96), or drug poisoning (ICD-10 codes"
+"T36-T50), have the cause of death labeled as 'Data not shown due to 6 month lag to account for delays in death certificate"
+"completion for certain causes of death.' For these deaths occurring 24 weeks prior to the final date in the provisional data,"
+"the number of deaths and related statistics are not available by specific cause of death for ICD-10 codes V01-Y89, R95, R96, or"
+"T36-T50. More information: http://wonder.cdc.gov/wonder/help/mcd-provisional.html#999."
+"10. Deaths occurring through September 20, 2025 as of September 28, 2025."

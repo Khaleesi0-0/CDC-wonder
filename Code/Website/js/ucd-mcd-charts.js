@@ -1,12 +1,11 @@
 // ucd-mcd-charts.js
-// Builds the top UCD chapter bars and bottom MCD cause bars; exposes renderUcdMcd(containerId, data)
+// Builds the top UCD chapter bars and bottom sub-chapter bars; exposes renderUcdMcd(containerId, data)
 (function () {
   window.renderUcdMcd = function (containerId, data) {
     // Ensure numeric fields
     data.forEach(d => {
       d.Deaths = +d.Deaths;
       d.Population = +d.Population;
-      d.Year = +d.Year;
     });
 
     let chapterArray = Array.from(
@@ -33,14 +32,14 @@
 
     const wrapper = container.append('div').style('font-family', 'system-ui, sans-serif');
     wrapper.append('h2')
-      .text('CDC Mortality Data - UCD Chapters and MCD Causes')
+      .text('CDC Mortality Data - UCD Chapters and Sub-Chapters')
       .style('font-size', '2.2rem')
       .style('font-weight', '800')
       .style('margin-bottom', '0.5rem')
       .style('text-align', 'center');
 
     wrapper.append('h3')
-      .text('UCD – ICD Chapter (click to explore causes)')
+      .text('UCD – ICD Chapter (click to explore sub-chapters)')
       .style('font-size', '1.3rem')
       .style('font-weight', '600')
       .style('margin-bottom', '1.5rem')
@@ -119,7 +118,7 @@
       d3.select(this).attr('fill', b => b.chapter === d.chapter ? '#1f77b4' : '#4e79a7');
     });
 
-    // Bottom: MCD causes
+    // Bottom: UCD sub-chapters
     const bottomTitle = wrapper.append('h3')
       .attr('id', 'bottom-title')
       .style('font-size', '1.2rem')
@@ -141,23 +140,27 @@
 
     function updateBottom(selectedChapter) {
       const rowsInChapter = data.filter(d => d['UCD - ICD Chapter'] === selectedChapter);
-      bottomTitle.text(`Top 10 MCD – ICD-10 113 Causes for: ${selectedChapter}`);
+      bottomTitle.text(`Top 10 UCD – ICD Sub-Chapters for: ${selectedChapter}`);
 
-      let causeArray = Array.from(d3.group(rowsInChapter, d => d['MCD - ICD-10 113 Cause List']), ([cause, rows]) => ({ cause, totalDeaths: d3.sum(rows, d => d.Deaths) }))
+      let causeArray = Array.from(
+        d3.group(rowsInChapter, d => d['UCD - ICD Sub-Chapter']),
+        ([subChapter, rows]) => ({ subChapter, totalDeaths: d3.sum(rows, d => d.Deaths) })
+      )
         .sort((a, b) => b.totalDeaths - a.totalDeaths).slice(0, 10);
 
       // Remove parenthetical content from cause labels for display
       function stripParens(str) {
-        return str.replace(/\s*\([^)]*\)/g, '').trim();
+        return (str || '').replace(/\s*\([^)]*\)/g, '').trim();
       }
 
       // Truncate/wrap y-axis labels for readability, add tooltip for full label
       function formatLabel(str) {
+        const safe = str || '';
         const maxLen = 28;
-        return str.length > maxLen ? str.slice(0, maxLen - 1) + '…' : str;
+        return safe.length > maxLen ? safe.slice(0, maxLen - 1) + '…' : safe;
       }
 
-      yCause.domain(causeArray.map(d => stripParens(d.cause)));
+      yCause.domain(causeArray.map(d => stripParens(d.subChapter)));
       xCauseDeaths.domain([0, d3.max(causeArray, d => d.totalDeaths)]).nice();
 
       const yAxisBottom = d3.axisLeft(yCause).tickFormat(formatLabel).tickSizeOuter(0);
@@ -169,19 +172,19 @@
       // Remove numbers from y-axis, add tooltip to bars for numbers
       bottomInner.selectAll('.cause-label').remove();
 
-      const causeBars = bottomInner.selectAll('.cause-bar').data(causeArray, d => d.cause);
+      const causeBars = bottomInner.selectAll('.cause-bar').data(causeArray, d => d.subChapter);
       // Join and attach tooltip events after join
       causeBars.join(
         enter => enter.append('rect')
           .attr('class', 'cause-bar')
           .attr('x', 0)
-          .attr('y', d => yCause(stripParens(d.cause)))
+          .attr('y', d => yCause(stripParens(d.subChapter)))
           .attr('height', yCause.bandwidth())
           .attr('width', d => xCauseDeaths(d.totalDeaths))
           .attr('fill', '#f28e2b')
           .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
-              .html(`<strong>${stripParens(d.cause)}</strong><br/>Total Deaths: ${d3.format(',')(d.totalDeaths)}`);
+              .html(`<strong>${stripParens(d.subChapter)}</strong><br/>Total Deaths: ${d3.format(',')(d.totalDeaths)}`);
             d3.select(this).attr('fill', '#c76a13');
           })
           .on('mousemove', function(event) {
@@ -193,13 +196,13 @@
             d3.select(this).attr('fill', '#f28e2b');
           }),
         update => update.transition().duration(500)
-          .attr('y', d => yCause(stripParens(d.cause)))
+          .attr('y', d => yCause(stripParens(d.subChapter)))
           .attr('height', yCause.bandwidth())
           .attr('width', d => xCauseDeaths(d.totalDeaths))
           .selection()
           .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
-              .html(`<strong>${stripParens(d.cause)}</strong><br/>Total Deaths: ${d3.format(',')(d.totalDeaths)}`);
+              .html(`<strong>${stripParens(d.subChapter)}</strong><br/>Total Deaths: ${d3.format(',')(d.totalDeaths)}`);
             d3.select(this).attr('fill', '#c76a13');
           })
           .on('mousemove', function(event) {
