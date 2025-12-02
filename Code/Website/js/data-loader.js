@@ -9,15 +9,17 @@
     const stateTotalsUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/stateDeathTotal.csv";
     const totalStateUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/totalState.csv";
     const stateTrendUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/statedeathtrend.csv";
+    const diseaseTrendUrl = "https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/desease-trend.csv";
     const usUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-    let Death, Cause, stateTotals, totalState, stateTrend, us;
+    let Death, Cause, stateTotals, totalState, stateTrend, diseaseTrend, us;
     try {
-      [Death, Cause, stateTotals, totalState, stateTrend, us] = await Promise.all([
+      [Death, Cause, stateTotals, totalState, stateTrend, diseaseTrend, us] = await Promise.all([
         d3.csv(deathUrl),
         d3.csv(causeUrl),
         d3.csv(stateTotalsUrl),
         d3.csv(totalStateUrl),
         d3.csv(stateTrendUrl),
+        d3.csv(diseaseTrendUrl),
         d3.json(usUrl)
       ]);
     } catch (err) {
@@ -45,6 +47,9 @@
     if (!Array.isArray(stateTrend) || stateTrend.length === 0) {
       throw new Error(`Loaded state trend CSV is empty or invalid from: ${stateTrendUrl}`);
     }
+    if (!Array.isArray(diseaseTrend) || diseaseTrend.length === 0) {
+      throw new Error(`Loaded disease trend CSV is empty or invalid from: ${diseaseTrendUrl}`);
+    }
 
     function computeCrudeRate(deaths, population, rawRate) {
       if (Number.isFinite(rawRate)) return rawRate;
@@ -52,7 +57,12 @@
       return (deaths / population) * 100000;
     }
 
+    const LAG_TEXT = "data not shown due to 6 month lag";
+
     const deathData = Death.map(d => {
+      const causeLabel = d["UCD - ICD Chapter"] || "";
+      // Drop suppressed/lagged cause rows from visualizations
+      if (causeLabel.toLowerCase().includes(LAG_TEXT)) return null;
       const rateRaw = (d["Crude Rate"] ?? "").trim();
       const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
       const deaths = +d["Deaths"] || 0;
@@ -61,7 +71,7 @@
       return {
         state: d["Residence State"],
         stateFips: d["Residence State Code"]?.padStart(2, "0"),
-        cause: d["UCD - ICD Chapter"],
+        cause: causeLabel,
         causeCode: d["UCD - ICD Chapter Code"],
         sex: d["Sex"],
         race: d["Single Race 6"],
@@ -69,7 +79,7 @@
         population,
         rate
       };
-    });
+    }).filter(Boolean);
 
     const stateTotalsData = stateTotals.map(d => {
       const deaths = +d.Deaths || 0;
@@ -86,6 +96,8 @@
     });
 
     const causeTotalsByState = totalState.map(d => {
+      const causeLabel = d["UCD - ICD Chapter"] || "";
+      if (causeLabel.toLowerCase().includes(LAG_TEXT)) return null;
       const deaths = +d.Deaths || 0;
       const population = +d.Population || 0;
       const rateRaw = (d["Crude Rate"] ?? "").trim();
@@ -93,13 +105,13 @@
       return {
         state: d["Residence State"],
         stateFips: d["Residence State Code"]?.padStart(2, "0"),
-        cause: d["UCD - ICD Chapter"],
+        cause: causeLabel,
         causeCode: d["UCD - ICD Chapter Code"],
         deaths,
         population,
         rate: computeCrudeRate(deaths, population, rateParsed)
       };
-    });
+    }).filter(Boolean);
 
     const stateTrends = stateTrend.map(d => {
       const deaths = +d.Deaths || 0;
@@ -118,6 +130,30 @@
       };
     }).filter(d => d.year);
 
-    return { deathData, Cause, us, stateTotals: stateTotalsData, causeTotalsByState, stateTrends };
+    const diseaseTrends = diseaseTrend.map(d => {
+      const chapter = d["UCD - ICD Chapter"] || "";
+      if (chapter.toLowerCase().includes(LAG_TEXT)) return null;
+      const deaths = +d.Deaths || 0;
+      const population = +d.Population || 0;
+      const rateRaw = (d["Crude Rate"] ?? "").trim();
+      const rateParsed = rateRaw === "" || rateRaw.toLowerCase() === "unreliable" ? NaN : +rateRaw;
+      const year = +d.Year || +d["Year Code"] || null;
+      return {
+        chapter,
+        chapterCode: d["UCD - ICD Chapter Code"],
+        year,
+        yearLabel: d.Year || d["Year Code"],
+        deaths,
+        population,
+        rate: computeCrudeRate(deaths, population, rateParsed)
+      };
+    }).filter(d => d && d.year);
+
+    const filteredCause = (Cause || []).filter(row => {
+      const label = (row["UCD - ICD Chapter"] || "").toLowerCase();
+      return !label.includes(LAG_TEXT);
+    });
+
+    return { deathData, Cause: filteredCause, us, stateTotals: stateTotalsData, causeTotalsByState, stateTrends, diseaseTrends };
   };
 })();
