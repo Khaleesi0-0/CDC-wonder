@@ -106,7 +106,11 @@
 
     bars.on('mouseover', function(event, d) {
       tooltip.style('display', 'block')
-        .html(`<strong>${d.chapter}</strong><br/>Total Deaths: ${d3.format(',')(d.totalDeaths)}`);
+        .html(
+          `<strong>${d.chapter}</strong><br/>` +
+          `Total deaths across all years: ${d3.format(',')(d.totalDeaths)}<br/>` +
+          `<span style="font-size:0.8rem;color:#cbd5f5;">Click to see the leading sub-chapters within this category.</span>`
+        );
       d3.select(this).attr('fill', '#1761a0');
     })
     .on('mousemove', function(event) {

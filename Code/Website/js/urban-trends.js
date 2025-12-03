@@ -287,8 +287,8 @@
           `<div><strong>${layer.key}</strong> — ${closest.year}</div>` +
           (closest.yearLabel && closest.yearLabel !== String(closest.year) ? `<div>${closest.yearLabel}</div>` : '') +
           `<div>${formatNumber(value)} deaths</div>` +
-          (activeConfig.accessor ? `<div>${formatPercent(share)} of year</div>` : '') +
-          `<div style="margin-top:4px;font-size:0.75rem;color:#cbd5f5;">Click layer to pin its trend</div>`
+          (activeConfig.accessor ? `<div>${formatPercent(share)} of all deaths in this year</div>` : '') +
+          `<div style="margin-top:4px;font-size:0.75rem;color:#cbd5f5;">Click this layer to pin its trend in the focus panel.</div>`
         );
     }
 

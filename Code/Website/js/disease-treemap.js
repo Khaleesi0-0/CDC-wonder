@@ -19,8 +19,12 @@
       r.year = +r.year || +r.Year || +r["Year Code"] || 0;
     });
 
-    const latestYear = findLatestYear(rows);
-    const latestRows = rows.filter(r => r.year === latestYear);
+    // Restrict disease trends to the 2018–2025 window used elsewhere on the page.
+    const filteredRows = rows.filter(r => r.year >= 2018 && r.year <= 2025);
+    if (!filteredRows.length) return;
+
+    const latestYear = findLatestYear(filteredRows);
+    const latestRows = filteredRows.filter(r => r.year === latestYear);
 
     const byChapter = Array.from(
       d3.group(latestRows, d => d.chapter || d["UCD - ICD Chapter"]),
@@ -67,9 +71,11 @@
     function renderTrend(chapterName) {
       const trendContainer = d3.select(trendSelector);
       trendContainer.selectAll('*').remove();
-      const series = rows.filter(r => (r.chapter || r["UCD - ICD Chapter"]) === chapterName).sort((a, b) => a.year - b.year);
+      const series = filteredRows
+        .filter(r => (r.chapter || r["UCD - ICD Chapter"]) === chapterName)
+        .sort((a, b) => a.year - b.year);
       if (!series.length) {
-        trendContainer.append('div').attr('class', 'text-muted').text('No trend data for this chapter.');
+        trendContainer.append('div').attr('class', 'text-muted').text('No crude-rate trend available for this chapter.');
         return;
       }
 
@@ -80,26 +86,31 @@
         .style('max-width', '100%')
         .style('height', 'auto');
 
-      const x = d3.scaleBand().domain(series.map(d => d.year)).range([margin.left, trendWidth - margin.right]).padding(0.1);
-      const y = d3.scaleLinear().domain([0, d3.max(series, d => d.rate) || 1]).nice().range([trendHeight - margin.bottom, margin.top]);
+      const years = series.map(d => d.year);
+      const x = d3.scaleLinear()
+        .domain(d3.extent(years))
+        .range([margin.left, trendWidth - margin.right]);
+      const y = d3.scaleLinear()
+        .domain([0, d3.max(series, d => d.rate) || 1])
+        .nice()
+        .range([trendHeight - margin.bottom, margin.top]);
 
-      const area = d3.area()
-        .x(d => x(d.year) + x.bandwidth() / 2)
-        .y0(trendHeight - margin.bottom)
-        .y1(d => y(d.rate))
+      const line = d3.line()
+        .x(d => x(d.year))
+        .y(d => y(d.rate))
         .curve(d3.curveMonotoneX);
 
       svgTrend.append('path')
         .datum(series)
-        .attr('fill', 'rgba(99,102,241,0.18)')
+        .attr('fill', 'none')
         .attr('stroke', '#6366f1')
-        .attr('stroke-width', 2)
-        .attr('d', area);
+        .attr('stroke-width', 2.5)
+        .attr('d', line);
 
       svgTrend.selectAll('circle')
         .data(series)
         .join('circle')
-        .attr('cx', d => x(d.year) + x.bandwidth() / 2)
+        .attr('cx', d => x(d.year))
         .attr('cy', d => y(d.rate))
         .attr('r', 4)
         .attr('fill', '#fbbf24')
@@ -107,7 +118,12 @@
         .attr('stroke-width', 1)
         .on('mouseover', function (event, d) {
           tooltip.style('display', 'block')
-            .html(`<strong>${chapterName}</strong><br/>Year: ${d.yearLabel || d.year}<br/>Crude rate: ${d3.format('.1f')(d.rate || 0)}<br/>Deaths: ${formatDeaths(d.deaths || 0)}`);
+            .html(
+              `<strong>${chapterName}</strong><br/>` +
+              `Year: ${d.yearLabel || d.year}<br/>` +
+              `Crude death rate: ${d3.format('.1f')(d.rate || 0)} per 100,000<br/>` +
+              `Deaths in year: ${formatDeaths(d.deaths || 0)}`
+            );
         })
         .on('mousemove', function (event) {
           tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 18) + 'px');
@@ -116,7 +132,7 @@
 
       svgTrend.append('g')
         .attr('transform', `translate(0,${trendHeight - margin.bottom})`)
-        .call(d3.axisBottom(x).tickFormat(d3.format('d')))
+        .call(d3.axisBottom(x).ticks(years.length).tickFormat(d3.format('d')))
         .selectAll('text')
         .attr('transform', 'rotate(0)')
         .style('text-anchor', 'middle');
@@ -161,7 +177,13 @@
       .on('mouseover', function (event, d) {
         d3.select(this).attr('stroke', '#0f172a').attr('stroke-width', 2);
         tooltip.style('display', 'block')
-          .html(`<strong>${d.data.chapter}</strong><br/>Year: ${d.data.year}<br/>Deaths: ${formatDeaths(d.data.deaths)}<br/>Crude rate: ${d3.format('.1f')(d.data.rate || 0)}`);
+          .html(
+            `<strong>${d.data.chapter}</strong><br/>` +
+            `Latest year: ${d.data.year}<br/>` +
+            `Deaths: ${formatDeaths(d.data.deaths)}<br/>` +
+            `Crude death rate: ${d3.format('.1f')(d.data.rate || 0)} per 100,000<br/>` +
+            `<span style="font-size:0.75rem;color:#cbd5f5;">Click to see this chapter’s trend.</span>`
+          );
       })
       .on('mousemove', function (event) {
         tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 18) + 'px');

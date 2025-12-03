@@ -328,12 +328,12 @@
     <!-- Orientation -->
     <section class="mb-4 content-panel">
       <h2 class="h4">How to read this page</h2>
-      <p class="mb-2">The story flows from a quick national snapshot, to causes, to where and how people die.</p>
+      <p class="mb-2">The story flows from a quick national snapshot, to which causes dominate, to where and how people die.</p>
       <ul class="mb-0">
-        <li><strong>Prelude:</strong> Scan the disease chapter treemap to see which chapters dominate the latest year, then click to view their trend.</li>
-        <li><strong>Chapter 1:</strong> Start with totals and a state-by-state view to see who is most affected.</li>
-        <li><strong>Chapter 2:</strong> Explore secondary causes over time (ICD-10 chapters aligned to the 113 underlying list).</li>
-        <li><strong>Chapters 3 & 4:</strong> Dive into urbanization, age bands, and place of death to understand context.</li>
+        <li><strong>Prelude:</strong> Use the chapter treemap to see which underlying-cause chapters account for the most deaths in the latest year, then click a block to view that chapter’s crude-rate trend over time.</li>
+        <li><strong>Chapter 1:</strong> Start with totals and the state map; filter by cause, race, and sex to see which groups and places carry higher crude death rates.</li>
+        <li><strong>Chapter 2:</strong> Explore leading underlying causes and their sub-chapters; click a chapter bar to reveal its top sub-chapters.</li>
+        <li><strong>Chapters 3 &amp; 4:</strong> Dive into urbanization tiers, ten-year age bands, and place of death to understand where deaths occur and how the burden shifts across people and places.</li>
       </ul>
     </section>
 
@@ -342,18 +342,20 @@
       <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Prelude: Which chapters dominate right now?</h2>
-          <p class="mb-0 text-muted">Latest-year deaths by UCD chapter (click a block to see its crude rate trend). Data: <code>desease-trend.csv</code>.</p>
+          <p class="mb-0 text-muted">Latest-year deaths by underlying-cause ICD-10 chapter. Each rectangle’s area is proportional to deaths; click a chapter to see its crude rate trend across years. Data: <code>desease-trend.csv</code>.</p>
         </div>
         <span class="badge bg-info-subtle text-info fw-semibold">New</span>
       </div>
       <div class="row g-3">
         <div class="col-lg-8">
           <div id="disease-treemap" class="chart"></div>
+          <p class="note mt-2 mb-0">Each block is an ICD-10 underlying-cause chapter; larger blocks correspond to more deaths in the latest year. Hover for details and click to update the trend panel.</p>
         </div>
         <div class="col-lg-4">
           <div class="chart" style="min-height: 340px;">
             <div id="disease-trend"></div>
           </div>
+          <p class="note mt-2 mb-0">The line shows how the selected chapter’s crude death rate has changed over time.</p>
         </div>
       </div>
     </section>
@@ -370,7 +372,7 @@
       <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Chapter 1: National pulse</h2>
-          <p class="mb-0 text-muted">Scan the totals, then filter the map by cause, race, and sex to see who and where the burden falls on.</p>
+          <p class="mb-0 text-muted">Scan the totals, then use the state map to compare crude death rates by cause, race, and sex. Click a state or use the dropdown to see how its deaths and crude rate have changed over time.</p>
         </div>
         <span class="badge bg-primary-subtle text-primary fw-semibold">Baseline</span>
       </div>
@@ -426,7 +428,8 @@
               </div>
             </div>
             <div id="map-title" class="mt-3 mb-2"></div>
-            <div id="choropleth" class="chart mb-3"></div>
+            <div id="choropleth" class="chart mb-2"></div>
+            <p class="note mb-0">Darker shades indicate higher crude death rates for the selected cause, race, and sex. Click a state to sync the trend chart on the right.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
@@ -435,7 +438,7 @@
               <h5 class="mb-0">State trend</h5>
               <select id="stateSelect" class="form-select form-select-sm w-auto"></select>
             </div>
-            <p class="text-muted small mb-2">Annual deaths and crude rates for the selected state.</p>
+            <p class="text-muted small mb-2">Annual deaths and crude death rates (per 100,000) for the selected state.</p>
             <div id="state-trend-chart" style="height:320px;"></div>
           </div>
         </div>
@@ -446,8 +449,8 @@
     <section class="mb-4 content-panel">
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
         <div>
-          <h2 class="h4 mb-1">Chapter 2: Explore secondary causes</h2>
-          <p class="mb-0 text-muted">ICD-10 chapters are aligned to the 113 underlying cause list; hover to see how secondary causes rise and fall week by week.</p>
+          <h2 class="h4 mb-1">Chapter 2: Leading underlying causes</h2>
+          <p class="mb-0 text-muted">Bars rank ICD-10 underlying-cause chapters by total deaths. Click a chapter to display its top sub-chapters and see which specific causes drive the burden within that category.</p>
         </div>
         <span class="badge bg-warning-subtle text-warning fw-semibold">Trend</span>
       </div>
@@ -459,7 +462,7 @@
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Chapter 3: Urban footprint</h2>
-          <p class="mb-0 text-muted">Which urbanization tiers carry the burden for a cause? Drill down with the sunburst.</p>
+          <p class="mb-0 text-muted">Break down deaths by year and up to two categorical fields (for example, urbanization tier, race, sex, or cause chapter). Use the controls above the chart to change the year and categories and see how deaths concentrate across the urban–rural spectrum.</p>
         </div>
         <span class="badge bg-info-subtle text-info fw-semibold">Structure</span>
       </div>
@@ -474,7 +477,7 @@
             <div class="intro-para">
               <h2 class="text-red">Chapter 4: Age and where deaths occur</h2>
               <h5>
-                Track how urban deaths shift between 2018 and 2025. Swap the grouping to compare sex, race, urbanization level, cause chapters, ten-year age bands, or where people pass away - inpatient floors, homes, hospice, or nursing facilities.
+                Track how deaths from the Urban and age–place datasets shift between 2018 and 2025. Swap the grouping to compare sex, race, urbanization level, cause chapters, ten-year age bands, or place of death (for example, inpatient, home, hospice, or nursing facilities).
               </h5>
             </div>
           </div>
@@ -487,8 +490,8 @@
             <div class="section-intro">
               <h1>Urban mortality pathways</h1>
               <h5>
-                This stacked view shows how deaths distribute by urban tier, demographic, age band, cause, and place of death - revealing who is most affected and where life ends.
-                <br><span class="text-em">Swap the grouping on the left; click any layer to isolate its trajectory.</span></br>
+                This stacked area chart shows how deaths accumulate over time and how they split across the selected grouping (urbanization tier, demographic, age band, cause chapter, or place of death).
+                <br><span class="text-em">Use the buttons on the left to change the grouping, and click a colored layer to isolate that group’s trend in the focus panel.</span></br>
               </h5>
             </div>
             <div id="trends-wrapper" class="viz-wrapper">

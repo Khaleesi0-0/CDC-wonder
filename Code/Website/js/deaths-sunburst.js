@@ -400,7 +400,7 @@
       paths.attr('fill', d => getFillColor(d));
       paths.transition().duration(600).attr('d', arc);
 
-      const yearText = selYear ? `in ${selYear}` : 'across all years';
+      const yearText = selYear ? `in ${selYear}` : 'across all available years';
       currentYearText = yearText;
       const denominator = total || 1;
       const showTooltip = (event, d) => {
@@ -410,7 +410,8 @@
         tooltip.style('display', 'block').html(
           `<div><strong>${formatArcLabel(d)}</strong></div>` +
           `<div>${formatDeaths(value)} deaths</div>` +
-          `<div>${shareText} of ${yearText}</div>`
+          `<div>${shareText} of deaths ${yearText}</div>` +
+          `<div style="margin-top:4px;font-size:0.75rem;color:#cbd5f5;">Hover to compare slices; click “Show all” to reset focus.</div>`
         );
         positionTooltip(event);
         updateBreadcrumbDisplay(d, total, yearText);
