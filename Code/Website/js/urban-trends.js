@@ -1,5 +1,3 @@
-// urban-trends.js
-// Creates the stacked area "trends" visualization powered by the Urban dataset.
 (function () {
   const urbanLocalPath = '../Data/Urban.csv';
   const urbanRemotePath = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
@@ -42,9 +40,12 @@
     return rows.map(r => {
       const rawYear = (r.Year || '').toString().trim();
       const fallback = r['Year Code'] ? String(r['Year Code']) : '';
-      const label = rawYear || fallback;
-      const numericYearString = label.replace(/[^\d]/g, '');
+      const baseLabel = rawYear || fallback;
+      const numericYearString = (baseLabel || '').replace(/[^\d]/g, '');
       const yearValue = numericYearString ? +numericYearString : +r['Year Code'] || null;
+      const label = (yearValue === 2024 || yearValue === 2025)
+        ? (baseLabel || '').replace(/\s*\(.*?\)/g, '').trim()
+        : baseLabel;
       return {
         year: yearValue,
         yearLabel: label || (yearValue ? String(yearValue) : ''),
@@ -61,9 +62,12 @@
     return rows.map(r => {
       const rawYear = (r.Year || '').toString().trim();
       const fallback = r['Year Code'] ? String(r['Year Code']) : '';
-      const label = rawYear || fallback;
-      const numericYearString = label.replace(/[^\d]/g, '');
+      const baseLabel = rawYear || fallback;
+      const numericYearString = (baseLabel || '').replace(/[^\d]/g, '');
       const yearValue = numericYearString ? +numericYearString : +r['Year Code'] || null;
+      const label = (yearValue === 2024 || yearValue === 2025)
+        ? (baseLabel || '').replace(/\s*\(.*?\)/g, '').trim()
+        : baseLabel;
       const age = (r['Ten-Year Age Groups'] || '').trim();
       const pod = (r['Place of Death'] || '').trim();
       return {
@@ -323,6 +327,8 @@
       }));
       const fx = d3.scaleLinear().domain(d3.extent(series, d => d.year)).range([0, innerWidthFocus]);
       const fy = d3.scaleLinear().domain([0, d3.max(series, d => d.value) || 1]).nice().range([innerHeightFocus, 0]);
+      const yearTicks = Array.from(new Set(series.map(d => d.year))).sort((a, b) => a - b);
+      const yearLabels = new Map(currentStackData.map(d => [d.year, d.yearLabel || String(d.year)]));
 
       const area = d3.area()
         .curve(d3.curveCatmullRom.alpha(0.5))
@@ -353,7 +359,9 @@
       focusGroup.append('g')
         .attr('class', 'focus-x-axis')
         .attr('transform', `translate(0,${innerHeightFocus})`)
-        .call(d3.axisBottom(fx).tickFormat(d3.format('d')));
+        .call(d3.axisBottom(fx)
+          .tickValues(yearTicks)
+          .tickFormat(year => yearLabels.get(year) || d3.format('d')(year)));
       focusGroup.append('g')
         .attr('class', 'focus-y-axis')
         .call(d3.axisLeft(fy).ticks(4).tickFormat(d => d3.format('.2s')(d).replace('G', 'B')));

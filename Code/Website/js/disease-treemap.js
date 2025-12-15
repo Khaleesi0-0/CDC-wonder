@@ -1,5 +1,3 @@
-// disease-treemap.js
-// Creates a treemap of latest-year deaths by UCD chapter and a linked trend line for the selected chapter.
 (function () {
   function formatDeaths(val) {
     return d3.format(',.0f')(val);

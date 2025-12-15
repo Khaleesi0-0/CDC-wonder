@@ -1,10 +1,7 @@
-// choropleth.js
-// Renders a US choropleth into a container using normalized deathData and a topojson 'us' object.
 (function () {
   window.renderChoropleth = function (containerId, deathData, us, options = {}) {
     const { race = null, sex = null, cause = null, causeLabel = null, width = 900, height = 600, onStateClick = null } = options;
 
-    // Filter data by selections
     const filtered = deathData.filter(d =>
       (race ? d.race === race : true) &&
       (sex ? d.sex === sex : true) &&
@@ -12,36 +9,24 @@
       d.stateFips
     );
 
-    // Map state FIPS -> crude rate
     const byState = new Map(filtered.map(d => [d.stateFips, d.rate]));
 
-
-    // --- Robustly extract state features from TopoJSON ---
-    // Accept both us-atlas (counties-albers-10m) and us-atlas (states-10m) formats
     let states = null;
     if (us.objects.states) {
       states = topojson.feature(us, us.objects.states);
     } else if (us.objects && us.objects.counties && us.objects.nation) {
-      // Try to extract states from counties-albers-10m by merging counties
-      // This fallback is not perfect, but prevents total failure
       states = {type: "FeatureCollection", features: []};
-      // Optionally, you could use topojson.mesh to get state borders only
-      // But for now, skip drawing if not found
     } else {
       container.selectAll('*').remove();
       container.append('div').style('color','red').text('Could not find US states in TopoJSON.');
       return;
     }
 
-    // Use a projection that fits the US features to the SVG area so the map
-    // aligns correctly with legends and controls across screen sizes.
     const projection = d3.geoAlbersUsa();
     const path = d3.geoPath().projection(projection);
 
-    // Reserve top margin before fitting projection so fitSize can use it
     const topMargin = 60;
 
-    // Auto-fit projection to the SVG available drawing area (account for title area)
     projection.fitSize([width, height - topMargin], states);
 
     const values = filtered.map(d => d.rate).filter(v => Number.isFinite(v));
@@ -50,7 +35,6 @@
       .domain(vmin == null ? [0, 1] : [vmin, vmax])
       .range(d3.schemeBlues[9]);
 
-    // Clear container
     const container = d3.select(containerId);
     container.selectAll('*').remove();
 
@@ -62,8 +46,6 @@
       .style('max-width', '100%')
       .style('height', 'auto');
 
-
-    // Title: main (cause) and subtitle (race/sex) on two lines
     svg.append('text')
       .attr('x', width / 2)
       .attr('y', 32)
@@ -87,7 +69,6 @@
       .attr('dominant-baseline', 'middle')
       .text([race || 'All races', sex || 'All sexes'].filter(Boolean).join(' - '));
 
-    // Legend using rects for each color bucket, moved to the right below the title
     const legendG = svg.append('g').attr('transform', `translate(${width - 340}, 70)`);
     legendG.append('rect')
       .attr('x', -10)
@@ -109,10 +90,8 @@
       .attr('fill', d => d);
     legendG.append('text').attr('x', 0).attr('y', -6).text('Crude rate per 100,000').attr('font-size', 11).attr('fill', '#e5e7eb');
 
-    // Add tick labels under each color
     if (buckets.length > 1) {
       const step = (vmax - vmin) / buckets.length;
-      // Show left edge for each bucket, and right edge for last bucket
       const tickValues = Array.from({length: buckets.length + 1}, (_, i) => vmin + i * step);
       legendG.selectAll('text.legend-tick')
         .data(tickValues)

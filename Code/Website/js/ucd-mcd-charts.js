@@ -1,8 +1,5 @@
-// ucd-mcd-charts.js
-// Builds the top UCD chapter bars and bottom sub-chapter bars; exposes renderUcdMcd(containerId, data)
 (function () {
   window.renderUcdMcd = function (containerId, data) {
-    // Ensure numeric fields
     data.forEach(d => {
       d.Deaths = +d.Deaths;
       d.Population = +d.Population;
@@ -16,7 +13,6 @@
         totalPopulation: d3.sum(rows, d => d.Population)
       })
     ).sort((a, b) => b.totalDeaths - a.totalDeaths);
-    // Remove the last five chapters (lowest total deaths)
     if (chapterArray.length > 5) {
       chapterArray = chapterArray.slice(0, chapterArray.length - 5);
     }
@@ -53,10 +49,7 @@
     const yChapter = d3.scaleBand().domain(chapterArray.map(d => d.chapter)).range([0, topInnerHeight]).padding(0.2);
     const xDeaths = d3.scaleLinear().domain([0, d3.max(chapterArray, d => d.totalDeaths)]).nice().range([0, topInnerWidth]);
 
-    // Remove 0 tick from y-axis by customizing tickFormat
-    // Custom y-axis with wrapped/truncated labels and tooltip for full text
     const yAxis = d3.axisLeft(yChapter).tickFormat(d => {
-      // Truncate with ellipsis if too long
       const maxLen = 28;
       return d.length > maxLen ? d.slice(0, maxLen - 1) + '…' : d;
     });
@@ -84,11 +77,8 @@
       .style('cursor', 'pointer')
       .style('filter', 'drop-shadow(0 1px 2px rgba(0,0,0,0.07))');
 
-    // Remove numbers from y-axis, add tooltip to bars for numbers
-    // Remove chapter-labels (numbers at end of bars)
     topInner.selectAll('.chapter-label').remove();
 
-    // Tooltip div
     let tooltip = d3.select('body').select('.ucd-mcd-tooltip');
     if (tooltip.empty()) {
       tooltip = d3.select('body').append('div')
@@ -122,7 +112,6 @@
       d3.select(this).attr('fill', b => b.chapter === d.chapter ? '#1f77b4' : '#4e79a7');
     });
 
-    // Bottom: UCD sub-chapters
     const bottomTitle = wrapper.append('h3')
       .attr('id', 'bottom-title')
       .style('font-size', '1.2rem')
@@ -152,12 +141,10 @@
       )
         .sort((a, b) => b.totalDeaths - a.totalDeaths).slice(0, 10);
 
-      // Remove parenthetical content from cause labels for display
       function stripParens(str) {
         return (str || '').replace(/\s*\([^)]*\)/g, '').trim();
       }
 
-      // Truncate/wrap y-axis labels for readability, add tooltip for full label
       function formatLabel(str) {
         const safe = str || '';
         const maxLen = 28;
@@ -173,11 +160,9 @@
 
       bottomInner.select('.x-axis-bottom').call(d3.axisBottom(xCauseDeaths));
 
-      // Remove numbers from y-axis, add tooltip to bars for numbers
       bottomInner.selectAll('.cause-label').remove();
 
       const causeBars = bottomInner.selectAll('.cause-bar').data(causeArray, d => d.subChapter);
-      // Join and attach tooltip events after join
       causeBars.join(
         enter => enter.append('rect')
           .attr('class', 'cause-bar')

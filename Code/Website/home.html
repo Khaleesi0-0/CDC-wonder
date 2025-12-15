@@ -318,31 +318,28 @@
 </head>
 <body>
   <div class="container py-4">
-    <!-- Header -->
     <header class="hero mb-4">
-      <h1 class="mb-2">Visualizing Mortality Patterns in the U.S.<br><small class="text-white">Trends by Cause, Demographics, and Urbanization (2018-2025)</small></h1>
+      <h1 class="mb-2">Visualizing Mortality Patterns in the U.S.<br><small class="text-white">Trends by Cause, Demographics, and <a href="#definitions" class="text-white">Urbanization</a> (2018-2025)</small></h1>
       <p class="mb-1"><strong>Author:</strong> Khaleesi Chen</p>
       <p class="lead">Understanding how mortality patterns differ across regions, races, and causes of death offers essential insights into public health disparities and emerging threats. This site presents interactive, multi-level visualizations built from CDC WONDER provisional mortality data.</p>
     </header>
 
-    <!-- Orientation -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="overview">
       <h2 class="h4">How to read this page</h2>
       <p class="mb-2">The story flows from a quick national snapshot, to which causes dominate, to where and how people die.</p>
       <ul class="mb-0">
-        <li><strong>Prelude:</strong> Use the chapter treemap to see which underlying-cause chapters account for the most deaths in the latest year, then click a block to view that chapter’s crude-rate trend over time.</li>
-        <li><strong>Chapter 1:</strong> Start with totals and the state map; filter by cause, race, and sex to see which groups and places carry higher crude death rates.</li>
-        <li><strong>Chapter 2:</strong> Explore leading underlying causes and their sub-chapters; click a chapter bar to reveal its top sub-chapters.</li>
-        <li><strong>Chapters 3 &amp; 4:</strong> Dive into urbanization tiers, ten-year age bands, and place of death to understand where deaths occur and how the burden shifts across people and places.</li>
+        <li><a href="#prelude" class="text-decoration-underline text-info"><strong>Prelude:</strong></a> Use the chapter treemap to see which underlying-cause chapters account for the most deaths in the latest year, then click a block to view that chapter’s crude-rate trend over time.</li>
+        <li><a href="#chapter-1" class="text-decoration-underline text-info"><strong>Chapter 1:</strong></a> Start with totals and the state map; filter by cause, race, and sex to see which groups and places carry higher crude death rates.</li>
+        <li><a href="#chapter-2" class="text-decoration-underline text-info"><strong>Chapter 2:</strong></a> Explore leading underlying causes and their sub-chapters; click a chapter bar to reveal its top sub-chapters.</li>
+        <li><strong>Chapters 3 &amp; 4:</strong> <a href="#chapter-3" class="text-decoration-underline text-info">Urban footprint</a> and <a href="#chapter-4" class="text-decoration-underline text-info">Age &amp; place</a> to see how the burden shifts across people and places.</li>
       </ul>
     </section>
 
-    <!-- Prelude: Disease chapter treemap + trend -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="prelude">
       <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Prelude: Which chapters dominate right now?</h2>
-          <p class="mb-0 text-muted">Latest-year deaths by underlying-cause ICD-10 chapter. Each rectangle’s area is proportional to deaths; click a chapter to see its crude rate trend across years. Data: <code>desease-trend.csv</code>.</p>
+          <p class="mb-0 text-muted">Latest-year deaths by underlying-cause <a href="#definitions">ICD-10 chapter</a>. Each rectangle’s area is proportional to deaths; click a chapter to see its crude rate trend across years.</p>
         </div>
         <span class="badge bg-info-subtle text-info fw-semibold">Explore</span>
       </div>
@@ -360,15 +357,13 @@
       </div>
     </section>
 
-    <!-- Data & framing -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="data-framing">
       <h2 class="h4">Data & framing</h2>
-      <p class="note mb-2">CDC WONDER provisional multiple cause of death, 2018-2025 (latest available). Age and place-of-death views come from the <code>ageLocation.csv</code> pull dated Nov 21, 2025.</p>
+      <p class="note mb-2">CDC WONDER provisional multiple cause of death, 2018-2025 (latest available). Age and place-of-death views pull dated Nov 21, 2025.</p>
       <p class="mb-0">Goal: surface how mortality patterns shift by cause, race, sex, age, geography, urbanization, and where deaths occur.</p>
     </section>
 
-    <!-- Chapter 1 -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="chapter-1">
       <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Chapter 1: National pulse</h2>
@@ -443,10 +438,10 @@
           </div>
         </div>
       </div>
+      <div class="mt-2"><a href="#overview" class="text-decoration-underline text-info small">Back to menu</a></div>
     </section>
 
-    <!-- Chapter 2 -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="chapter-2">
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Chapter 2: Leading underlying causes</h2>
@@ -455,10 +450,10 @@
         <span class="badge bg-warning-subtle text-warning fw-semibold">Trend</span>
       </div>
       <div id="timeSeries" class="chart"></div>
+      <div class="mt-2"><a href="#overview" class="text-decoration-underline text-info small">Back to menu</a></div>
     </section>
 
-    <!-- Chapter 3 -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="chapter-3">
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Chapter 3: Urban footprint</h2>
@@ -467,10 +462,10 @@
         <span class="badge bg-info-subtle text-info fw-semibold">Structure</span>
       </div>
       <div id="urban-deaths" class="chart mt-2"></div>
+      <div class="mt-2"><a href="#overview" class="text-decoration-underline text-info small">Back to menu</a></div>
     </section>
 
-    <!-- Urban Trends Section -->
-    <section class="mb-5">
+    <section class="mb-5" id="chapter-4">
       <div class="section trends" data-anchor="trends">
         <div class="slide trends-intro bg-image">
           <div class="bg-opacity">
@@ -496,10 +491,9 @@
             </div>
             <div id="trends-wrapper" class="viz-wrapper">
 
-              <!-- Buttons -->
-              <div id="filter-buttons" class="viz-filter-buttons">
+              <div id="filter-buttons" class="viz-filter-buttons" aria-label="Urbanization filter buttons">
                 <button type="button" id="gender-button">Gender</button>
-                <button type="button" id="urban-button">Urbanization</button>
+                <button type="button" id="urban-button" aria-label="Urbanization filter">Urbanization</button>
                 <button type="button" id="ethnicity-button">Ethnicity</button>
                 <button type="button" id="cause-button">Cause</button>
                 <button type="button" id="age-button">Age</button>
@@ -507,7 +501,6 @@
                 <button type="button" id="total-button">Total</button>
               </div>
 
-              <!--Main Viz Wrap-->
               <div id="stack-chart-content" class="viz-content">
                   <svg class="stack-chart-svg"></svg>
                   <div id="stack-legend">
@@ -521,9 +514,8 @@
                   </div>
               </div>
 
-              <!--Text-->
               <div id="trends-insights-wrapper" class="insights-wrapper">
-                <h2 id="trends-insights-header" class="insights-header">Key Insights</h2>
+                <h2 id="trends-insights-header" class="insights-header">Key Insights — <a href="#definitions" class="text-white text-decoration-underline">Urbanization</a></h2>
                 <div id="trends-text" class="insights-text"></div>
                 <button type="button" id="trends-next" class="insights-next">Next</button>
               </div>
@@ -535,9 +527,9 @@
         </div>
 
       </div>
+      <div class="mt-2"><a href="#overview" class="text-decoration-underline text-info small">Back to menu</a></div>
     </section>
 
-    <!-- Data & Usage Notes -->
     <section class="mb-4 content-panel">
       <h2 class="h4">Methods & reuse notes</h2>
       <ul class="mb-1">
@@ -547,8 +539,7 @@
       </ul>
     </section>
 
-    <!-- Interactive Definitions -->
-    <section class="mb-4 content-panel">
+    <section class="mb-4 content-panel" id="definitions">
       <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
         <div>
           <h2 class="h4 mb-1">Definitions & Notes</h2>
@@ -569,15 +560,14 @@
         <div class="text-muted small mb-1">Definition</div>
         <div id="definition-text" class="fw-semibold">Select a term to view details.</div>
       </div>
+      <div class="mt-2"><a href="#overview" class="text-decoration-underline text-info small">Back to menu</a></div>
     </section>
 
-    <!-- Footer -->
     <footer class="mt-4 mb-5 border-top pt-3">
       <small>Created by Khaleesi Chen - Exploring CDC provisional mortality data (2018-2025).</small>
     </footer>
   </div>
 
-  <!-- Load topojson-client (used by choropleth) and site scripts -->
   <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="js/data-loader.js"></script>
   <script src="js/disease-treemap.js"></script>
@@ -586,29 +576,25 @@
   <script src="js/deaths-sunburst.js"></script>
   <script src="js/urban-trends.js"></script>
   <script>
-    // Initialize page: load remote datasets and render modules
+    // Init charts/data
     (async function () {
       try {
         const data = await window.loadMortalityData();
 
-        // Prelude treemap + trend
         if (window.renderDiseaseTreemap && data.diseaseTrends) {
           renderDiseaseTreemap('#disease-treemap', '#disease-trend', data.diseaseTrends);
         }
 
-        // Render UCD/Sub-Chapter interactive chart (uses the Cause CSV)
         renderUcdMcd('#timeSeries', data.Cause);
 
         const ALL_CAUSES = 'All causes';
         const ALL_RACES = 'All races';
         const ALL_SEXES = 'All sexes';
 
-        // Helper to get unique, sorted values for dropdowns
         function getUniqueSorted(arr, key) {
           return Array.from(new Set(arr.map(d => d[key]).filter(Boolean))).sort();
         }
 
-        // Populate dropdowns
         function populateDropdown(id, values) {
           const sel = document.getElementById(id);
           if (!sel) return;
@@ -621,7 +607,6 @@
           });
         }
 
-        // Populate all dropdowns from data, filtering out unwanted cause label
         const causes = [ALL_CAUSES].concat(getUniqueSorted(data.deathData, 'cause').filter(c => c && !c.includes('Data not shown due to 6 month lag')));
         const races = [ALL_RACES].concat(getUniqueSorted(data.deathData, 'race'));
         const sexes = [ALL_SEXES].concat(getUniqueSorted(data.deathData, 'sex'));
@@ -631,11 +616,9 @@
         populateDropdown('sexSelect', sexes);
         populateDropdown('stateSelect', states);
 
-        // Set default cause to first available if present
         if (causes.length && !document.getElementById('causeSelect').value)
           document.getElementById('causeSelect').value = causes[0];
 
-        // Render choropleth using normalized deathData and wire controls
         function computeCrudeRate(deaths, population) {
           if (!population) return NaN;
           return (deaths / population) * 100000;
@@ -664,7 +647,6 @@
           const race = document.getElementById('raceSelect').value;
           const sex = document.getElementById('sexSelect').value;
 
-          // Determine dataset based on selections
           let dataset = [];
           if (cause === ALL_CAUSES) {
             dataset = data.stateTotals;
@@ -709,13 +691,11 @@
 
         renderMapFromControls();
 
-        // Re-render map when selectors change
         ['causeSelect','raceSelect','sexSelect'].forEach(id => {
           const el = document.getElementById(id);
           if (el) el.addEventListener('change', () => renderMapFromControls());
         });
 
-        // Summary cards
         document.getElementById('total-deaths').textContent = d3.format(',')(d3.sum(data.deathData, d => d.deaths));
         document.getElementById('unique-causes').textContent = d3.format(',')(causes.length - 1); // exclude "All causes"
         document.getElementById('unique-races').textContent = d3.format(',')(races.length - 1); // exclude "All races"
@@ -810,7 +790,6 @@
           stateSelect.addEventListener('change', (e) => renderStateTrend(e.target.value));
         }
 
-        // Initialize Urban deaths sunburst (loads ../Data/Urban.csv)
         let urbanRows = null;
         try {
           urbanRows = await window.renderUrbanDeaths('#urban-deaths');
@@ -826,7 +805,6 @@
           }
         }
 
-        // Interactive definitions for urbanization and cause updates
         const urbanDefs = {
           'Large central metro': 'Counties in metro areas >=1M that contain the largest principal city, are fully the principal city, or have >=250k residents of any principal city.',
           'Large fringe metro': 'Counties in metro areas >=1M that do not qualify as large central metro.',
@@ -836,6 +814,7 @@
           'Noncore': 'Nonmetropolitan counties that are not micropolitan.'
         };
         const causeDefs = {
+          'ICD-10 chapter': 'ICD-10 (International Classification of Diseases, 10th Revision) is a global standard for coding diagnoses, symptoms, and procedures, allowing healthcare systems to classify and track health conditions for billing, public health, and statistical analysis.',
           'New causes 2023': 'Post COVID-19 condition (U09, U09.9) added as contributing causes only.',
           'New causes 2020': 'COVID-19 (U07.1) introduced.',
           'New causes 2019': 'Vaping related disorder (U07.0) introduced.',

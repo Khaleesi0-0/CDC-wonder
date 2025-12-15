@@ -1,13 +1,8 @@
-// deaths-sunburst.js
-// Interactive sunburst/donut for Urban dataset using 'Deaths' as the value.
 (function () {
   async function loadUrbanData() {
-    // Attempt to load Urban.csv relative to the Website folder first.
-    // If that fails (not served locally), fall back to the raw GitHub URL provided by the user.
     const localPath = '../../Data/Urban.csv';
     const fallbackUrl = 'https://raw.githubusercontent.com/Khaleesi0-0/CDC-wonder/main/Data/Urban.csv';
 
-    // Try local path
     try {
       const rows = await d3.csv(localPath);
       if (rows && rows.length > 0) {
@@ -19,7 +14,6 @@
       console.warn(`Could not load local Urban.csv at ${localPath}: ${err.message}`);
     }
 
-    // Try fallback remote URL
     try {
       const rows = await d3.csv(fallbackUrl);
       if (!rows || rows.length === 0) throw new Error('Empty or missing Urban.csv at remote URL');
@@ -35,6 +29,15 @@
     const exclude = new Set(['Deaths', 'deaths', 'Population', 'population', 'rate', 'Rate', 'year', 'Year', 'Notes']);
     return Object.keys(sample).filter(k => !exclude.has(k) && typeof sample[k] !== 'undefined');
   }
+
+  const cleanYearLabel = (label) => {
+    const txt = (label || '').toString().trim();
+    const match = txt.match(/^(\d{4})/);
+    if (!match) return txt;
+    const yearNum = +match[1];
+    if (yearNum === 2024 || yearNum === 2025) return match[1];
+    return txt;
+  };
 
   const isCauseField = field => typeof field === 'string' && /(cause|icd)/i.test(field);
   const otherCauseLabel = 'All other causes';
@@ -63,7 +66,6 @@
   function buildHierarchy(rows, f1, f2) {
     const root = { name: 'root', children: [] };
     if (!f1) {
-      // total
       const total = sumDeaths(rows);
       root.value = total;
       return root;
@@ -96,8 +98,7 @@
     wrapper.append('div').attr('class', 'section-intro').html('<h1>Understanding Urban Deaths</h1><h5>Break down <strong>Deaths</strong> by year and up to two categorical variables. Select up to 2 filters to explore the distribution.</h5>');
 
     const controls = wrapper.append('div').attr('id', 'urban-controls').style('margin', '12px 0');
-    // Year selector built from data
-    const years = Array.from(new Set(rows.map(r => r.Year || r.year))).filter(Boolean).sort();
+    const years = Array.from(new Set(rows.map(r => cleanYearLabel(r.Year || r.year)))).filter(Boolean).sort();
     const defaultYear = years.includes('2015') ? '2015' : years[0] || null;
     const defaultIndex = Math.max(0, years.indexOf(defaultYear));
     const sliderBlock = controls.append('div').attr('class', 'year-slider-control').style('margin-bottom', '16px').style('max-width', '360px');
@@ -151,8 +152,8 @@
     const labelMap = {
       'Sex': 'Gender',
       'Sex Code': 'Gender Code',
-      'Residence 2013 Urbanization': 'Place',
-      'Residence 2013 Urbanization Code': 'Place Code',
+      'Residence 2013 Urbanization': 'Urbanization',
+      'Residence 2013 Urbanization Code': 'Urbanization Code',
       'Single Race 6': 'Ethnicity',
       'Single Race 6 Code': 'Ethnicity Code',
       'UCD - ICD Chapter': 'Cause Chapter',
@@ -168,7 +169,6 @@
       const enter = btns.enter().append('button').attr('type', 'button').text(d => fieldLabel(d)).attr('class', 'btn btn-outline-secondary').style('padding', '6px 10px');
       enter.merge(btns).on('click', function (event, d) {
         if (d === 'Total') { selected = []; buttons.selectAll('button').classed('active', false).style('background', null).style('color', null); updateChart(); return; }
-        // toggle selection; limit to 2
         const field = d;
         if (selected.includes(field)) selected = selected.filter(x => x !== field);
         else {
@@ -217,20 +217,19 @@
     insights.append('h4').text('Suggested Explorations');
     insights.append('div').html(
       '<ul>' +
-      '<li>Pick a <strong>year</strong>, then toggle <strong>Place</strong> and <strong>Cause Chapter</strong> to expose how geography reshapes the leading causes.</li>' +
+      '<li>Pick a <strong>year</strong>, then toggle <strong><a href="#definitions" class="text-white text-decoration-underline">Urbanization</a></strong> and <strong>Cause Chapter</strong> to expose how geography reshapes the leading causes.</li>' +
       '<li>Layer <strong>Ethnicity</strong> with <strong>Gender</strong> to surface disproportional burdens across demographic groups.</li>' +
       '<li>Use <strong>Focus</strong> on a single segment to isolate its share and see how the inner ring reallocates.</li>' +
       '</ul>'
     );
 
-    // Setup SVG
     const width = 700, height = 500, radius = Math.min(width, height) / 2;
     const svg = chartDiv.append('svg').attr('width', width).attr('height', height).style('max-width', '100%');
     const g = svg.append('g').attr('transform', `translate(${width / 2},${height / 2})`);
 
     const partition = d3.partition().size([2 * Math.PI, radius]);
     const arc = d3.arc().startAngle(d => d.x0).endAngle(d => d.x1).innerRadius(d => d.y0).outerRadius(d => d.y1 - 1);
-    // Paul Tol + Okabe-Ito inspired palette; tuned for color-blind accessibility.
+    // Colorblind-friendly palette.
     const paletteLevel1 = ['#4477AA', '#66CCEE', '#228833', '#CCBB44', '#EE6677', '#AA3377', '#BBBBBB', '#882255', '#44AA99', '#117733', '#999933', '#DDCC77'];
     const colorLevel1 = d3.scaleOrdinal(paletteLevel1);
     const getChildTintColor = (node) => {
@@ -372,10 +371,9 @@
     function updateChart() {
       hideTooltip();
       hoverNode = null;
-      // filter rows by selected year
       const selYear = getSelectedYear();
       sliderValue.text(selYear || '');
-      let rowsYear = selYear ? rows.filter(r => (r.Year || r.year) == selYear) : rows;
+      let rowsYear = selYear ? rows.filter(r => cleanYearLabel(r.Year || r.year) == selYear) : rows;
       const f1 = selected[0] || null;
       const f2 = selected[1] || null;
       if (!f1) focusSelection = null;
@@ -443,7 +441,6 @@
         if (d.depth === 1) toggleFocusFromNode(d, f1);
       });
 
-      // Center label showing total for year
       const centerText = g.selectAll('text.center').data([total]);
       centerText.join(
         enter => enter.append('text')
@@ -466,21 +463,17 @@
       }
     }
 
-    // wire year selector change
     d3.select('#urban-year-select').on('change', () => updateChart());
 
     updateButtons();
     updateChart();
   }
 
-  // Expose initializer: containerSelector is a selector for a wrapper div where the module will create its UI
   window.renderUrbanDeaths = async function (containerSelector = '#urban-deaths') {
     const rows = await loadUrbanData();
-    // Normalize numeric fields if needed
     rows.forEach(r => {
       if (r.Deaths) r.Deaths = +r.Deaths;
       if (r.deaths) r.Deaths = +r.deaths;
-      // Remove any properties that end with 'Code' (case-insensitive) and any 'Crude Rate' field
       Object.keys(r).forEach(k => {
         if (/code$/i.test(k) || /crude rate/i.test(k)) delete r[k];
       });
