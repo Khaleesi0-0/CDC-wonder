@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Rationale & Implementation Notes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #050816; color: #e5e7eb; font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif; }
+    a { color: #a5b4fc; }
+    .content { max-width: 1000px; margin: 40px auto; padding: 24px; background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(11,16,32,0.9)); border: 1px solid rgba(148,163,184,0.2); border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+    h1, h2, h3 { color: #f8fafc; }
+    .badge-tag { background: rgba(99,102,241,0.18); border: 1px solid rgba(99,102,241,0.35); color: #c7d2fe; border-radius: 999px; padding: 0.35rem 0.8rem; font-weight: 700; }
+    .section { margin-bottom: 28px; }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-2">
+      <div>
+        <h1 class="h3 mb-1">Design Rationale & Implementation Notes</h1>
+        <div class="text-muted">Context for the CDC WONDER mortality visuals</div>
+      </div>
+      <a href="home.html" class="badge-tag text-decoration-none">Back to main view</a>
+    </div>
+
+    <div class="section">
+      <h2 class="h4">Design rationale</h2>
+      <p><strong>Data abstractions:</strong> The page treats mortality data as linked slices of a multi-dimensional cube: time, geography (nation &amp; state), demographic groups (race, sex, age bands), causes (ICD-10 chapters/sub-chapters), and contextual place (urbanization tier, place of death). Each chart reveals one projection of that cube while keeping others available through filters.</p>
+      <p><strong>Task abstractions:</strong> Readers need to (1) locate where burden concentrates, (2) compare groups over time, and (3) drill from broad categories to specifics. The treemap shows current composition (part-to-whole), the state choropleth shows spatial variation, bars rank leading causes, the stacked area and sunburst show how shares shift across categories and time.</p>
+      <p><strong>Encodings and visual choices:</strong> Color hue encodes categorical groups (chapters, urbanization tiers, demographics), while luminance encodes magnitude where appropriate (choropleth). Position along axes encodes time; area encodes part-to-whole (treemap, sunburst, stacked area). Legends, breadcrumbs, and tooltips provide low-friction reading without overwhelming labels.</p>
+      <p><strong>Layout:</strong> Sections follow a narrative arc—composition (Prelude), geographic baselines (Chapter 1), ranked causes (Chapter 2), structural context (Chapter 3), and temporal/setting detail (Chapter 4). Each section keeps controls close to its visualization to reduce context switching.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="h4">Chosen visualization examples</h2>
+      <ul class="mb-0">
+        <li><strong>Treemap + trend (Prelude):</strong> Reveals current composition and lets users click to see temporal behavior of a category.</li>
+        <li><strong>Choropleth + state trend (Chapter 1):</strong> Pairs spatial comparison with a linked time series for selected states.</li>
+        <li><strong>Ranked bars (Chapter 2):</strong> Prioritizes comparison of leading underlying causes with sub-chapter drill-down.</li>
+        <li><strong>Stacked area + focus (Chapter 4):</strong> Shows how totals accumulate over time while allowing isolation of a single group’s trajectory.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="h4">Implementation spotlight: Urban mortality pathways</h2>
+      <p><strong>Why highlight:</strong> It combines multi-dimensional filtering (demographic, cause, urbanization, age, place-of-death) with linked focus and insights.</p>
+      <p><strong>Data prep:</strong> <code>urban-trends.js</code> normalizes the Urban and ageLocation CSVs into tidy rows with <code>year</code>, <code>deaths</code>, and category fields. It builds a stacked dataset via <code>d3.stack</code>, limiting segments and merging tails into “Other” to keep the legend readable.</p>
+      <p><strong>Rendering:</strong> A stacked area chart uses position for time and area for contribution. Hover shows a tooltip and a vertical guide line; click pins a layer and renders a mini focus chart below using the same color for continuity.</p>
+      <p><strong>Interaction architecture:</strong> Filter buttons switch the active accessor (gender, urbanization, ethnicity, cause, age, place of death, total). The same update routine rebuilds scales, stack keys, legend, insights, and focus state, keeping state management centralized.</p>
+      <p><strong>Feedback elements:</strong> Insight text summarizes dominant segments and biggest movers between first and latest years; legend swatches mirror layer colors; the focus chart shares the x-domain so pinned lines align temporally with the main view.</p>
+    </div>
+  </div>
+</body>
+</html>
