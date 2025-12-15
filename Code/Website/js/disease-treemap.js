@@ -199,14 +199,14 @@
       .attr('font-weight', 800)
       .text(d => `${formatDeaths(d.data.deaths)}`);
 
-    nodes.append('text')
-      .attr('x', 10)
-      .attr('y', 42)
-      .attr('fill', '#0b1020')
-      .attr('font-size', 13)
-      .attr('font-weight', 600)
-      .attr('dy', 4)
-      .text(d => d.data.chapter);
+  nodes.append('text')
+    .attr('x', 10)
+    .attr('y', 42)
+    .attr('fill', '#0b1020')
+    .attr('font-size', 15)
+    .attr('font-weight', 600)
+    .attr('dy', 4)
+    .text(d => d.data.chapter);
 
     // Render initial trend for the largest chapter
     if (byChapter.length) {

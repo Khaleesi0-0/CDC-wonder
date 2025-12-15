@@ -6,49 +6,278 @@
   <title>Design Rationale & Implementation Notes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { background: #050816; color: #e5e7eb; font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif; }
-    a { color: #a5b4fc; }
-    .content { max-width: 1000px; margin: 40px auto; padding: 24px; background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(11,16,32,0.9)); border: 1px solid rgba(148,163,184,0.2); border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.45); }
+    :root {
+      --ink: #050816;
+      --panel: rgba(13, 18, 35, 0.9);
+      --panel-2: rgba(17, 24, 45, 0.62);
+      --edge: rgba(148, 163, 184, 0.35);
+      --accent: #a5b4fc;
+      --accent-strong: #7c3aed;
+      --soft: #e5e7eb;
+    }
+    body {
+      background: radial-gradient(circle at 20% 18%, rgba(57, 115, 255, 0.12), transparent 25%),
+                  radial-gradient(circle at 80% 8%, rgba(99, 102, 241, 0.14), transparent 27%),
+                  radial-gradient(circle at 50% 80%, rgba(15, 209, 197, 0.12), transparent 35%),
+                  var(--ink);
+      color: var(--soft);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+    a { color: var(--accent); }
+    .content {
+      position: relative;
+      max-width: 1100px;
+      margin: 52px auto;
+      padding: 32px;
+      background: linear-gradient(140deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--edge);
+      border-radius: 18px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .content:before,
+    .content:after {
+      content: "";
+      position: absolute;
+      inset: -60% auto auto -30%;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(165, 180, 252, 0.32), transparent 60%);
+      filter: blur(22px);
+      z-index: 0;
+      transform: rotate(-8deg);
+    }
+    .content:after {
+      inset: auto -25% -50% auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.25), transparent 60%);
+      transform: rotate(12deg);
+    }
     h1, h2, h3 { color: #f8fafc; }
-    .badge-tag { background: rgba(99,102,241,0.18); border: 1px solid rgba(99,102,241,0.35); color: #c7d2fe; border-radius: 999px; padding: 0.35rem 0.8rem; font-weight: 700; }
-    .section { margin-bottom: 28px; }
+    .badge-tag {
+      background: rgba(99, 102, 241, 0.16);
+      border: 1px solid rgba(99, 102, 241, 0.45);
+      color: #dfe4ff;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      backdrop-filter: blur(6px);
+    }
+    .section {
+      position: relative;
+      margin-bottom: 32px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(226, 232, 240, 0.08);
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.02), rgba(165, 180, 252, 0.03));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      z-index: 1;
+    }
+    .section:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      bottom: 12px;
+      width: 3px;
+      background: linear-gradient(to bottom, #22d3ee, #a855f7);
+      border-radius: 12px;
+      opacity: 0.85;
+    }
+    .section h2 { margin-bottom: 10px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(226, 232, 240, 0.32), transparent);
+      margin: 16px 0 10px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .info-card {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 240, 0.12);
+      background: rgba(255, 255, 255, 0.02);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .info-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(165, 180, 252, 0.35);
+      background: rgba(165, 180, 252, 0.04);
+    }
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      border-left: 1px dashed rgba(148, 163, 184, 0.4);
+    }
+    .timeline li {
+      padding-left: 14px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .timeline li:before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 2px solid rgba(165, 180, 252, 0.9);
+      background: #0b1224;
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      box-shadow: 0 0 0 5px rgba(165, 180, 252, 0.12);
+    }
+    .callout {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      color: #e0f2fe;
+    }
   </style>
 </head>
 <body>
   <div class="content">
     <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-2">
       <div>
+        <div class="pill mb-2">
+          <span class="text-info fw-semibold">CDC WONDER</span>
+          <span class="text-muted small">Mortality dashboard blueprint</span>
+        </div>
         <h1 class="h3 mb-1">Design Rationale & Implementation Notes</h1>
-        <div class="text-muted">Context for the CDC WONDER mortality visuals</div>
+        <div class="text-muted">How the visuals hang together and why the interactions matter</div>
       </div>
       <a href="home.html" class="badge-tag text-decoration-none">Back to main view</a>
     </div>
 
     <div class="section">
       <h2 class="h4">Design rationale</h2>
-      <p><strong>Data abstractions:</strong> The page treats mortality data as linked slices of a multi-dimensional cube: time, geography (nation &amp; state), demographic groups (race, sex, age bands), causes (ICD-10 chapters/sub-chapters), and contextual place (urbanization tier, place of death). Each chart reveals one projection of that cube while keeping others available through filters.</p>
-      <p><strong>Task abstractions:</strong> Readers need to (1) locate where burden concentrates, (2) compare groups over time, and (3) drill from broad categories to specifics. The treemap shows current composition (part-to-whole), the state choropleth shows spatial variation, bars rank leading causes, the stacked area and sunburst show how shares shift across categories and time.</p>
-      <p><strong>Encodings and visual choices:</strong> Color hue encodes categorical groups (chapters, urbanization tiers, demographics), while luminance encodes magnitude where appropriate (choropleth). Position along axes encodes time; area encodes part-to-whole (treemap, sunburst, stacked area). Legends, breadcrumbs, and tooltips provide low-friction reading without overwhelming labels.</p>
-      <p><strong>Layout:</strong> Sections follow a narrative arc—composition (Prelude), geographic baselines (Chapter 1), ranked causes (Chapter 2), structural context (Chapter 3), and temporal/setting detail (Chapter 4). Each section keeps controls close to its visualization to reduce context switching.</p>
+      <div class="card-grid">
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Data abstractions</div>
+          <ul class="mb-0 ps-3">
+            <li>Think of mortality as a cube with axes for time, geography, demographics, causes, and context.</li>
+            <li>Each viz is just one slice; filters keep the other dimensions hanging out in the background.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Task priorities</div>
+          <ul class="mb-0 ps-3">
+            <li>Find where the burden piles up, compare groups over time, then zoom from broad to specific.</li>
+            <li>Treemap hits composition, choropleth shows spatial contrast, bars rank causes, stacked area/sunburst show shifting shares.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Encoding choices</div>
+          <ul class="mb-0 ps-3">
+            <li>Hue = categories; luminance = magnitude for maps because that is what maps like.</li>
+            <li>Axes anchor time; area signals part-to-whole; legends and breadcrumbs stay light but helpful.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Narrative arc</div>
+          <ul class="mb-0 ps-3">
+            <li>Composition (Prelude) -> geography (Chapter 1) -> ranked causes (Chapter 2) -> structure (Chapter 3) -> time/setting (Chapter 4).</li>
+            <li>Controls live next to charts so you do not have to wander back to a menu; each section docks its filters and legend beside its viz to cut travel time.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="section">
-      <h2 class="h4">Chosen visualization examples</h2>
-      <ul class="mb-0">
+      <h2 class="h4">Chosen visualization </h2>
+      <ul class="timeline">
         <li><strong>Treemap + trend (Prelude):</strong> Reveals current composition and lets users click to see temporal behavior of a category.</li>
         <li><strong>Choropleth + state trend (Chapter 1):</strong> Pairs spatial comparison with a linked time series for selected states.</li>
         <li><strong>Ranked bars (Chapter 2):</strong> Prioritizes comparison of leading underlying causes with sub-chapter drill-down.</li>
-        <li><strong>Stacked area + focus (Chapter 4):</strong> Shows how totals accumulate over time while allowing isolation of a single group’s trajectory.</li>
+        <li><strong>Stacked area + focus (Chapter 4):</strong> Shows how totals accumulate over time while allowing isolation of a single group's trajectory.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2 class="h4">Implementation spotlight: Urban mortality pathways</h2>
-      <p><strong>Why highlight:</strong> It combines multi-dimensional filtering (demographic, cause, urbanization, age, place-of-death) with linked focus and insights.</p>
-      <p><strong>Data prep:</strong> <code>urban-trends.js</code> normalizes the Urban and ageLocation CSVs into tidy rows with <code>year</code>, <code>deaths</code>, and category fields. It builds a stacked dataset via <code>d3.stack</code>, limiting segments and merging tails into “Other” to keep the legend readable.</p>
-      <p><strong>Rendering:</strong> A stacked area chart uses position for time and area for contribution. Hover shows a tooltip and a vertical guide line; click pins a layer and renders a mini focus chart below using the same color for continuity.</p>
-      <p><strong>Interaction architecture:</strong> Filter buttons switch the active accessor (gender, urbanization, ethnicity, cause, age, place of death, total). The same update routine rebuilds scales, stack keys, legend, insights, and focus state, keeping state management centralized.</p>
-      <p><strong>Feedback elements:</strong> Insight text summarizes dominant segments and biggest movers between first and latest years; legend swatches mirror layer colors; the focus chart shares the x-domain so pinned lines align temporally with the main view.</p>
+      <p class="callout mb-3"><strong>Why highlight:</strong> This view mixes a bunch of filters (demographic, cause, urbanization, age, place of death) with a linked focus lane so the user does not get lost.</p>
+      <div class="divider"></div>
+      <div class="card-grid">
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Data prep</div>
+          <ul class="mb-0 ps-3">
+            <li><code>urban-trends.js</code> tidies Urban and ageLocation CSVs into rows with <code>year</code>, <code>deaths</code>, and category fields.</li>
+            <li>Runs <code>d3.stack</code>, trims tiny slices, and buckets leftovers into "Other" to keep the legend chill.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Rendering</div>
+          <ul class="mb-0 ps-3">
+            <li>Stacked area uses x for time and area for contribution; nothing fancy, just clean.</li>
+            <li>Hover drops a tooltip + vertical guide; click pins a layer and spawns a mini focus chart in the same color.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Interaction architecture</div>
+          <ul class="mb-0 ps-3">
+            <li>Buttons swap the active accessor (gender, urbanization, ethnicity, cause, age, place of death, total).</li>
+            <li>One update routine rebuilds scales, stack keys, legend, insights, and focus state so state stays in one place.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="fw-semibold text-info mb-1">Feedback elements</div>
+          <ul class="mb-0 ps-3">
+            <li>Insights flag the biggest slices and the biggest changers between the first and last years.</li>
+            <li>Legend colors match the layers, and the focus chart uses the same x-scale so everything lines up.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-card">
+        <div class="fw-semibold text-info mb-2">Quick demo code (JS)</div>
+        <pre class="mb-0" style="background: rgba(0,0,0,0.35); border: 1px solid rgba(148,163,184,0.28); color: #e5e7eb; padding: 12px; border-radius: 12px; font-size: 0.9rem;"><code>// Build a stacked series with D3
+const stackKeys = categories.slice(0, 6); // cap the legend
+const stack = d3.stack()
+  .keys(stackKeys)
+  .value((d, key) => d[key] ?? 0);
+
+const stacked = stack(rows); // rows already tidied to {year, deaths, category}
+
+// Simple area generator
+const area = d3.area()
+  .x(d => xScale(d.data.year))
+  .y0(d => yScale(d[0]))
+  .y1(d => yScale(d[1]))
+  .curve(d3.curveCatmullRom.alpha(0.7));
+
+svg.selectAll("path.layer")
+  .data(stacked)
+  .join("path")
+  .attr("class", "layer")
+  .attr("fill", d => color(d.key))
+  .attr("d", area);</code></pre>
+        <ul class="mb-0 ps-3 pt-2">
+          <li><code>stackKeys</code> just grabs the first six categories so the legend does not blow up.</li>
+          <li><code>d3.stack()</code> turns the tidy rows into layers; if a value is missing, it just drops in a zero so the math stays steady.</li>
+          <li><code>d3.area()</code> sets up the path builder—y0/y1 from the stack bands, x as year, using Catmull-Rom (a smoothing curve that still passes through the points) to keep the edges rounded.</li>
+          <li>The join spits out one SVG path per layer and paints it by key, keeping fills and the legend on the same page.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
